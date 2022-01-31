@@ -1,0 +1,100 @@
+\hypertarget{_protocol_a_r_e_a_8java_source}{}\subsection{Protocol\+A\+R\+E\+A.\+java}
+\label{_protocol_a_r_e_a_8java_source}\index{Protocol\+A\+R\+E\+A.\+java@{Protocol\+A\+R\+E\+A.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00011 \textcolor{keyword}{import} android.util.Log;
+00012 
+00013 \textcolor{keyword}{import} java.util.Vector;
+00014 
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00019}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{00019} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}
+00020 \{
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00024}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a4cc039bb2f3b605eb461b38dca05d22d}{00024}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a4cc039bb2f3b605eb461b38dca05d22d}{TAG} = \textcolor{stringliteral}{"\_ProtocoleAREA"};  
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00025}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77e082eb863a4839d0f1e885b31594e2}{00025}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77e082eb863a4839d0f1e885b31594e2}{NOM\_MODULE\_NET} = \textcolor{stringliteral}{"NET\_AREA"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00026}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_afdfe4064c9e2d1c013bce83fd03c4326}{00026}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_afdfe4064c9e2d1c013bce83fd03c4326}{NOM\_MODULE\_AFFICHEUR\_AREA} = \textcolor{stringliteral}{"AFFICHEUR\_AREA"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00027}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a57f9d1bae3c42517827ff0f193f0f36f}{00027}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a57f9d1bae3c42517827ff0f193f0f36f}{ADRESSE\_MODULE\_NET} = \textcolor{stringliteral}{"24:6F:28:7B:E1:06"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00028}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a5f26c701d9ee639249d7f11e0b87b72d}{00028}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a5f26c701d9ee639249d7f11e0b87b72d}{ADRESSE\_MODULE\_AFFICHEUR} = \textcolor{stringliteral}{"DC:A6:32:52:7D:B5"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00029}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_afec644c1c2a6563a0ee16a689044433c}{00029}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_afec644c1c2a6563a0ee16a689044433c}{DELIMITEUR\_CHAMP} = \textcolor{stringliteral}{";"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00030}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{00030}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN} = \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"};
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00031}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ad9aa917d162b8de3234b65ba294803ee}{00031}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ad9aa917d162b8de3234b65ba294803ee}{DEBUT\_TRAME} = \textcolor{stringliteral}{"MOBILE\_AREA"};
+00032     \textcolor{comment}{// MODULE\_NET}
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00033}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ab835cea072ee1568a285250debc1b3be}{00033}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ab835cea072ee1568a285250debc1b3be}{TRAME\_SERVICE} = \textcolor{stringliteral}{"MOBILE\_AREA;SERVICE\(\backslash\)r\(\backslash\)n"};
+00034     \textcolor{comment}{// MODULE\_AFFICHEUR}
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00035}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a6a896dcb5c52062dbeab426b93e566fc}{00035}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a6a896dcb5c52062dbeab426b93e566fc}{TRAME\_AFFICHEUR\_RENCONTRE} = 0;
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00036}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a4f5be4d0653ad5f52ae5f5c673ec728d}{00036}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a4f5be4d0653ad5f52ae5f5c673ec728d}{TRAME\_AFFICHEUR\_INFO\_PARTIE} = 1;
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00037}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{00037}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE} = 2;
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00038}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a685ef5127e28517ca42fafb5cd6ba25a}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a685ef5127e28517ca42fafb5cd6ba25a}{TRAME\_AFFICHEUR\_ETAT\_PARTIE} = 3;
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00039}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a33bebef0a070831f8853b3f9e88532f2}{00039}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a33bebef0a070831f8853b3f9e88532f2}{TRAME\_AFFICHEUR\_NET} = 4;
+00040 
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00048}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{00048}     \textcolor{keyword}{public} \textcolor{keyword}{static} String \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\textcolor{keywordtype}{int} typeTrame, 
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+00049     \{
+00050         String trame = \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ad9aa917d162b8de3234b65ba294803ee}{DEBUT\_TRAME};
+00051 
+00055         \textcolor{keywordflow}{switch} (typeTrame)
+00056         \{
+00057             \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a6a896dcb5c52062dbeab426b93e566fc}{TRAME\_AFFICHEUR\_RENCONTRE}:
+00061                 \textcolor{keywordflow}{break};
+00062             \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a4f5be4d0653ad5f52ae5f5c673ec728d}{TRAME\_AFFICHEUR\_INFO\_PARTIE}:
+00067                 Vector<Joueur> joueursA = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00068                 Vector<Joueur> joueursB = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00069                 \textcolor{keywordflow}{if} (joueursA.size() > 1)
+00070                     trame += DELIMITEUR\_CHAMP + TRAME\_AFFICHEUR\_INFO\_PARTIE + joueursA.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00071                             joueursA.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getPrenom() + DELIMITEUR\_CHAMP + joueursA.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{POSITION\_DEUXIEME\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00072                             joueursA.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{POSITION\_DEUXIEME\_JOUEUR}).getPrenom() + DELIMITEUR\_CHAMP + joueursB.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00073                             joueursB.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getPrenom() + DELIMITEUR\_CHAMP + joueursB.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{POSITION\_DEUXIEME\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00074                             joueursB.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{POSITION\_DEUXIEME\_JOUEUR}).getPrenom() + \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN};
+00075                 \textcolor{keywordflow}{else}
+00076                     trame += DELIMITEUR\_CHAMP + TRAME\_AFFICHEUR\_INFO\_PARTIE + joueursA.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00077                             joueursA.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getPrenom() + DELIMITEUR\_CHAMP + joueursB.elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getNom() + DELIMITEUR\_CHAMP +
+00078                             joueursB.elementAt(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR}).getPrenom() + \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN};
+00079                 \textcolor{keywordflow}{break};
+00080             \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE}:
+00085                 trame += DELIMITEUR\_CHAMP + TRAME\_AFFICHEUR\_SCORE + DELIMITEUR\_CHAMP + partie.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a535a67141814a238c1ffc0c42d0afedc}{getId}() + DELIMITEUR\_CHAMP + partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a5ec15306fc24648c1698ea0cdd50bf53}{getPointsJoueursA}() +
+00086                         DELIMITEUR\_CHAMP + partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a376bb79a67c311e1eb681387e9440bbd}{getPointsJoueursB}() + DELIMITEUR\_CHAMP +
+       partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a7c863edbbdd07ddc7f71616949823201}{getManchesJoueursA}() + DELIMITEUR\_CHAMP +
+00087                         partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a706fa101c4fcad9f2ea6473b5778b55e}{getManchesJoueursB}() + 
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN};
+00088                 \textcolor{keywordflow}{break};
+00089             \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a685ef5127e28517ca42fafb5cd6ba25a}{TRAME\_AFFICHEUR\_ETAT\_PARTIE}:
+00096                 String etat = \textcolor{stringliteral}{"EN\_COURS"};
+00097                 \textcolor{keywordflow}{if} (partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a00890390c78922c024fe31065923964e}{estFinie}())
+00098                     etat = \textcolor{stringliteral}{"TERMINEE"};
+00099                 trame += DELIMITEUR\_CHAMP + TRAME\_AFFICHEUR\_ETAT\_PARTIE + DELIMITEUR\_CHAMP + partie.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a535a67141814a238c1ffc0c42d0afedc}{getId}() + DELIMITEUR\_CHAMP + etat + \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN};
+00100                 \textcolor{keywordflow}{break};
+00101             \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a33bebef0a070831f8853b3f9e88532f2}{TRAME\_AFFICHEUR\_NET}:
+00105                 trame += DELIMITEUR\_CHAMP + TRAME\_AFFICHEUR\_NET + DELIMITEUR\_CHAMP + partie.
+      \hyperlink{classcom_1_1example_1_1area_1_1_partie_a535a67141814a238c1ffc0c42d0afedc}{getId}() + \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77f13634749dc65bc24d98672ff7ba03}{DELIMITEUR\_FIN};
+00106                 \textcolor{keywordflow}{break};
+00107         \}
+00108 
+00109         Log.d(TAG, \textcolor{stringliteral}{"fabriquerTrameAfficheur() trame = "} + trame);
+00110 
+00111         \textcolor{keywordflow}{return} trame;
+00112     \}
+00113 
+\Hypertarget{_protocol_a_r_e_a_8java_source_l00117}\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_af675efbe6d33699aa34c01f6223fa711}{00117}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_af675efbe6d33699aa34c01f6223fa711}{verifierTrameNet}(String trame)
+00118     \{
+00119         \textcolor{keywordflow}{if} (trame.startsWith(\textcolor{stringliteral}{"NET\_AREA"}) && trame.contains(\textcolor{stringliteral}{"NET"}))
+00120         \{
+00121             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00122         \}
+00123         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00124     \}
+00125 \}
+\end{DoxyCode}

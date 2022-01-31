@@ -1,0 +1,17 @@
+\hypertarget{main_8cpp_source}{}\subsection{main.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{_i_h_m_afficheur_8h}{IHMAfficheur.h}"}
+00002 \textcolor{preprocessor}{#include <QApplication>}
+00003 
+\Hypertarget{main_8cpp_source_l00019}\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{00019} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}(\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char} *argv[])
+00020 \{
+00021     QApplication a(argc, argv);
+00022     \hyperlink{class_i_h_m_afficheur}{IHMAfficheur} w;
+00023 
+00024     \textcolor{comment}{//w.show();}
+00025     w.showFullScreen();
+00026 
+00027     \textcolor{keywordflow}{return} a.exec();
+00028 \}
+\end{DoxyCode}

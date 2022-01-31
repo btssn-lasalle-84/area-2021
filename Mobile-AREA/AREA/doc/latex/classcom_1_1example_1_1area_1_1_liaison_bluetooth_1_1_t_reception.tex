@@ -1,0 +1,154 @@
+\hypertarget{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{}\subsection{Référence de la classe com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception}
+\label{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}\index{com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception@{com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception}}
+
+
+Graphe de collaboration de com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}{arreter} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui permet d\textquotesingle{}arrêter lire les données entrantes. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_afb141736dac915d0c82f96f75033f318}{run} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui permet de lire les données entrantes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+boolean \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{fini}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+
+
+Définition à la ligne \hyperlink{_liaison_bluetooth_8java_source_l00228}{228} du fichier \hyperlink{_liaison_bluetooth_8java_source}{Liaison\+Bluetooth.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}\label{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}} 
+\index{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}!arreter@{arreter}}
+\index{arreter@{arreter}!com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{arreter()}{arreter()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception.\+arreter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode qui permet d\textquotesingle{}arrêter lire les données entrantes. 
+
+
+
+Définition à la ligne \hyperlink{_liaison_bluetooth_8java_source_l00287}{287} du fichier \hyperlink{_liaison_bluetooth_8java_source}{Liaison\+Bluetooth.\+java}.
+
+
+
+Référencé par \hyperlink{_liaison_bluetooth_8java_source_l00171}{com.\+example.\+area.\+Liaison\+Bluetooth.\+deconnecter()}.
+
+
+\begin{DoxyCode}
+00288         \{
+00289             \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{fini} == \textcolor{keyword}{false})
+00290             \{
+00291                 \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{fini} = \textcolor{keyword}{true};
+00292             \}
+00293 
+00294             \textcolor{keywordflow}{try}
+00295             \{
+00296                 \hyperlink{class_thread}{Thread}.sleep(250);
+00297             \}
+00298             \textcolor{keywordflow}{catch} (InterruptedException e)
+00299             \{
+00300                 e.printStackTrace();
+00301             \}
+00302         \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_afb141736dac915d0c82f96f75033f318}\label{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_afb141736dac915d0c82f96f75033f318}} 
+\index{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}!run@{run}}
+\index{run@{run}!com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode qui permet de lire les données entrantes. 
+
+
+
+Définition à la ligne \hyperlink{_liaison_bluetooth_8java_source_l00240}{240} du fichier \hyperlink{_liaison_bluetooth_8java_source}{Liaison\+Bluetooth.\+java}.
+
+
+
+Références \hyperlink{_liaison_bluetooth_8java_source_l00136}{com.\+example.\+area.\+Liaison\+Bluetooth.\+connecter()}, \hyperlink{_liaison_bluetooth_8java_source_l00037}{com.\+example.\+area.\+Liaison\+Bluetooth.\+D\+E\+C\+O\+N\+N\+E\+X\+I\+O\+N\+\_\+\+S\+O\+C\+K\+ET}, et \hyperlink{_liaison_bluetooth_8java_source_l00038}{com.\+example.\+area.\+Liaison\+Bluetooth.\+R\+E\+C\+E\+P\+T\+I\+O\+N\+\_\+\+T\+R\+A\+ME}.
+
+
+\begin{DoxyCode}
+00241         \{
+00242             Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac51aa4b63fae5c36734a061cc05d7fc9}{TAG},\textcolor{stringliteral}{"Démarrage du thread Réception pour le module "} + 
+      \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module}.getName() + \textcolor{stringliteral}{" | Adresse : "} + \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module}.getAddress());
+00243             BufferedReader reception = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(
+      \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a9a3a7d77bae06a972782b6e73471878d}{fluxReception}));
+00244             \textcolor{keywordflow}{while}(!\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{fini})
+00245             \{
+00246                 \textcolor{keywordflow}{try}
+00247                 \{
+00248                     String trame = \textcolor{stringliteral}{""};
+00249                     \textcolor{keywordflow}{if} (\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ab59b57f5e59d0236e49ecf68c053cb27}{socket}.isConnected())
+00250                     \{
+00251                         trame = reception.readLine();
+00252                         \textcolor{keywordflow}{if}(trame.length() > 0)
+00253                         \{
+00254                           Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac51aa4b63fae5c36734a061cc05d7fc9}{TAG}, \textcolor{stringliteral}{"Trame : "} + trame);
+00255                           Message message = \textcolor{keyword}{new} Message();
+00256                           message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1a3058c683cec15fe0f3699f7fc26073}{RECEPTION\_TRAME};
+00257                           message.obj = trame;
+00258                           \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ace2c20759fc96d3ae787f1f726fd2691}{handlerIHM}.sendMessage(message);
+00259                         \}
+00260                     \}
+00261                 \}
+00262                 \textcolor{keywordflow}{catch} (IOException e)
+00263                 \{
+00264                     e.printStackTrace();
+00265                     Message message = \textcolor{keyword}{new} Message();
+00266                     message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{DECONNEXION\_SOCKET};
+00267                     message.obj = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module}.getName();
+00268                     \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ace2c20759fc96d3ae787f1f726fd2691}{handlerIHM}.sendMessage(message);
+00269                     \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{connecter}();
+00270                 \}
+00271 
+00272                 \textcolor{keywordflow}{try}
+00273                 \{
+00274                     \hyperlink{class_thread}{Thread}.sleep(250);
+00275                 \}
+00276                 \textcolor{keywordflow}{catch} (InterruptedException e)
+00277                 \{
+00278                     e.printStackTrace();
+00279                 \}
+00280             \}
+00281             Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac51aa4b63fae5c36734a061cc05d7fc9}{TAG},\textcolor{stringliteral}{"Arrêt du thread Réception pour le module "} + \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module}.getName() + \textcolor{stringliteral}{" | Adresse
+       : "} + \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module}.getAddress());
+00282         \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}\label{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}} 
+\index{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}!fini@{fini}}
+\index{fini@{fini}!com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception@{com\+::example\+::area\+::\+Liaison\+Bluetooth\+::\+T\+Reception}}
+\paragraph{\texorpdfstring{fini}{fini}}
+{\footnotesize\ttfamily boolean com.\+example.\+area.\+Liaison\+Bluetooth.\+T\+Reception.\+fini\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_liaison_bluetooth_8java_source_l00230}{230} du fichier \hyperlink{_liaison_bluetooth_8java_source}{Liaison\+Bluetooth.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_liaison_bluetooth_8java}{Liaison\+Bluetooth.\+java}\end{DoxyCompactItemize}

@@ -1,0 +1,239 @@
+\hypertarget{class_club}{}\subsection{Référence de la classe Club}
+\label{class_club}\index{Club@{Club}}
+
+
+{\ttfamily \#include $<$Club.\+h$>$}
+
+
+
+Graphe de collaboration de Club\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_club__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_club_af7cf902fc29f6d587b11a10eec87edff}{ajouter\+Joueur} (char \&lettre, \hyperlink{class_joueur}{Joueur} \&j)
+\item 
+\hyperlink{class_club_a6d6fa5971608a06394c40453289d6251}{Club} (Q\+String \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom}=\char`\"{}\char`\"{})
+\item 
+Q\+String \hyperlink{class_club_aaa3c96659bf305d7a1988ecbd27de30f}{get\+Nom} () const
+\item 
+int \hyperlink{class_club_af4f28219aa51c3742cddfae4b66cec4b}{get\+Parties\+Remportes} () const
+\item 
+void \hyperlink{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}{set\+Nom} (Q\+String \&n)
+\item 
+void \hyperlink{class_club_ad1711f2742e385ef00174b3ebd98b165}{set\+Parties\+Remportes} (int \&p)
+\item 
+\hyperlink{class_club_a1c2993e141cfa6468284274359cc7de5}{$\sim$\+Club} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Map$<$ char, \hyperlink{class_joueur}{Joueur} $>$ \hyperlink{class_club_a1546f281ba72a07e52cbfd2a60af699b}{joueurs}
+\item 
+Q\+String \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom}
+\item 
+int \hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{parties\+Remportees}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+
+
+Définition à la ligne \hyperlink{_club_8h_source_l00017}{17} du fichier \hyperlink{_club_8h_source}{Club.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_club_a6d6fa5971608a06394c40453289d6251}\label{class_club_a6d6fa5971608a06394c40453289d6251}} 
+\index{Club@{Club}!Club@{Club}}
+\index{Club@{Club}!Club@{Club}}
+\paragraph{\texorpdfstring{Club()}{Club()}}
+{\footnotesize\ttfamily Club\+::\+Club (\begin{DoxyParamCaption}\item[{Q\+String}]{nom = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00013}{13} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+\begin{DoxyCode}
+00013                       : \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom}(\hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom}), \hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees}(0)
+00014 \{
+00015     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom} << \textcolor{keyword}{this};
+00016 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_club_a1c2993e141cfa6468284274359cc7de5}\label{class_club_a1c2993e141cfa6468284274359cc7de5}} 
+\index{Club@{Club}!````~Club@{$\sim$\+Club}}
+\index{````~Club@{$\sim$\+Club}!Club@{Club}}
+\paragraph{\texorpdfstring{$\sim$\+Club()}{~Club()}}
+{\footnotesize\ttfamily Club\+::$\sim$\+Club (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00018}{18} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+\begin{DoxyCode}
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00021 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_club_af7cf902fc29f6d587b11a10eec87edff}\label{class_club_af7cf902fc29f6d587b11a10eec87edff}} 
+\index{Club@{Club}!ajouter\+Joueur@{ajouter\+Joueur}}
+\index{ajouter\+Joueur@{ajouter\+Joueur}!Club@{Club}}
+\paragraph{\texorpdfstring{ajouter\+Joueur()}{ajouterJoueur()}}
+{\footnotesize\ttfamily void Club\+::ajouter\+Joueur (\begin{DoxyParamCaption}\item[{char \&}]{lettre,  }\item[{\hyperlink{class_joueur}{Joueur} \&}]{j }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00043}{43} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+
+Références \hyperlink{_club_8h_source_l00022}{joueurs}.
+
+
+\begin{DoxyCode}
+00044 \{
+00045     \hyperlink{class_club_a1546f281ba72a07e52cbfd2a60af699b}{joueurs}.insert(lettre,j);
+00046 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_club_aaa3c96659bf305d7a1988ecbd27de30f}\label{class_club_aaa3c96659bf305d7a1988ecbd27de30f}} 
+\index{Club@{Club}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Club@{Club}}
+\paragraph{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily Q\+String Club\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00023}{23} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+
+Références \hyperlink{_club_8h_source_l00020}{nom}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom};
+00026 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_club_af4f28219aa51c3742cddfae4b66cec4b}\label{class_club_af4f28219aa51c3742cddfae4b66cec4b}} 
+\index{Club@{Club}!get\+Parties\+Remportes@{get\+Parties\+Remportes}}
+\index{get\+Parties\+Remportes@{get\+Parties\+Remportes}!Club@{Club}}
+\paragraph{\texorpdfstring{get\+Parties\+Remportes()}{getPartiesRemportes()}}
+{\footnotesize\ttfamily int Club\+::get\+Parties\+Remportes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00033}{33} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+
+Références \hyperlink{_club_8h_source_l00021}{parties\+Remportees}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     \textcolor{keywordflow}{return} this->\hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees};
+00036 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}\label{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}} 
+\index{Club@{Club}!set\+Nom@{set\+Nom}}
+\index{set\+Nom@{set\+Nom}!Club@{Club}}
+\paragraph{\texorpdfstring{set\+Nom()}{setNom()}}
+{\footnotesize\ttfamily void Club\+::set\+Nom (\begin{DoxyParamCaption}\item[{Q\+String \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00028}{28} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+
+Références \hyperlink{_club_8h_source_l00020}{nom}.
+
+
+\begin{DoxyCode}
+00029 \{
+00030     \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom} = n;
+00031 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_club_ad1711f2742e385ef00174b3ebd98b165}\label{class_club_ad1711f2742e385ef00174b3ebd98b165}} 
+\index{Club@{Club}!set\+Parties\+Remportes@{set\+Parties\+Remportes}}
+\index{set\+Parties\+Remportes@{set\+Parties\+Remportes}!Club@{Club}}
+\paragraph{\texorpdfstring{set\+Parties\+Remportes()}{setPartiesRemportes()}}
+{\footnotesize\ttfamily void Club\+::set\+Parties\+Remportes (\begin{DoxyParamCaption}\item[{int \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_club_8cpp_source_l00038}{38} du fichier \hyperlink{_club_8cpp_source}{Club.\+cpp}.
+
+
+
+Références \hyperlink{_club_8h_source_l00021}{parties\+Remportees}.
+
+
+\begin{DoxyCode}
+00039 \{
+00040     \hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees} = p;
+00041 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_club_a1546f281ba72a07e52cbfd2a60af699b}\label{class_club_a1546f281ba72a07e52cbfd2a60af699b}} 
+\index{Club@{Club}!joueurs@{joueurs}}
+\index{joueurs@{joueurs}!Club@{Club}}
+\paragraph{\texorpdfstring{joueurs}{joueurs}}
+{\footnotesize\ttfamily Q\+Map$<$char,\hyperlink{class_joueur}{Joueur}$>$ Club\+::joueurs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_club_8h_source_l00022}{22} du fichier \hyperlink{_club_8h_source}{Club.\+h}.
+
+
+
+Référencé par \hyperlink{_club_8cpp_source_l00043}{ajouter\+Joueur()}.
+
+\mbox{\Hypertarget{class_club_a18e1489d02110a82a0c8706f52091002}\label{class_club_a18e1489d02110a82a0c8706f52091002}} 
+\index{Club@{Club}!nom@{nom}}
+\index{nom@{nom}!Club@{Club}}
+\paragraph{\texorpdfstring{nom}{nom}}
+{\footnotesize\ttfamily Q\+String Club\+::nom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_club_8h_source_l00020}{20} du fichier \hyperlink{_club_8h_source}{Club.\+h}.
+
+
+
+Référencé par \hyperlink{_club_8cpp_source_l00023}{get\+Nom()}, et \hyperlink{_club_8cpp_source_l00028}{set\+Nom()}.
+
+\mbox{\Hypertarget{class_club_a1c5dd1362656cb4829de483255ffc39a}\label{class_club_a1c5dd1362656cb4829de483255ffc39a}} 
+\index{Club@{Club}!parties\+Remportees@{parties\+Remportees}}
+\index{parties\+Remportees@{parties\+Remportees}!Club@{Club}}
+\paragraph{\texorpdfstring{parties\+Remportees}{partiesRemportees}}
+{\footnotesize\ttfamily int Club\+::parties\+Remportees\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_club_8h_source_l00021}{21} du fichier \hyperlink{_club_8h_source}{Club.\+h}.
+
+
+
+Référencé par \hyperlink{_club_8cpp_source_l00033}{get\+Parties\+Remportes()}, et \hyperlink{_club_8cpp_source_l00038}{set\+Parties\+Remportes()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_club_8h}{Club.\+h}\item 
+\hyperlink{_club_8cpp}{Club.\+cpp}\end{DoxyCompactItemize}

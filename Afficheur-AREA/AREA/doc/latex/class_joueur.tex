@@ -1,0 +1,304 @@
+\hypertarget{class_joueur}{}\subsection{Référence de la classe Joueur}
+\label{class_joueur}\index{Joueur@{Joueur}}
+
+
+{\ttfamily \#include $<$Joueur.\+h$>$}
+
+
+
+Graphe de collaboration de Joueur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_joueur__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_joueur_affde221fc6d6bf633991fff4f11dd62b}{get\+Echanges\+Remportes} () const
+\item 
+bool \hyperlink{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}{get\+Est\+Serveur} () const
+\item 
+Q\+String \hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{get\+Nom} () const
+\item 
+Q\+String \hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{get\+Prenom} () const
+\item 
+\hyperlink{class_joueur_a75f73a73741b0faa59c75fc98b872765}{Joueur} (Q\+String \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom}=\char`\"{}nom\+Joueur\char`\"{}, Q\+String \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom}=\char`\"{}Prenom\+Joueur\char`\"{})
+\item 
+void \hyperlink{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}{set\+Nom} (Q\+String \&n)
+\item 
+void \hyperlink{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}{set\+Prenom} (Q\+String \&p)
+\item 
+void \hyperlink{class_joueur_aea42f5af160c61130d5252796378ad4f}{set\+Serveur} (bool \&e)
+\item 
+\hyperlink{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}{$\sim$\+Joueur} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{echanges\+Remportes}
+\item 
+bool \hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{est\+Serveur}
+\item 
+Q\+String \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom}
+\item 
+Q\+String \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+
+
+Définition à la ligne \hyperlink{_joueur_8h_source_l00015}{15} du fichier \hyperlink{_joueur_8h_source}{Joueur.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_joueur_a75f73a73741b0faa59c75fc98b872765}\label{class_joueur_a75f73a73741b0faa59c75fc98b872765}} 
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\index{Joueur@{Joueur}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{Joueur()}{Joueur()}}
+{\footnotesize\ttfamily Joueur\+::\+Joueur (\begin{DoxyParamCaption}\item[{Q\+String}]{nom = {\ttfamily \char`\"{}nomJoueur\char`\"{}},  }\item[{Q\+String}]{prenom = {\ttfamily \char`\"{}PrenomJoueur\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00013}{13} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00019}{prenom}.
+
+
+\begin{DoxyCode}
+00013                                           : \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom}(\hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom}), \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom}(\hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom}), 
+      \hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur}(\textcolor{keyword}{false}), \hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{echangesRemportes}(0)
+00014 \{
+00015     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom} << \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom};
+00016 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}\label{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}} 
+\index{Joueur@{Joueur}!````~Joueur@{$\sim$\+Joueur}}
+\index{````~Joueur@{$\sim$\+Joueur}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{$\sim$\+Joueur()}{~Joueur()}}
+{\footnotesize\ttfamily Joueur\+::$\sim$\+Joueur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00018}{18} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+\begin{DoxyCode}
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_joueur_affde221fc6d6bf633991fff4f11dd62b}\label{class_joueur_affde221fc6d6bf633991fff4f11dd62b}} 
+\index{Joueur@{Joueur}!get\+Echanges\+Remportes@{get\+Echanges\+Remportes}}
+\index{get\+Echanges\+Remportes@{get\+Echanges\+Remportes}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{get\+Echanges\+Remportes()}{getEchangesRemportes()}}
+{\footnotesize\ttfamily int Joueur\+::get\+Echanges\+Remportes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00053}{53} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00021}{echanges\+Remportes}.
+
+
+\begin{DoxyCode}
+00054 \{
+00055     \textcolor{keywordflow}{return} \hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{echangesRemportes};
+00056 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}\label{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}} 
+\index{Joueur@{Joueur}!get\+Est\+Serveur@{get\+Est\+Serveur}}
+\index{get\+Est\+Serveur@{get\+Est\+Serveur}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{get\+Est\+Serveur()}{getEstServeur()}}
+{\footnotesize\ttfamily bool Joueur\+::get\+Est\+Serveur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00043}{43} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00020}{est\+Serveur}.
+
+
+\begin{DoxyCode}
+00044 \{
+00045     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur};
+00046 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}\label{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}} 
+\index{Joueur@{Joueur}!get\+Nom@{get\+Nom}}
+\index{get\+Nom@{get\+Nom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{get\+Nom()}{getNom()}}
+{\footnotesize\ttfamily Q\+String Joueur\+::get\+Nom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00023}{23} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00018}{nom}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom};
+00026 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_ade527085b285ce86ea9e369bc9959032}\label{class_joueur_ade527085b285ce86ea9e369bc9959032}} 
+\index{Joueur@{Joueur}!get\+Prenom@{get\+Prenom}}
+\index{get\+Prenom@{get\+Prenom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{get\+Prenom()}{getPrenom()}}
+{\footnotesize\ttfamily Q\+String Joueur\+::get\+Prenom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00033}{33} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00019}{prenom}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom};
+00036 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}\label{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}} 
+\index{Joueur@{Joueur}!set\+Nom@{set\+Nom}}
+\index{set\+Nom@{set\+Nom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{set\+Nom()}{setNom()}}
+{\footnotesize\ttfamily void Joueur\+::set\+Nom (\begin{DoxyParamCaption}\item[{Q\+String \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00028}{28} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00018}{nom}.
+
+
+\begin{DoxyCode}
+00029 \{
+00030     \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom} = n;
+00031 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}\label{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}} 
+\index{Joueur@{Joueur}!set\+Prenom@{set\+Prenom}}
+\index{set\+Prenom@{set\+Prenom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{set\+Prenom()}{setPrenom()}}
+{\footnotesize\ttfamily void Joueur\+::set\+Prenom (\begin{DoxyParamCaption}\item[{Q\+String \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00038}{38} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00019}{prenom}.
+
+
+\begin{DoxyCode}
+00039 \{
+00040     \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom} = p;
+00041 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_joueur_aea42f5af160c61130d5252796378ad4f}\label{class_joueur_aea42f5af160c61130d5252796378ad4f}} 
+\index{Joueur@{Joueur}!set\+Serveur@{set\+Serveur}}
+\index{set\+Serveur@{set\+Serveur}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{set\+Serveur()}{setServeur()}}
+{\footnotesize\ttfamily void Joueur\+::set\+Serveur (\begin{DoxyParamCaption}\item[{bool \&}]{e }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8cpp_source_l00048}{48} du fichier \hyperlink{_joueur_8cpp_source}{Joueur.\+cpp}.
+
+
+
+Références \hyperlink{_joueur_8h_source_l00020}{est\+Serveur}.
+
+
+\begin{DoxyCode}
+00049 \{
+00050     \hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur} = e;
+00051 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}\label{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}} 
+\index{Joueur@{Joueur}!echanges\+Remportes@{echanges\+Remportes}}
+\index{echanges\+Remportes@{echanges\+Remportes}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{echanges\+Remportes}{echangesRemportes}}
+{\footnotesize\ttfamily int Joueur\+::echanges\+Remportes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8h_source_l00021}{21} du fichier \hyperlink{_joueur_8h_source}{Joueur.\+h}.
+
+
+
+Référencé par \hyperlink{_joueur_8cpp_source_l00053}{get\+Echanges\+Remportes()}.
+
+\mbox{\Hypertarget{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}\label{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}} 
+\index{Joueur@{Joueur}!est\+Serveur@{est\+Serveur}}
+\index{est\+Serveur@{est\+Serveur}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{est\+Serveur}{estServeur}}
+{\footnotesize\ttfamily bool Joueur\+::est\+Serveur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8h_source_l00020}{20} du fichier \hyperlink{_joueur_8h_source}{Joueur.\+h}.
+
+
+
+Référencé par \hyperlink{_joueur_8cpp_source_l00043}{get\+Est\+Serveur()}, et \hyperlink{_joueur_8cpp_source_l00048}{set\+Serveur()}.
+
+\mbox{\Hypertarget{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}\label{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}} 
+\index{Joueur@{Joueur}!nom@{nom}}
+\index{nom@{nom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{nom}{nom}}
+{\footnotesize\ttfamily Q\+String Joueur\+::nom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8h_source_l00018}{18} du fichier \hyperlink{_joueur_8h_source}{Joueur.\+h}.
+
+
+
+Référencé par \hyperlink{_joueur_8cpp_source_l00023}{get\+Nom()}, et \hyperlink{_joueur_8cpp_source_l00028}{set\+Nom()}.
+
+\mbox{\Hypertarget{class_joueur_a96d4237143c2e57b8025c4e116e95909}\label{class_joueur_a96d4237143c2e57b8025c4e116e95909}} 
+\index{Joueur@{Joueur}!prenom@{prenom}}
+\index{prenom@{prenom}!Joueur@{Joueur}}
+\paragraph{\texorpdfstring{prenom}{prenom}}
+{\footnotesize\ttfamily Q\+String Joueur\+::prenom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_joueur_8h_source_l00019}{19} du fichier \hyperlink{_joueur_8h_source}{Joueur.\+h}.
+
+
+
+Référencé par \hyperlink{_joueur_8cpp_source_l00033}{get\+Prenom()}, \hyperlink{_joueur_8cpp_source_l00013}{Joueur()}, et \hyperlink{_joueur_8cpp_source_l00038}{set\+Prenom()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_joueur_8h}{Joueur.\+h}\item 
+\hyperlink{_joueur_8cpp}{Joueur.\+cpp}\end{DoxyCompactItemize}

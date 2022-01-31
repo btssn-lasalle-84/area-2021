@@ -1,0 +1,4 @@
+<map id="com.example.area.LiaisonBluetooth" name="com.example.area.LiaisonBluetooth">
+<area shape="rect" id="node2" href="$class_thread.html" title="{Thread\n||}" alt="" coords="67,5,130,83"/>
+<area shape="rect" id="node3" href="$classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception.html" title="{com.example.area.Liaison\lBluetooth.TReception\n|&#45; fini\l|+ arreter()\l+ run()\l~ TReception()\l}" alt="" coords="121,132,295,253"/>
+</map>

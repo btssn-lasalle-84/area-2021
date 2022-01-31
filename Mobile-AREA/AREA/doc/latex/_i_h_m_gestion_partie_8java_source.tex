@@ -1,0 +1,446 @@
+\hypertarget{_i_h_m_gestion_partie_8java_source}{}\subsection{I\+H\+M\+Gestion\+Partie.\+java}
+\label{_i_h_m_gestion_partie_8java_source}\index{I\+H\+M\+Gestion\+Partie.\+java@{I\+H\+M\+Gestion\+Partie.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} androidx.annotation.ColorRes;
+00004 \textcolor{keyword}{import} androidx.annotation.NonNull;
+00005 \textcolor{keyword}{import} androidx.appcompat.app.ActionBar;
+00006 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;
+00007 \textcolor{keyword}{import} androidx.appcompat.widget.Toolbar;
+00008 
+00009 \textcolor{keyword}{import} android.app.AlertDialog;
+00010 \textcolor{keyword}{import} android.bluetooth.BluetoothAdapter;
+00011 \textcolor{keyword}{import} android.bluetooth.BluetoothDevice;
+00012 \textcolor{keyword}{import} android.content.DialogInterface;
+00013 \textcolor{keyword}{import} android.content.Intent;
+00014 \textcolor{keyword}{import} android.graphics.Color;
+00015 \textcolor{keyword}{import} android.os.Bundle;
+00016 \textcolor{keyword}{import} android.os.Handler;
+00017 \textcolor{keyword}{import} android.os.Message;
+00018 \textcolor{keyword}{import} android.util.Log;
+00019 \textcolor{keyword}{import} android.view.Gravity;
+00020 \textcolor{keyword}{import} android.view.LayoutInflater;
+00021 \textcolor{keyword}{import} android.view.Menu;
+00022 \textcolor{keyword}{import} android.view.MenuItem;
+00023 \textcolor{keyword}{import} android.view.View;
+00024 \textcolor{keyword}{import} android.widget.Button;
+00025 \textcolor{keyword}{import} android.widget.ImageView;
+00026 \textcolor{keyword}{import} android.widget.TextView;
+00027 \textcolor{keyword}{import} android.widget.Toast;
+00028 
+00029 \textcolor{keyword}{import} java.lang.reflect.Array;
+00030 \textcolor{keyword}{import} java.util.Set;
+00031 \textcolor{keyword}{import} java.util.Vector;
+00032 
+00033 \textcolor{comment}{// Pour Logcat : \_IHMGestionRencontre|\_IHMGestionPartie|\_Partie|\_LiaisonBluetooth|\_ProtocoleAREA}
+00034 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00047}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{00047} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{IHMGestionPartie} \textcolor{keyword}{extends} AppCompatActivity
+00048 \{
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00052}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a78af1eb84e4a48b7f69c3ebee193933c}{00052}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a78af1eb84e4a48b7f69c3ebee193933c}{TAG} = \textcolor{stringliteral}{"\_IHMGestionPartie"};  
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00053}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_abc36e82bb3c4a2fb719305ea9e525c9b}{00053}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_abc36e82bb3c4a2fb719305ea9e525c9b}{TEXTE\_BOUTON\_TEMPS\_MORT} = \textcolor{stringliteral}{"Temps mort"};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00054}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a9218ba4464b7631738927d74539ac927}{00054}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a9218ba4464b7631738927d74539ac927}{TEXTE\_BOUTON\_RETIRER\_POINT} = \textcolor{stringliteral}{"-1"};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00055}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a29eb33d17f8f318937bd01705f5769d8}{00055}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a29eb33d17f8f318937bd01705f5769d8}{TEXTE\_BOUTON\_AJOUTER\_POINT} = \textcolor{stringliteral}{"+1"};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00056}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa5b1cdff8bb4d6f6157ae215f43062c5}{00056}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa5b1cdff8bb4d6f6157ae215f43062c5}{TEXTE\_TOAST\_NET} = \textcolor{stringliteral}{"NET"};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00057}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a12cdd76d3c9dec83783e40a0d017ac17}{00057}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a12cdd76d3c9dec83783e40a0d017ac17}{TEXTE\_CONNEXION\_MODULE\_NET} = \textcolor{stringliteral}{"Module NET "};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00058}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a60d4b79c44e29fe68c565cf24ed6a22a}{00058}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a60d4b79c44e29fe68c565cf24ed6a22a}{TEXTE\_CONNEXION\_MODULE\_AFFICHEUR} = \textcolor{stringliteral}{"Module
+       Afficheur "};
+00059 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00063}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ad7ac57a177098fba4ba7ea29a2418f10}{00063}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ad7ac57a177098fba4ba7ea29a2418f10}{nomJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00064}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a9a5b0bc9c6f1d865b85bfe789219e16e}{00064}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a9a5b0bc9c6f1d865b85bfe789219e16e}{prenomJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00065}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a00dbc2ac1396af550520dd011d8e01cc}{00065}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a00dbc2ac1396af550520dd011d8e01cc}{nomDeuxiemeJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00066}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_af209e9cda709137d8b77170a35b295e0}{00066}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_af209e9cda709137d8b77170a35b295e0}{prenomDeuxiemeJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00067}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_af59fb470e464a16a7f09f4440b18c2e8}{00067}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_af59fb470e464a16a7f09f4440b18c2e8}{boutonRetirerPointJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00068}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa99f420624fb6c990516b30ebe0805cc}{00068}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa99f420624fb6c990516b30ebe0805cc}{boutonAjouterPointJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00069}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a811fe6ba189ad62350a6e95c3147a1f0}{00069}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a811fe6ba189ad62350a6e95c3147a1f0}{imageServeurJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00070}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ad66029deaf2045f16e86ed6059501a1a}{00070}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ad66029deaf2045f16e86ed6059501a1a}{imageServeurDeuxiemeJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00071}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a1014526b0dcc0266e184dc2787fbeeef}{00071}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a1014526b0dcc0266e184dc2787fbeeef}{boutonTempsMortJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00072}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_affa1414152ba72b6b19e087049e2bda8}{00072}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_affa1414152ba72b6b19e087049e2bda8}{pointsJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00073}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ac30dccc72d814c0d1eb36aeb5f5bdc1f}{00073}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ac30dccc72d814c0d1eb36aeb5f5bdc1f}{manchesJoueurA};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00074}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a84e6684857fc76364978fff7bfbc4e00}{00074}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a84e6684857fc76364978fff7bfbc4e00}{tiret};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00075}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a5aba0922e5b556ebc91d67793b149f52}{00075}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a5aba0922e5b556ebc91d67793b149f52}{nomJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00076}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa25eb218f30b28bb0b750c9fa0c1a9af}{00076}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa25eb218f30b28bb0b750c9fa0c1a9af}{prenomJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00077}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a68aa62c03f3280a8f22d84e1701c1c3e}{00077}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a68aa62c03f3280a8f22d84e1701c1c3e}{nomDeuxiemeJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00078}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa5e959a5694b49790434a7d1006f57f3}{00078}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aa5e959a5694b49790434a7d1006f57f3}{prenomDeuxiemeJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00079}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a198ecded9484cec42303eb70246bd590}{00079}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a198ecded9484cec42303eb70246bd590}{boutonRetirerPointJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00080}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a8381630a907132144271c11cba2dce20}{00080}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a8381630a907132144271c11cba2dce20}{boutonAjouterPointJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00081}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a0b78d5ef6419187b3b24a2ab7db7dcea}{00081}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a0b78d5ef6419187b3b24a2ab7db7dcea}{imageServeurJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00082}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a543e5c8605174e111ada0719a0d86fe1}{00082}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a543e5c8605174e111ada0719a0d86fe1}{imageServeurDeuxiemeJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00083}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a35331b85b4b0acc71a4ede7c78819bc0}{00083}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a35331b85b4b0acc71a4ede7c78819bc0}{boutonTempsMortJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00084}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a88e51101924801095d21f65d16b337f3}{00084}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a88e51101924801095d21f65d16b337f3}{pointsJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00085}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ae60c32d48a9fe634358fae66d760a573}{00085}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ae60c32d48a9fe634358fae66d760a573}{manchesJoueurB};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00086}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a490bd4b5241dfe6a5e709209a939fa2e}{00086}     \textcolor{keyword}{private} Toast \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a490bd4b5241dfe6a5e709209a939fa2e}{toastNet};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00087}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ae9b9e3bd68c744139fe5b2300528beab}{00087}     \textcolor{keyword}{private} View \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ae9b9e3bd68c744139fe5b2300528beab}{layoutNet};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00088}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ac097d7bed4ac981338629a28c0d70c1d}{00088}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ac097d7bed4ac981338629a28c0d70c1d}{net};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00089}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a80163f148ea0264b5395a7c55ee5b4ed}{00089}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a80163f148ea0264b5395a7c55ee5b4ed}{connexionModuleNet};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00090}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a98c578b0056e17278e27aacefa933952}{00090}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a98c578b0056e17278e27aacefa933952}{imageConnexionModuleNet};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00091}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a77e3d7f58799c309694b3ccbb3318150}{00091}     \textcolor{keyword}{private} TextView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a77e3d7f58799c309694b3ccbb3318150}{connexionModuleAfficheur};
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00092}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aae13761712b67eac1e69ac900c265ffc}{00092}     \textcolor{keyword}{private} ImageView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aae13761712b67eac1e69ac900c265ffc}{imageConnexionModuleAfficheur};
+00093 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00097}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a20e5bc638f1bd45e80bbadca8e8ec28f}{00097}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a20e5bc638f1bd45e80bbadca8e8ec28f}{liaisonModuleNet} = null;
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00098}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a126a48e2f28ff098e20f0efb4700145f}{00098}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a126a48e2f28ff098e20f0efb4700145f}{liaisonModuleAfficheur} = null;
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00099}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ace8429e695c3e7d695ba98bf2dcd66f2}{00099}     \textcolor{keyword}{private} Handler \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ace8429e695c3e7d695ba98bf2dcd66f2}{handler} = null;
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00100}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a225e150f813f8fa5c632709a57eacc32}{00100}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a225e150f813f8fa5c632709a57eacc32}{partie} = null;
+00101 
+00105     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00106}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a501249e0f0625aa3e0784ce5f2b51cd8}{00106}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a501249e0f0625aa3e0784ce5f2b51cd8}{onCreate}(Bundle savedInstanceState)
+00107     \{
+00108         super.onCreate(savedInstanceState);
+00109         setContentView(R.layout.ihm\_gestion\_partie);
+00110         Log.d(TAG, \textcolor{stringliteral}{"onCreate()"});
+00111 
+00112         partie = (\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}) getIntent().getSerializableExtra(
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}{IHMGestionRencontre}.\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}{ID\_INTENT\_LANCEMENT\_PARTIE});
+00113 
+00114         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a26db1ff779d6ce415ab481dd79295115}{initialiserHandler}();
+00115 
+00116         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a98f583c39004081b004b854085000256}{initialiserLiaisonBluetooth}();
+00117 
+00118         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a2161909470bc787c850df7266c44a0c2}{recupererRessourcesIHM}();
+00119 
+00120         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a7d67797752c3b0f4e0cab951c8e11e8d}{initialiserRessourcesIHM}();
+00121 
+00122         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6be1ce3804251a75cef8d58514645e2c}{connecterBoutons}();
+00123     \}
+00124 
+00128     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00129}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a132b61f448998b41a12ef50994350c92}{00129}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a132b61f448998b41a12ef50994350c92}{onStart}()
+00130     \{
+00131         super.onStart();
+00132         Log.d(TAG, \textcolor{stringliteral}{"onStart()"});
+00133     \}
+00134 
+00138     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00139}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a8ebd633d46edcc3218f4b5a5826c0163}{00139}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a8ebd633d46edcc3218f4b5a5826c0163}{onResume}()
+00140     \{
+00141         super.onResume();
+00142         Log.d(TAG, \textcolor{stringliteral}{"onResume()"});
+00143     \}
+00144 
+00148     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00149}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a05a8b1eabc376a9d06150eaed696e53e}{00149}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a05a8b1eabc376a9d06150eaed696e53e}{onPause}()
+00150     \{
+00151         super.onPause();
+00152         Log.d(TAG, \textcolor{stringliteral}{"onPause()"});
+00153     \}
+00154 
+00158     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00159}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a67aa6746480bdba2a5744a2ff8d6c48d}{00159}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a67aa6746480bdba2a5744a2ff8d6c48d}{onStop}()
+00160     \{
+00161         super.onStop();
+00162         Log.d(TAG, \textcolor{stringliteral}{"onStop()"});
+00163     \}
+00164 
+00168     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00169}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a5706132cc0d20b0c4a67fdc2e9c94a4e}{00169}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a5706132cc0d20b0c4a67fdc2e9c94a4e}{onDestroy}()
+00170     \{
+00171         super.onDestroy();
+00172         Log.d(TAG, \textcolor{stringliteral}{"onDestroy()"});
+00173         liaisonModuleNet.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a10b356586feed95ecacb0a57cb51f0e6}{deconnecter}();
+00174         liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a10b356586feed95ecacb0a57cb51f0e6}{deconnecter}();
+00175     \}
+00176 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00180}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a2161909470bc787c850df7266c44a0c2}{00180}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a2161909470bc787c850df7266c44a0c2}{recupererRessourcesIHM}()
+00181     \{
+00182         nomJoueurA = findViewById(R.id.nomJoueurA);
+00183         prenomJoueurA = findViewById(R.id.prenomJoueurA);
+00184         nomDeuxiemeJoueurA = findViewById(R.id.nomDeuxiemeJoueurA);
+00185         prenomDeuxiemeJoueurA = findViewById(R.id.prenomDeuxiemeJoueurA);
+00186         boutonRetirerPointJoueurA = findViewById(R.id.boutonRetirerPointJoueurA);
+00187         boutonAjouterPointJoueurA = findViewById(R.id.boutonAjouterPointJoueurA);
+00188         imageServeurJoueurA = findViewById(R.id.imageServeurJoueurA);
+00189         imageServeurDeuxiemeJoueurA = findViewById(R.id.imageServeurDeuxiemeJoueurA);
+00190         boutonTempsMortJoueurA = findViewById(R.id.boutonTempsMortJoueurA);
+00191         pointsJoueurA = findViewById(R.id.pointsJoueurA);
+00192         manchesJoueurA = findViewById(R.id.manchesJoueurA);
+00193 
+00194         tiret = findViewById(R.id.tiret);
+00195 
+00196         nomJoueurB = findViewById(R.id.nomJoueurB);
+00197         prenomJoueurB = findViewById(R.id.prenomJoueurB);
+00198         nomDeuxiemeJoueurB = findViewById(R.id.nomDeuxiemeJoueurB);
+00199         prenomDeuxiemeJoueurB = findViewById(R.id.prenomDeuxiemeJoueurB);
+00200         boutonRetirerPointJoueurB = findViewById(R.id.boutonRetirerPointJoueurB);
+00201         boutonAjouterPointJoueurB = findViewById(R.id.boutonAjouterPointJoueurB);
+00202         imageServeurJoueurB = findViewById(R.id.imageServeurJoueurB);
+00203         imageServeurDeuxiemeJoueurB = findViewById(R.id.imageServeurDeuxiemeJoueurB);
+00204         boutonTempsMortJoueurB = findViewById(R.id.boutonTempsMortJoueurB);
+00205         pointsJoueurB = findViewById(R.id.pointsJoueurB);
+00206         manchesJoueurB = findViewById(R.id.manchesJoueurB);
+00207 
+00208         LayoutInflater layoutInflater = getLayoutInflater();
+00209         layoutNet = layoutInflater.inflate(R.layout.toast\_net,findViewById(R.id.layout\_toast\_net));
+00210         net = layoutNet.findViewById(R.id.texte\_net);
+00211         toastNet = \textcolor{keyword}{new} Toast(getApplicationContext());
+00212 
+00213         imageConnexionModuleNet = findViewById(R.id.imageConnexionModuleNet);
+00214         connexionModuleNet = findViewById(R.id.connexionModuleNet);
+00215 
+00216         imageConnexionModuleAfficheur = findViewById(R.id.imageConnexionModuleAfficheur);
+00217         connexionModuleAfficheur = findViewById(R.id.connexionModuleAfficheur);
+00218     \}
+00219 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00223}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a7d67797752c3b0f4e0cab951c8e11e8d}{00223}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a7d67797752c3b0f4e0cab951c8e11e8d}{initialiserRessourcesIHM}()
+00224     \{
+00225         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf3bc699cb45da1f1dea4cb5e16e74f3}{afficherNomsJoueursA}();
+00226         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a55e51d83d01ea0c3c6400f6419edfd06}{afficherNomsJoueursB}();
+00227 
+00228         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}();
+00229         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}();
+00230 
+00231         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6c63ebbc9822ef53f43468d100ab5677}{afficherBoutonsEquipeA}();
+00232         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a00c0111f1b2d4d1161515e2c04ca645c}{afficherBoutonsEquipeB}();
+00233 
+00234         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a1892c3b33ec5d93514dfa8e30f61204d}{afficherNet}();
+00235 
+00236         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ade4de81cd6978057a06e16e2e577180c}{afficherConnexionModulesBluetooth}();
+00237     \}
+00238 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00242}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ade4de81cd6978057a06e16e2e577180c}{00242}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_ade4de81cd6978057a06e16e2e577180c}{afficherConnexionModulesBluetooth}()
+00243     \{
+00244         imageConnexionModuleNet.setColorFilter(Color.RED);
+00245         connexionModuleNet.setText(TEXTE\_CONNEXION\_MODULE\_NET);
+00246         imageConnexionModuleAfficheur.setColorFilter(Color.RED);
+00247         connexionModuleAfficheur.setText(TEXTE\_CONNEXION\_MODULE\_AFFICHEUR);
+00248     \}
+00249 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00253}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a1892c3b33ec5d93514dfa8e30f61204d}{00253}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a1892c3b33ec5d93514dfa8e30f61204d}{afficherNet}()
+00254     \{
+00255         tiret.setText(\textcolor{stringliteral}{"-"});
+00256         net.setText(TEXTE\_TOAST\_NET);
+00257         toastNet.setDuration(Toast.LENGTH\_LONG);
+00258         toastNet.setGravity(Gravity.TOP, 0, 150);
+00259         toastNet.setView(layoutNet);
+00260     \}
+00261 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00265}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6c63ebbc9822ef53f43468d100ab5677}{00265}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6c63ebbc9822ef53f43468d100ab5677}{afficherBoutonsEquipeA}()
+00266     \{
+00270         boutonAjouterPointJoueurA.setText(TEXTE\_BOUTON\_AJOUTER\_POINT);
+00271         boutonRetirerPointJoueurA.setText(TEXTE\_BOUTON\_RETIRER\_POINT);
+00272         boutonTempsMortJoueurA.setText(TEXTE\_BOUTON\_TEMPS\_MORT);
+00273     \}
+00274 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00278}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a00c0111f1b2d4d1161515e2c04ca645c}{00278}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a00c0111f1b2d4d1161515e2c04ca645c}{afficherBoutonsEquipeB}()
+00279     \{
+00283         boutonAjouterPointJoueurB.setText(TEXTE\_BOUTON\_AJOUTER\_POINT);
+00284         boutonRetirerPointJoueurB.setText(TEXTE\_BOUTON\_RETIRER\_POINT);
+00285         boutonTempsMortJoueurB.setText(TEXTE\_BOUTON\_TEMPS\_MORT);
+00286     \}
+00287 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00291}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a26db1ff779d6ce415ab481dd79295115}{00291}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a26db1ff779d6ce415ab481dd79295115}{initialiserHandler}()
+00292     \{
+00293         this.handler = \textcolor{keyword}{new} Handler(this.getMainLooper())
+00294         \{
+00295             @Override
+00296             \textcolor{keyword}{public} \textcolor{keywordtype}{void} handleMessage(@NonNull Message message)
+00297             \{
+00298                 Log.d(TAG, \textcolor{stringliteral}{"[Handler] id du message = "} + message.what);
+00299                 Log.d(TAG, \textcolor{stringliteral}{"[Handler] contenu du message = "} + message.obj.toString());
+00300 
+00301                 \textcolor{keywordflow}{switch} (message.what)
+00302                 \{
+00303                     \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac961c73879bd0de9933b2fc310cc5e7e}{CREATION\_SOCKET}:
+00304                         Log.d(TAG, \textcolor{stringliteral}{"[Handler] CREATION\_SOCKET = "} + message.obj.toString());
+00305                         \textcolor{keywordflow}{break};
+00306                     \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a4870b4fac5c0f1aedac1bb40346d43da}{CONNEXION\_SOCKET}:
+00307                         Log.d(TAG, \textcolor{stringliteral}{"[Handler] CONNEXION\_SOCKET = "} + message.obj.toString());
+00308                         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a73fa6d212cf9c5e4dc8fadc96d8d35e9}{afficherEtatConnexionBluetooth}(message.obj.toString()
+      ,\textcolor{keyword}{true});
+00309                         \textcolor{keywordflow}{break};
+00310                     \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{DECONNEXION\_SOCKET}:
+00311                         Log.d(TAG, \textcolor{stringliteral}{"[Handler] DECONNEXION\_SOCKET = "} + message.obj.toString());
+00312                         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a73fa6d212cf9c5e4dc8fadc96d8d35e9}{afficherEtatConnexionBluetooth}(message.obj.toString()
+      ,\textcolor{keyword}{false});
+00313                         \textcolor{keywordflow}{break};
+00314                     \textcolor{keywordflow}{case} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1a3058c683cec15fe0f3699f7fc26073}{RECEPTION\_TRAME}:
+00315                         \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_af675efbe6d33699aa34c01f6223fa711}{verifierTrameNet}(message.obj.toString()
+      ))
+00316                         \{
+00317                             toastNet.show();
+00318                             liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a33bebef0a070831f8853b3f9e88532f2}{TRAME\_AFFICHEUR\_NET}, partie));
+00319                         \}
+00320                         \textcolor{keywordflow}{break};
+00321                 \}
+00322             \}
+00323         \};
+00324     \}
+00325 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00329}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a98f583c39004081b004b854085000256}{00329}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a98f583c39004081b004b854085000256}{initialiserLiaisonBluetooth}()
+00330     \{
+00334         liaisonModuleNet = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77e082eb863a4839d0f1e885b31594e2}{NOM\_MODULE\_NET}, \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a57f9d1bae3c42517827ff0f193f0f36f}{ADRESSE\_MODULE\_NET}, handler);
+00335         liaisonModuleNet.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{connecter}();
+00336 
+00337         liaisonModuleAfficheur = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth}(
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_afdfe4064c9e2d1c013bce83fd03c4326}{NOM\_MODULE\_AFFICHEUR\_AREA}, 
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a5f26c701d9ee639249d7f11e0b87b72d}{ADRESSE\_MODULE\_AFFICHEUR}, handler);
+00338         liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{connecter}();
+00339 
+00340         liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a685ef5127e28517ca42fafb5cd6ba25a}{TRAME\_AFFICHEUR\_ETAT\_PARTIE}, partie));
+00341     \}
+00342 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00346}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6be1ce3804251a75cef8d58514645e2c}{00346}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a6be1ce3804251a75cef8d58514645e2c}{connecterBoutons}()
+00347     \{
+00351         boutonAjouterPointJoueurA.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00352         \{
+00353             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00354             \{
+00355                 partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_abb040a8be4a92a91afded80991d07087}{ajouterPointJoueursA}();
+00356                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}();
+00357                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}();
+00358                 liaisonModuleNet.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ab835cea072ee1568a285250debc1b3be}{TRAME\_SERVICE});
+00359                 liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE}, partie));
+00360             \}
+00361         \});
+00362 
+00363         boutonAjouterPointJoueurB.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00364         \{
+00365             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00366             \{
+00367                 partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_aadc82cc11b982008b81f886adbc4e63a}{ajouterPointJoueursB}();
+00368                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}();
+00369                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}();
+00370                 liaisonModuleNet.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_ab835cea072ee1568a285250debc1b3be}{TRAME\_SERVICE});
+00371                 liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE}, partie));
+00372             \}
+00373         \});
+00374 
+00375         boutonRetirerPointJoueurA.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00376         \{
+00377             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00378             \{
+00379                 partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2847b07aff035a02c130f6219efc5312}{retirerPointJoueursA}();
+00380                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}();
+00381                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}();
+00382                 liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE}, partie));
+00383             \}
+00384         \});
+00385 
+00386         boutonRetirerPointJoueurB.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00387         \{
+00388             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00389             \{
+00390                 partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_aa3f7d2c68dcf31a2e48f95c5db9c5663}{retirerPointJoueursB}();
+00391                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}();
+00392                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}();
+00393                 liaisonModuleAfficheur.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a3d4245d57e6b03b022e72c3ab9b2bc34}{fabriquerTrameAfficheur}(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a63ba437bfc08504af2caaec99d61a230}{TRAME\_AFFICHEUR\_SCORE}, partie));
+00394             \}
+00395         \});
+00396     \}
+00397 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00401}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf3bc699cb45da1f1dea4cb5e16e74f3}{00401}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf3bc699cb45da1f1dea4cb5e16e74f3}{afficherNomsJoueursA}()
+00402     \{
+00403         Vector<Joueur> joueursA = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00404 
+00405         nomJoueurA.setText(joueursA.elementAt(0).getNom() + \textcolor{stringliteral}{" "});
+00406         prenomJoueurA.setText(joueursA.elementAt(0).getPrenom());
+00407 
+00408         \textcolor{keywordflow}{if}(joueursA.size() > 1)
+00409         \{
+00410             nomDeuxiemeJoueurA.setText(joueursA.elementAt(1).getNom() + \textcolor{stringliteral}{" "});
+00411             prenomDeuxiemeJoueurA.setText(joueursA.elementAt(1).getPrenom());
+00412         \}
+00413     \}
+00414 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00418}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a55e51d83d01ea0c3c6400f6419edfd06}{00418}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a55e51d83d01ea0c3c6400f6419edfd06}{afficherNomsJoueursB}()
+00419     \{
+00420         Vector<Joueur> joueursB = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3c6b981de54d03eeb553919983ee3be8}{getJoueursB}();
+00421 
+00422         nomJoueurB.setText(joueursB.elementAt(0).getNom() + \textcolor{stringliteral}{" "});
+00423         prenomJoueurB.setText(joueursB.elementAt(0).getPrenom());
+00424 
+00425         \textcolor{keywordflow}{if}(joueursB.size() > 1)
+00426         \{
+00427             nomDeuxiemeJoueurB.setText(joueursB.elementAt(1).getNom() + \textcolor{stringliteral}{" "});
+00428             prenomDeuxiemeJoueurB.setText(joueursB.elementAt(1).getPrenom());
+00429         \}
+00430     \}
+00431 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00435}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{00435}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a42cce9ee62fd37d687d4a194328aac70}{afficherScore}()
+00436     \{
+00437         pointsJoueurA.setText(Integer.toString(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a5ec15306fc24648c1698ea0cdd50bf53}{getPointsJoueursA}()));
+00438         manchesJoueurA.setText(Integer.toString(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a7c863edbbdd07ddc7f71616949823201}{getManchesJoueursA}()));
+00439 
+00440         pointsJoueurB.setText(Integer.toString(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a376bb79a67c311e1eb681387e9440bbd}{getPointsJoueursB}()));
+00441         manchesJoueurB.setText(Integer.toString(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a706fa101c4fcad9f2ea6473b5778b55e}{getManchesJoueursB}()));
+00442     \}
+00443 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00447}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{00447}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_adf8fc8de224da80f542675cbb4c2e364}{afficherServeur}()
+00448     \{
+00449          \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a34f75da57f51b710fccbce4aafda28d4}{getServeur}();
+00450          Vector<Joueur> joueursA = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00451          \textcolor{keywordtype}{int} indexServeur = joueursA.indexOf(serveur);
+00452          String nomCompletServeur = serveur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}() + \textcolor{stringliteral}{" "} + serveur.
+      \hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}();
+00453 
+00454         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a4f5930a69896d1d75add34badfb168eb}{renitialiserAffichageServeur}();
+00455 
+00456         \textcolor{keywordflow}{if}(indexServeur != -1)
+00457          \{
+00458             \textcolor{keywordflow}{if} (nomCompletServeur.equals((String)nomJoueurA.getText()+prenomJoueurA.getText()))
+00459                 imageServeurJoueurA.setVisibility(View.VISIBLE);
+00460             \textcolor{keywordflow}{else}
+00461                 imageServeurDeuxiemeJoueurA.setVisibility(View.VISIBLE);
+00462          \}
+00463          \textcolor{keywordflow}{else}
+00464          \{
+00465              \textcolor{keywordflow}{if} (nomCompletServeur.equals((String)nomJoueurB.getText()+prenomJoueurB.getText()))
+00466                  imageServeurJoueurB.setVisibility(View.VISIBLE);
+00467              \textcolor{keywordflow}{else}
+00468                  imageServeurDeuxiemeJoueurB.setVisibility(View.VISIBLE);
+00469          \}
+00470     \}
+00471 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00475}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a4f5930a69896d1d75add34badfb168eb}{00475}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a4f5930a69896d1d75add34badfb168eb}{renitialiserAffichageServeur}()
+00476     \{
+00477         imageServeurJoueurA.setVisibility(View.INVISIBLE);
+00478         imageServeurDeuxiemeJoueurA.setVisibility(View.INVISIBLE);
+00479         imageServeurJoueurB.setVisibility(View.INVISIBLE);
+00480         imageServeurDeuxiemeJoueurB.setVisibility(View.INVISIBLE);
+00481     \}
+00482 
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00488}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a73fa6d212cf9c5e4dc8fadc96d8d35e9}{00488}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_a73fa6d212cf9c5e4dc8fadc96d8d35e9}{afficherEtatConnexionBluetooth}(String nomModule, \textcolor{keywordtype}{boolean} 
+      estConnecte)
+00489     \{
+00490         \textcolor{keywordflow}{if} (nomModule.startsWith(\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a}{ProtocolAREA}.\hyperlink{classcom_1_1example_1_1area_1_1_protocol_a_r_e_a_a77e082eb863a4839d0f1e885b31594e2}{NOM\_MODULE\_NET}))
+00491         \{
+00492             imageConnexionModuleNet.setColorFilter(Color.RED);
+00493             \textcolor{keywordflow}{if} (estConnecte)
+00494                 imageConnexionModuleNet.setColorFilter(Color.GREEN);
+00495         \}
+00496         \textcolor{keywordflow}{else}
+00497         \{
+00498             imageConnexionModuleAfficheur.setColorFilter(Color.RED);
+00499             \textcolor{keywordflow}{if} (estConnecte)
+00500                 imageConnexionModuleAfficheur.setColorFilter(Color.GREEN);
+00501         \}
+00502     \}
+00503 
+00507     @Override
+\Hypertarget{_i_h_m_gestion_partie_8java_source_l00508}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aafa9ce81364dbd851409ae0b38138e28}{00508}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie_aafa9ce81364dbd851409ae0b38138e28}{finish}()
+00509     \{
+00510         Log.d(TAG, \textcolor{stringliteral}{"finish()"});
+00511 
+00512         Intent intent = \textcolor{keyword}{new} Intent();
+00516         \textcolor{comment}{// cf. intent.putExtra()}
+00517 
+00518         setResult(RESULT\_OK, intent);
+00519         super.finish();
+00520     \}
+00521 \}
+\end{DoxyCode}

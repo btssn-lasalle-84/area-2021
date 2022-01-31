@@ -1,0 +1,55 @@
+\hypertarget{_equipe_8java_source}{}\subsection{Equipe.\+java}
+\label{_equipe_8java_source}\index{Equipe.\+java@{Equipe.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} java.util.Vector;
+00004 
+\Hypertarget{_equipe_8java_source_l00013}\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{00013} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}
+00014 \{
+\Hypertarget{_equipe_8java_source_l00015}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{00015}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A} = 0;
+\Hypertarget{_equipe_8java_source_l00016}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{00016}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B} = 1;
+\Hypertarget{_equipe_8java_source_l00017}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{00017}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C} = 2;
+\Hypertarget{_equipe_8java_source_l00018}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{00018}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D} = 3;
+00019 
+\Hypertarget{_equipe_8java_source_l00020}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{00020}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W} = 0;
+\Hypertarget{_equipe_8java_source_l00021}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{00021}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X} = 1;
+\Hypertarget{_equipe_8java_source_l00022}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{00022}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y} = 2;
+\Hypertarget{_equipe_8java_source_l00023}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{00023}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z} = 3;
+00024 
+\Hypertarget{_equipe_8java_source_l00025}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_af01e154be3aaa3fbcf909c3a44734b2e}{00025}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_af01e154be3aaa3fbcf909c3a44734b2e}{nbPartiesGagnees};
+\Hypertarget{_equipe_8java_source_l00026}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ac93205e041df88192dd6b1dfc8488e0a}{00026}     \textcolor{keyword}{private} String \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ac93205e041df88192dd6b1dfc8488e0a}{nomClub};
+\Hypertarget{_equipe_8java_source_l00027}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a13f5e9288dec5f11829e1a7ccc21cdc9}{00027}     \textcolor{keyword}{private} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a13f5e9288dec5f11829e1a7ccc21cdc9}{joueurs};
+\Hypertarget{_equipe_8java_source_l00028}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3be17f443cb57269d595d8b860acc66a}{00028}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3be17f443cb57269d595d8b860acc66a}{id};
+00029 
+\Hypertarget{_equipe_8java_source_l00030}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a313ec6933f3fb30f68ec93c7c290c6ee}{00030}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a313ec6933f3fb30f68ec93c7c290c6ee}{Equipe}(String nomClub, Vector<Joueur> joueurs)
+00031     \{
+00032         this.nbPartiesGagnees = 0;
+00033         this.nomClub = \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ac93205e041df88192dd6b1dfc8488e0a}{nomClub};
+00034         this.joueurs = \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a13f5e9288dec5f11829e1a7ccc21cdc9}{joueurs};
+00035         this.\textcolor{keywordtype}{id} = 0;
+00036     \}
+00037 
+\Hypertarget{_equipe_8java_source_l00038}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1ba6f14b9b168e283d5d6417ad0a5ed2}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1ba6f14b9b168e283d5d6417ad0a5ed2}{getNbPartiesGagnees}()
+00039     \{
+00040       \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_af01e154be3aaa3fbcf909c3a44734b2e}{nbPartiesGagnees};
+00041     \}
+00042 
+\Hypertarget{_equipe_8java_source_l00043}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{00043}     \textcolor{keyword}{public} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}()
+00044     \{
+00045       \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ac93205e041df88192dd6b1dfc8488e0a}{nomClub};
+00046     \}
+00047 
+\Hypertarget{_equipe_8java_source_l00048}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aba16e2f2a922d1b2c4219dc6c865482c}{00048}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_aba16e2f2a922d1b2c4219dc6c865482c}{setNbPartiesGagnees}(\textcolor{keywordtype}{int} nbPartiesGagnees)
+00049     \{
+00050       this.nbPartiesGagnees = \hyperlink{classcom_1_1example_1_1area_1_1_equipe_af01e154be3aaa3fbcf909c3a44734b2e}{nbPartiesGagnees};
+00051     \}
+00052 
+\Hypertarget{_equipe_8java_source_l00053}\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aa681b4ea72d93a16fc8384fa3ccc8b21}{00053}     \textcolor{keyword}{public} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_equipe_aa681b4ea72d93a16fc8384fa3ccc8b21}{getJoueurs}()
+00054     \{
+00055         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a13f5e9288dec5f11829e1a7ccc21cdc9}{joueurs};
+00056     \}
+00057 
+00058 \}
+\end{DoxyCode}

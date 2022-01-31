@@ -1,0 +1,167 @@
+\hypertarget{_rencontre_8java_source}{}\subsection{Rencontre.\+java}
+\label{_rencontre_8java_source}\index{Rencontre.\+java@{Rencontre.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} java.util.Vector;
+00004 
+\Hypertarget{_rencontre_8java_source_l00017}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{00017} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{Rencontre}
+00018 \{
+\Hypertarget{_rencontre_8java_source_l00022}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_accbafe5a878f457fb7119cfd55401c86}{00022}     \textcolor{keyword}{private} Vector<Equipe> \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_accbafe5a878f457fb7119cfd55401c86}{equipes}; 
+\Hypertarget{_rencontre_8java_source_l00023}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9bdc6df389184fc2ecb4d87a7879213a}{00023}     \textcolor{keyword}{private} Vector<Partie> \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9bdc6df389184fc2ecb4d87a7879213a}{parties}; 
+\Hypertarget{_rencontre_8java_source_l00024}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a570f0dcf549626a6a87ab9e994279fde}{00024}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0; 
+\Hypertarget{_rencontre_8java_source_l00025}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a2124164efb96db89312021ed57d795c1}{00025}     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abafd9770f1e749026b7a4196648fa366}{estFinie} = \textcolor{keyword}{false}; 
+\Hypertarget{_rencontre_8java_source_l00026}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_aef266bd256aecd70fbd02cf07625ed14}{00026}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_aef266bd256aecd70fbd02cf07625ed14}{nbManchesGagnantes}; 
+\Hypertarget{_rencontre_8java_source_l00027}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ae1849c4bcdcfbb2d336b750a36be1162}{00027}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ae1849c4bcdcfbb2d336b750a36be1162}{nbPointsParManche}; 
+00028 
+\Hypertarget{_rencontre_8java_source_l00031}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a673930c3156037739c3fa2aa335033d7}{00031}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a673930c3156037739c3fa2aa335033d7}{INDEX\_EQUIPE\_A} = 0;
+\Hypertarget{_rencontre_8java_source_l00032}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a08ed5cef8f2bbb80b2010bdb60c515d6}{00032}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a08ed5cef8f2bbb80b2010bdb60c515d6}{INDEX\_EQUIPE\_B} = 1;
+\Hypertarget{_rencontre_8java_source_l00033}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9ab6dcd72bcb2ca3c21ed3fcba4a9b46}{00033}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9ab6dcd72bcb2ca3c21ed3fcba4a9b46}{NB\_MANCHES\_GAGNANTES\_DEFAUT} = 3; 
+\Hypertarget{_rencontre_8java_source_l00034}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ac2217d1cf2cf9310966619ba69214259}{00034}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ac2217d1cf2cf9310966619ba69214259}{NB\_POINTS\_PAR\_MANCHE\_DEFAUT} = 11; 
+00035 
+\Hypertarget{_rencontre_8java_source_l00041}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abc915d4578268471bfab8214928bbd74}{00041}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abc915d4578268471bfab8214928bbd74}{Rencontre}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeA, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeB)
+00042     \{
+00043         this.nbManchesGagnantes = \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9ab6dcd72bcb2ca3c21ed3fcba4a9b46}{NB\_MANCHES\_GAGNANTES\_DEFAUT};
+00044         this.nbPointsParManche = \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ac2217d1cf2cf9310966619ba69214259}{NB\_POINTS\_PAR\_MANCHE\_DEFAUT};
+00045 
+00046         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a61ff55a4fb128654aec0456d5b3adaa3}{initialiserRencontre}(equipeA, equipeB);
+00047 
+00048         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9af98788b76483567c06eac9a02418c5}{initialiserParties}();
+00049     \}
+00050 
+\Hypertarget{_rencontre_8java_source_l00058}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a28c1f3173d0d0a81abb80fac81a184d4}{00058}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a28c1f3173d0d0a81abb80fac81a184d4}{Rencontre}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeA, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeB, \textcolor{keywordtype}{int} nbManchesGagnantes, \textcolor{keywordtype}{int} 
+      nbPointsParManche)
+00059     \{
+00060         this.nbManchesGagnantes = \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_aef266bd256aecd70fbd02cf07625ed14}{nbManchesGagnantes};
+00061         this.nbPointsParManche = \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ae1849c4bcdcfbb2d336b750a36be1162}{nbPointsParManche};
+00062 
+00063         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a61ff55a4fb128654aec0456d5b3adaa3}{initialiserRencontre}(equipeA, equipeB);
+00064 
+00065         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9af98788b76483567c06eac9a02418c5}{initialiserParties}();
+00066     \}
+00067 
+\Hypertarget{_rencontre_8java_source_l00071}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a61ff55a4fb128654aec0456d5b3adaa3}{00071}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a61ff55a4fb128654aec0456d5b3adaa3}{initialiserRencontre}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeA, 
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeB)
+00072     \{
+00073         this.equipes = \textcolor{keyword}{new} Vector<Equipe>();
+00074         this.equipes.add(equipeA);
+00075         this.equipes.add(equipeB);
+00076     \}
+00077 
+\Hypertarget{_rencontre_8java_source_l00081}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9af98788b76483567c06eac9a02418c5}{00081}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9af98788b76483567c06eac9a02418c5}{initialiserParties}()
+00082     \{
+00083         this.parties = \textcolor{keyword}{new} Vector<Partie>();
+00084 
+00085         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W});
+00086         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X});
+00087         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y});
+00088         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z});
+00089         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X});
+00090         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W});
+00091         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y});
+00092         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z});
+00093         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5dd70b0d58f74626bdb4bd21a21d661c}{initialiserPartieDouble}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y});
+00094         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5dd70b0d58f74626bdb4bd21a21d661c}{initialiserPartieDouble}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z});
+00095         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W});
+00096         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X});
+00097         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z});
+00098         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y});
+00099         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_abbd44b4789c0234d86578fbbfd8bf624}{INDEX\_JOUEUR\_C}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_aeca3d6f47e05b7c2aef70b64778d5d47}{INDEX\_JOUEUR\_W});
+00100         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae204f48df7446d745f33ff4a7e662ea7}{INDEX\_JOUEUR\_D}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_ae5f0313dce371f13950d4fdc54074dd9}{INDEX\_JOUEUR\_X});
+00101         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a3b61c78bfb4284470bc3b5315b6b03e7}{INDEX\_JOUEUR\_A}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a11d252140fc4e3edd71a31573221a7b7}{INDEX\_JOUEUR\_Y});
+00102         \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a1b9c3f1c23757be40472c63504df9d37}{INDEX\_JOUEUR\_B}, \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}.\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a50e1c2cbd7d24c8c5b4f0f4de1652621}{INDEX\_JOUEUR\_Z});
+00103     \}
+00104 
+\Hypertarget{_rencontre_8java_source_l00110}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{00110}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_afe8119a55e348caf296514d604718646}{initialiserPartieSimple}(\textcolor{keywordtype}{int} indexJoueurA, \textcolor{keywordtype}{int} indexJoueurB)
+00111     \{
+00112         Vector<Joueur> joueursPartiesA = \textcolor{keyword}{new} Vector<Joueur>();
+00113         Vector<Joueur> joueursPartiesB = \textcolor{keyword}{new} Vector<Joueur>();
+00114 
+00115         Vector<Joueur> joueursEquipeA = this.equipes.get(INDEX\_EQUIPE\_A).getJoueurs();
+00116         Vector<Joueur> joueursEquipeB = this.equipes.get(INDEX\_EQUIPE\_B).getJoueurs();
+00117 
+00118         joueursPartiesA.add(joueursEquipeA.elementAt(indexJoueurA));
+00119         joueursPartiesB.add(joueursEquipeB.elementAt(indexJoueurB));
+00120         parties.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}(this.nbManchesGagnantes, this.nbPointsParManche, joueursPartiesA, 
+      joueursPartiesB));
+00121     \}
+00122 
+\Hypertarget{_rencontre_8java_source_l00130}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5dd70b0d58f74626bdb4bd21a21d661c}{00130}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5dd70b0d58f74626bdb4bd21a21d661c}{initialiserPartieDouble}(\textcolor{keywordtype}{int} indexJoueurA, \textcolor{keywordtype}{int} indexDeuxiemeJoueurA,
+       \textcolor{keywordtype}{int} indexJoueurB, \textcolor{keywordtype}{int} indexDeuxiemeJoueurB)
+00131     \{
+00132       Vector<Joueur> joueursPartiesA = \textcolor{keyword}{new} Vector<Joueur>();
+00133       Vector<Joueur> joueursPartiesB = \textcolor{keyword}{new} Vector<Joueur>();
+00134 
+00135       Vector<Joueur> joueursEquipeA = this.equipes.get(INDEX\_EQUIPE\_A).getJoueurs();
+00136       Vector<Joueur> joueursEquipeB = this.equipes.get(INDEX\_EQUIPE\_B).getJoueurs();
+00137 
+00138       joueursPartiesA.add(joueursEquipeA.elementAt(indexJoueurA));
+00139       joueursPartiesA.add(joueursEquipeA.elementAt(indexDeuxiemeJoueurA));
+00140       joueursPartiesB.add(joueursEquipeB.elementAt(indexJoueurB));
+00141       joueursPartiesB.add(joueursEquipeB.elementAt(indexDeuxiemeJoueurB));
+00142       parties.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}(this.nbManchesGagnantes, this.nbPointsParManche, joueursPartiesA, 
+      joueursPartiesB));
+00143     \}
+00144 
+\Hypertarget{_rencontre_8java_source_l00149}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a59f379be02ce6c587ad59d1b30e3c9a5}{00149}     \textcolor{keyword}{public} Vector<Equipe> \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a59f379be02ce6c587ad59d1b30e3c9a5}{getEquipes}()
+00150     \{
+00151         \textcolor{keywordflow}{return} this.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_accbafe5a878f457fb7119cfd55401c86}{equipes};
+00152     \}
+00153 
+\Hypertarget{_rencontre_8java_source_l00158}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{00158}     \textcolor{keyword}{public} Vector<Partie> \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{getParties}()
+00159     \{
+00160         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a9bdc6df389184fc2ecb4d87a7879213a}{parties};
+00161     \}
+00162 
+\Hypertarget{_rencontre_8java_source_l00168}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5bd76838a3c61a6e8e6204981218e10e}{00168}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a5bd76838a3c61a6e8e6204981218e10e}{getEquipe}(\textcolor{keywordtype}{int} indexEquipe)
+00169     \{
+00170         \textcolor{keywordflow}{return} this.equipes.get(indexEquipe);
+00171     \}
+00172 
+\Hypertarget{_rencontre_8java_source_l00177}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{00177}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{getEquipeA}()
+00178     \{
+00179         \textcolor{keywordflow}{return} this.equipes.get(INDEX\_EQUIPE\_A);
+00180     \}
+00181 
+\Hypertarget{_rencontre_8java_source_l00186}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{00186}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{getEquipeB}()
+00187     \{
+00188         \textcolor{keywordflow}{return} this.equipes.get(INDEX\_EQUIPE\_B);
+00189     \}
+00190 
+\Hypertarget{_rencontre_8java_source_l00195}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abafd9770f1e749026b7a4196648fa366}{00195}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abafd9770f1e749026b7a4196648fa366}{estFinie}()
+00196     \{
+00197         \textcolor{keywordflow}{return} this.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_abafd9770f1e749026b7a4196648fa366}{estFinie};
+00198     \}
+00199 
+\Hypertarget{_rencontre_8java_source_l00204}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a8f7801a28279d1fb26b0961d05c55bdd}{00204}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a8f7801a28279d1fb26b0961d05c55bdd}{getNbManchesGagnantes}()
+00205     \{
+00206         \textcolor{keywordflow}{return} this.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_aef266bd256aecd70fbd02cf07625ed14}{nbManchesGagnantes};
+00207     \}
+00208 
+\Hypertarget{_rencontre_8java_source_l00213}\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a539e26b8c59998880fcf9b7c9f2b685a}{00213}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a539e26b8c59998880fcf9b7c9f2b685a}{getNbPointsParManche}()
+00214     \{
+00215         \textcolor{keywordflow}{return} this.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_ae1849c4bcdcfbb2d336b750a36be1162}{nbPointsParManche};
+00216     \}
+00217 \}
+\end{DoxyCode}

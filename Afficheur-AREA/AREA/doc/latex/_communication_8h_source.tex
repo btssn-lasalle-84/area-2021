@@ -1,0 +1,75 @@
+\hypertarget{_communication_8h_source}{}\subsection{Communication.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef COMMUNICATION\_H}
+00002 \textcolor{preprocessor}{#define COMMUNICATION\_H}
+00003 
+00004 \textcolor{preprocessor}{#include <QObject>}
+00005 \textcolor{preprocessor}{#include <QString>}
+00006 \textcolor{preprocessor}{#include <QBluetoothLocalDevice>}
+00007 \textcolor{preprocessor}{#include <QBluetoothServer>}
+00008 \textcolor{preprocessor}{#include <QBluetoothSocket>}
+00009 
+\Hypertarget{_communication_8h_source_l00019}\hyperlink{_communication_8h_a226742d7ade287673fb2295df90f462b}{00019} \textcolor{preprocessor}{#define ENTETE\_TRAME        "MOBILE\_AREA"}
+\Hypertarget{_communication_8h_source_l00020}\hyperlink{_communication_8h_a2aab79787b26ad74e8cb5ab837236791}{00020} \textcolor{preprocessor}{#define CHAMP\_TYPE\_TRAME    1}
+00021 
+\Hypertarget{_communication_8h_source_l00026}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992}{00026} \textcolor{keyword}{enum} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992}{TypeTrame}
+00027 \{
+\Hypertarget{_communication_8h_source_l00028}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af8ce6111c15264884121829746e18a1f}{00028}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af8ce6111c15264884121829746e18a1f}{RENCONTRE}, 
+\Hypertarget{_communication_8h_source_l00029}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992ac3a2021df6ca4ad18f8af3ce95931122}{00029}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992ac3a2021df6ca4ad18f8af3ce95931122}{INFO\_PARTIE},
+\Hypertarget{_communication_8h_source_l00030}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af57444a2814db96222f09035ff269767}{00030}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af57444a2814db96222f09035ff269767}{SCORE},
+\Hypertarget{_communication_8h_source_l00031}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a6f91d1f6dd2600af9ca6a66ffe2adba2}{00031}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a6f91d1f6dd2600af9ca6a66ffe2adba2}{ETAT\_PARTIE},
+\Hypertarget{_communication_8h_source_l00032}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a09c331e69591a2470471d457a17b413c}{00032}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a09c331e69591a2470471d457a17b413c}{NET},
+\Hypertarget{_communication_8h_source_l00033}\hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a2f4a926417575653ebbe1ca64a16974f}{00033}     \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a2f4a926417575653ebbe1ca64a16974f}{TEMPS\_MORT},
+00034 \};
+00035 
+00036 \textcolor{keyword}{static} \textcolor{keyword}{const} QString \hyperlink{_communication_8h_a6f285f3a7cee5c6573729d7e6b99dbf4}{uuidService}(QStringLiteral(\textcolor{stringliteral}{"0000110a-0000-1000-8000-00805f9b34fb"}));
+00037 \textcolor{keyword}{static} \textcolor{keyword}{const} QString \hyperlink{_communication_8h_afd6061bebcd621de34bc921326538181}{nomService}(QStringLiteral(\textcolor{stringliteral}{"Afficheur\_AREA"}));
+00038 
+00039 \textcolor{keyword}{class }\hyperlink{class_rencontre}{Rencontre};
+00040 
+\Hypertarget{_communication_8h_source_l00046}\hyperlink{class_communication}{00046} \textcolor{keyword}{class }\hyperlink{class_communication}{Communication} : \textcolor{keyword}{public} \hyperlink{class_q_object}{QObject}
+00047 \{
+00048     Q\_OBJECT
+00049 \textcolor{keyword}{private}:
+\Hypertarget{_communication_8h_source_l00050}\hyperlink{class_communication_acb471e5da168acc149c5e4e90d8b601c}{00050}     \hyperlink{class_rencontre}{Rencontre} *\hyperlink{class_communication_acb471e5da168acc149c5e4e90d8b601c}{rencontre};
+\Hypertarget{_communication_8h_source_l00051}\hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{00051}     QBluetoothServer *\hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur};                  
+\Hypertarget{_communication_8h_source_l00052}\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{00052}     QBluetoothSocket *\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket};                   
+\Hypertarget{_communication_8h_source_l00053}\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{00053}     QBluetoothLocalDevice \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal};    
+\Hypertarget{_communication_8h_source_l00054}\hyperlink{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}{00054}     QBluetoothServiceInfo \hyperlink{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}{serviceInfo};          
+\Hypertarget{_communication_8h_source_l00055}\hyperlink{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}{00055}     QString \hyperlink{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}{nomPeripheriqueLocal};               
+\Hypertarget{_communication_8h_source_l00056}\hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{00056}     QString \hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{trame};                              
+\Hypertarget{_communication_8h_source_l00057}\hyperlink{class_communication_a89b75dc8f2d3427478660b45c01f4186}{00057}     QString \hyperlink{class_communication_a89b75dc8f2d3427478660b45c01f4186}{trames};                             
+\Hypertarget{_communication_8h_source_l00058}\hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{00058}     QStringList \hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infosTrame};                     
+00059 
+00060     \textcolor{keywordtype}{bool} \hyperlink{class_communication_a1f17fd8330b55b3ab30263d15e6e740b}{traiterTrame}(QStringList infosTrame);
+00061 
+00062 \textcolor{keyword}{public}:
+00063     \hyperlink{class_communication_a56cf4b262e592bcae1d987c3dd00487f}{Communication}(\hyperlink{class_q_object}{QObject} *parent = \textcolor{keyword}{nullptr});
+00064     \hyperlink{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}{~Communication}();
+00065 
+00066     \textcolor{keywordtype}{void} \hyperlink{class_communication_a2c10a52807bc7bdc520ec3fae622f672}{initialiser}();                         
+00067     \textcolor{keywordtype}{void} \hyperlink{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}{demarrer}();                            
+00068     \textcolor{keywordtype}{void} \hyperlink{class_communication_a1f4b02441803f9c8e231cb9f304d776b}{arreter}();                             
+00069     QString \hyperlink{class_communication_ad8dbd75b168bc02c76306361e650bbba}{getTrame}() \textcolor{keyword}{const};                   \textcolor{comment}{// ???}
+00070 
+00071 \textcolor{keyword}{private} slots:
+00072     \textcolor{keywordtype}{void} \hyperlink{class_communication_a1ef7e4107d98346290f19f76d7eecf32}{connecterSocket}();
+00073     \textcolor{keywordtype}{void} \hyperlink{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}{deconnecterSocket}();
+00074     \textcolor{keywordtype}{void} \hyperlink{class_communication_a94a9c34e683d590fc6abbc4111a57f29}{recevoirErreurSocket}(QBluetoothSocket::SocketError e);
+00075     \textcolor{keywordtype}{void} \hyperlink{class_communication_a9640339b93f4a99f80426b7345615037}{connecterTerminalMobile}(\textcolor{keyword}{const} QBluetoothAddress &adresse);
+00076     \textcolor{keywordtype}{void} \hyperlink{class_communication_aeeb47bc3c4d7419fefb737168638442e}{deconnecterTerminalMobile}(\textcolor{keyword}{const} QBluetoothAddress &adresse);
+00077     \textcolor{keywordtype}{void} \hyperlink{class_communication_adbbab5630096d6374c4d7e52508b8a37}{recevoirErreurBluetooth}(QBluetoothLocalDevice::Error erreurBluetooth);
+00078     \textcolor{keywordtype}{void} \hyperlink{class_communication_ad99afe857470e6e95432b3adcb97fea2}{lireTrame}();
+00079 
+00080 signals:
+00081     \textcolor{keywordtype}{void} \hyperlink{class_communication_af3430c844d728e4ec3961744243324e1}{debutRencontre}(QString club1, QString club2);
+00082     \textcolor{keywordtype}{void} \hyperlink{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}{creationPartie}(QStringList infoTrame);
+00083     \textcolor{keywordtype}{void} \hyperlink{class_communication_acf4446d47652e0c508296e52df6fb11b}{nouveauScorePartie}();
+00084     \textcolor{keywordtype}{void} \hyperlink{class_communication_af5444d470230a6e817ca8bc9484eb169}{changementEtatPartie}();
+00085     \textcolor{keywordtype}{void} \hyperlink{class_communication_a4c828450e0ff92818c878ee28f240662}{detectionNET}();
+00086     \textcolor{keywordtype}{void} \hyperlink{class_communication_ab2dd9f10ceaba18016017104683b6fc1}{demandeTempsMort}();
+00087 \};
+00088 
+00089 \textcolor{preprocessor}{#endif // COMMUNICATION\_H}
+\end{DoxyCode}

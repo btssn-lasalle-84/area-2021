@@ -1,0 +1,227 @@
+\hypertarget{class_rencontre}{}\subsection{Référence de la classe Rencontre}
+\label{class_rencontre}\index{Rencontre@{Rencontre}}
+
+
+{\ttfamily \#include $<$Rencontre.\+h$>$}
+
+
+
+Graphe de collaboration de Rencontre\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_rencontre__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}{creer\+Partie} (Q\+String\+List info\+Trame)
+\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{get\+Nom\+Equipe1} ()
+\item 
+Q\+String \hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{get\+Nom\+Equipe2} ()
+\item 
+\hyperlink{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}{Rencontre} (Q\+String nom\+Club1=\char`\"{}nom\+Club1\char`\"{}, Q\+String nom\+Club2=\char`\"{}nom\+Club1\char`\"{})
+\item 
+\hyperlink{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}{$\sim$\+Rencontre} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{class_club}{Club} $\ast$ $>$ \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}
+\item 
+\hyperlink{class_communication}{Communication} $\ast$ \hyperlink{class_rencontre_a843a1b93c1cb909f2706c6f81438661e}{communication}
+\item 
+Q\+Vector$<$ \hyperlink{class_partie}{Partie} $>$ \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+
+
+Définition à la ligne \hyperlink{_rencontre_8h_source_l00025}{25} du fichier \hyperlink{_rencontre_8h_source}{Rencontre.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}\label{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}} 
+\index{Rencontre@{Rencontre}!Rencontre@{Rencontre}}
+\index{Rencontre@{Rencontre}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{Rencontre()}{Rencontre()}}
+{\footnotesize\ttfamily Rencontre\+::\+Rencontre (\begin{DoxyParamCaption}\item[{Q\+String}]{nom\+Club1 = {\ttfamily \char`\"{}nomClub1\char`\"{}},  }\item[{Q\+String}]{nom\+Club2 = {\ttfamily \char`\"{}nomClub1\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8cpp_source_l00015}{15} du fichier \hyperlink{_rencontre_8cpp_source}{Rencontre.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8h_source_l00030}{clubs}.
+
+
+\begin{DoxyCode}
+00016 \{
+00017     qDebug() << Q\_FUNC\_INFO << nomClub1 << nomClub2;
+00018     \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.push\_back(\textcolor{keyword}{new} \hyperlink{class_club}{Club}(nomClub1));
+00019     \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.push\_back(\textcolor{keyword}{new} \hyperlink{class_club}{Club}(nomClub2));
+00020 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}\label{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}} 
+\index{Rencontre@{Rencontre}!````~Rencontre@{$\sim$\+Rencontre}}
+\index{````~Rencontre@{$\sim$\+Rencontre}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{$\sim$\+Rencontre()}{~Rencontre()}}
+{\footnotesize\ttfamily Rencontre\+::$\sim$\+Rencontre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8cpp_source_l00022}{22} du fichier \hyperlink{_rencontre_8cpp_source}{Rencontre.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8h_source_l00030}{clubs}.
+
+
+\begin{DoxyCode}
+00023 \{
+00024     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.size(); i++)
+00025     \{
+00026         \textcolor{keyword}{delete} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[i];
+00027     \}
+00028     qDebug() << Q\_FUNC\_INFO;
+00029 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}\label{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}} 
+\index{Rencontre@{Rencontre}!creer\+Partie@{creer\+Partie}}
+\index{creer\+Partie@{creer\+Partie}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{creer\+Partie}{creerPartie}}
+{\footnotesize\ttfamily void Rencontre\+::creer\+Partie (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{info\+Trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8cpp_source_l00031}{31} du fichier \hyperlink{_rencontre_8cpp_source}{Rencontre.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8h_source_l00031}{parties}.
+
+
+\begin{DoxyCode}
+00032 \{
+00033     qDebug() << Q\_FUNC\_INFO;
+00034     \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties}.push\_back(\hyperlink{class_partie}{Partie}(\hyperlink{class_joueur}{Joueur}(infoTrame[3],infoTrame[4]), 
+      \hyperlink{class_joueur}{Joueur}(infoTrame[5], infoTrame[6])));
+00035 
+00036 \textcolor{preprocessor}{    #ifdef DEBUG\_PARTIE}
+00037     \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties}[0].debugPartie();
+00038 \textcolor{preprocessor}{    #endif}
+00039 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}\label{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}} 
+\index{Rencontre@{Rencontre}!get\+Nom\+Equipe1@{get\+Nom\+Equipe1}}
+\index{get\+Nom\+Equipe1@{get\+Nom\+Equipe1}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{get\+Nom\+Equipe1()}{getNomEquipe1()}}
+{\footnotesize\ttfamily Q\+String Rencontre\+::get\+Nom\+Equipe1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8cpp_source_l00041}{41} du fichier \hyperlink{_rencontre_8cpp_source}{Rencontre.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8h_source_l00030}{clubs}, et \hyperlink{_rencontre_8h_source_l00017}{E\+Q\+U\+I\+P\+E\+\_\+A}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{I\+H\+M\+Afficheur\+::afficher\+Rencontre()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{I\+H\+M\+Afficheur\+::commencer\+Rencontre()}.
+
+
+\begin{DoxyCode}
+00042 \{
+00043     \textcolor{keywordflow}{if}(\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.count() > 0)
+00044         \textcolor{keywordflow}{return} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[\hyperlink{_rencontre_8h_ab4f4f1173fbbb2f1f27e2b18c5de79dc}{EQUIPE\_A}]->getNom();
+00045     \textcolor{keywordflow}{else}
+00046         \textcolor{keywordflow}{return} QString();
+00047 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_rencontre_ac544f97755480e0e2718d0802d308585}\label{class_rencontre_ac544f97755480e0e2718d0802d308585}} 
+\index{Rencontre@{Rencontre}!get\+Nom\+Equipe2@{get\+Nom\+Equipe2}}
+\index{get\+Nom\+Equipe2@{get\+Nom\+Equipe2}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{get\+Nom\+Equipe2()}{getNomEquipe2()}}
+{\footnotesize\ttfamily Q\+String Rencontre\+::get\+Nom\+Equipe2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8cpp_source_l00049}{49} du fichier \hyperlink{_rencontre_8cpp_source}{Rencontre.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8h_source_l00030}{clubs}, et \hyperlink{_rencontre_8h_source_l00018}{E\+Q\+U\+I\+P\+E\+\_\+X}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{I\+H\+M\+Afficheur\+::afficher\+Rencontre()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{I\+H\+M\+Afficheur\+::commencer\+Rencontre()}.
+
+
+\begin{DoxyCode}
+00050 \{
+00051     \textcolor{keywordflow}{if}(\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.count() > 0)
+00052         \textcolor{keywordflow}{return} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[\hyperlink{_rencontre_8h_abee6bce8b9cc687177c72a76428afcff}{EQUIPE\_X}]->getNom();
+00053     \textcolor{keywordflow}{else}
+00054         \textcolor{keywordflow}{return} QString();
+00055 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}\label{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}} 
+\index{Rencontre@{Rencontre}!clubs@{clubs}}
+\index{clubs@{clubs}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{clubs}{clubs}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_club}{Club}$\ast$$>$ Rencontre\+::clubs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8h_source_l00030}{30} du fichier \hyperlink{_rencontre_8h_source}{Rencontre.\+h}.
+
+
+
+Référencé par \hyperlink{_rencontre_8cpp_source_l00041}{get\+Nom\+Equipe1()}, \hyperlink{_rencontre_8cpp_source_l00049}{get\+Nom\+Equipe2()}, \hyperlink{_rencontre_8cpp_source_l00015}{Rencontre()}, et \hyperlink{_rencontre_8cpp_source_l00022}{$\sim$\+Rencontre()}.
+
+\mbox{\Hypertarget{class_rencontre_a843a1b93c1cb909f2706c6f81438661e}\label{class_rencontre_a843a1b93c1cb909f2706c6f81438661e}} 
+\index{Rencontre@{Rencontre}!communication@{communication}}
+\index{communication@{communication}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{communication}{communication}}
+{\footnotesize\ttfamily \hyperlink{class_communication}{Communication}$\ast$ Rencontre\+::communication\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8h_source_l00032}{32} du fichier \hyperlink{_rencontre_8h_source}{Rencontre.\+h}.
+
+\mbox{\Hypertarget{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}\label{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}} 
+\index{Rencontre@{Rencontre}!parties@{parties}}
+\index{parties@{parties}!Rencontre@{Rencontre}}
+\paragraph{\texorpdfstring{parties}{parties}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_partie}{Partie}$>$ Rencontre\+::parties\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_rencontre_8h_source_l00031}{31} du fichier \hyperlink{_rencontre_8h_source}{Rencontre.\+h}.
+
+
+
+Référencé par \hyperlink{_rencontre_8cpp_source_l00031}{creer\+Partie()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_rencontre_8h}{Rencontre.\+h}\item 
+\hyperlink{_rencontre_8cpp}{Rencontre.\+cpp}\end{DoxyCompactItemize}

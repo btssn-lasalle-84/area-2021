@@ -1,0 +1,276 @@
+\hypertarget{_liaison_bluetooth_8java_source}{}\subsection{Liaison\+Bluetooth.\+java}
+\label{_liaison_bluetooth_8java_source}\index{Liaison\+Bluetooth.\+java@{Liaison\+Bluetooth.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} android.bluetooth.BluetoothAdapter;
+00004 \textcolor{keyword}{import} android.bluetooth.BluetoothDevice;
+00005 \textcolor{keyword}{import} android.bluetooth.BluetoothSocket;
+00006 \textcolor{keyword}{import} android.os.Handler;
+00007 \textcolor{keyword}{import} android.os.Message;
+00008 \textcolor{keyword}{import} android.util.Log;
+00009 
+00010 \textcolor{keyword}{import} java.io.BufferedReader;
+00011 \textcolor{keyword}{import} java.io.IOException;
+00012 \textcolor{keyword}{import} java.io.InputStream;
+00013 \textcolor{keyword}{import} java.io.InputStreamReader;
+00014 \textcolor{keyword}{import} java.io.OutputStream;
+00015 \textcolor{keyword}{import} java.util.ArrayList;
+00016 \textcolor{keyword}{import} java.util.UUID;
+00017 \textcolor{keyword}{import} java.util.Set;
+00018 
+\Hypertarget{_liaison_bluetooth_8java_source_l00031}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{00031} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth}{LiaisonBluetooth} \textcolor{keyword}{extends} \hyperlink{class_thread}{Thread}
+00032 \{
+\Hypertarget{_liaison_bluetooth_8java_source_l00033}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac51aa4b63fae5c36734a061cc05d7fc9}{00033}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac51aa4b63fae5c36734a061cc05d7fc9}{TAG} = \textcolor{stringliteral}{"\_LiaisonBluetooth"};
+\Hypertarget{_liaison_bluetooth_8java_source_l00034}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8f4d17b8ac09c7ba9213163de86fb669}{00034}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8f4d17b8ac09c7ba9213163de86fb669}{ID} = \textcolor{stringliteral}{"00001101-0000-1000-8000-00805F9B34FB"};
+\Hypertarget{_liaison_bluetooth_8java_source_l00035}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac961c73879bd0de9933b2fc310cc5e7e}{00035}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac961c73879bd0de9933b2fc310cc5e7e}{CREATION\_SOCKET} = 1;
+\Hypertarget{_liaison_bluetooth_8java_source_l00036}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a4870b4fac5c0f1aedac1bb40346d43da}{00036}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a4870b4fac5c0f1aedac1bb40346d43da}{CONNEXION\_SOCKET} = 2;
+\Hypertarget{_liaison_bluetooth_8java_source_l00037}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{00037}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{DECONNEXION\_SOCKET} = 3;
+\Hypertarget{_liaison_bluetooth_8java_source_l00038}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1a3058c683cec15fe0f3699f7fc26073}{00038}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1a3058c683cec15fe0f3699f7fc26073}{RECEPTION\_TRAME} = 4;
+00039 
+\Hypertarget{_liaison_bluetooth_8java_source_l00040}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ab59b57f5e59d0236e49ecf68c053cb27}{00040}     \textcolor{keyword}{private} BluetoothSocket \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ab59b57f5e59d0236e49ecf68c053cb27}{socket} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00041}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{00041}     \textcolor{keyword}{private} BluetoothDevice \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a80068a7178f6c84eae7bab50cf0a784a}{module} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00042}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7462ce946676c47ee83289c7bb436b64}{00042}     \textcolor{keyword}{private} \textcolor{keyword}{static} BluetoothAdapter \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7462ce946676c47ee83289c7bb436b64}{bluetoothAdapter} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00043}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a9a3a7d77bae06a972782b6e73471878d}{00043}     \textcolor{keyword}{private} InputStream \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a9a3a7d77bae06a972782b6e73471878d}{fluxReception} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00044}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ab6b076591203cae95fde933717019c5d}{00044}     \textcolor{keyword}{private} OutputStream \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ab6b076591203cae95fde933717019c5d}{fluxEnvoi} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00045}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ae3ef79eced8ab42b066b624108860d48}{00045}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{TReception} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ae3ef79eced8ab42b066b624108860d48}{tReception} = null;
+\Hypertarget{_liaison_bluetooth_8java_source_l00046}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ace2c20759fc96d3ae787f1f726fd2691}{00046}     \textcolor{keyword}{private} Handler \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ace2c20759fc96d3ae787f1f726fd2691}{handlerIHM} = null;
+00047 
+\Hypertarget{_liaison_bluetooth_8java_source_l00048}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1388dcaf09e2493d2fac6ddb9d8d58e1}{00048}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1388dcaf09e2493d2fac6ddb9d8d58e1}{LiaisonBluetooth}(String nomAppareil, String adresseAppareil, Handler handlerIHM)
+00049     \{
+00050         this.handlerIHM = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ace2c20759fc96d3ae787f1f726fd2691}{handlerIHM};
+00051 
+00052         \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_acc6b0431535ca4d7abc65e84deff8002}{activerBluetooth}();
+00053 
+00054         \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a47786b43e054a81e08356cd22b4cb37e}{rechercherAppareil}(nomAppareil))
+00055         \{
+00056             \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a69ea46dca5a0690d5d8231731ae60d9f}{creerSocket}();
+00057         \}
+00058         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a47786b43e054a81e08356cd22b4cb37e}{rechercherAppareil}(adresseAppareil))
+00059         \{
+00060             \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a69ea46dca5a0690d5d8231731ae60d9f}{creerSocket}();
+00061         \}
+00062     \}
+00063 
+\Hypertarget{_liaison_bluetooth_8java_source_l00067}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_acc6b0431535ca4d7abc65e84deff8002}{00067}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_acc6b0431535ca4d7abc65e84deff8002}{activerBluetooth}()
+00068     \{
+00069         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+00070         \textcolor{keywordflow}{if} (!bluetoothAdapter.isEnabled())
+00071         \{
+00072             Log.d(TAG,\textcolor{stringliteral}{"Activation du Bluetooth"});
+00073             bluetoothAdapter.enable();
+00074         \}
+00075     \}
+00076 
+\Hypertarget{_liaison_bluetooth_8java_source_l00081}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a47786b43e054a81e08356cd22b4cb37e}{00081}     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a47786b43e054a81e08356cd22b4cb37e}{rechercherAppareil}(String idAppareil)
+00082     \{
+00083         Set<BluetoothDevice> appareilsAppaires = bluetoothAdapter.getBondedDevices();
+00084 
+00085         Log.d(TAG,\textcolor{stringliteral}{"Recherche l'appareil : "} + idAppareil);
+00086         \textcolor{keywordflow}{for} (BluetoothDevice appareil : appareilsAppaires)
+00087         \{
+00088             Log.d(TAG,\textcolor{stringliteral}{"Nom : "} + appareil.getName() + \textcolor{stringliteral}{" | Adresse : "} + appareil.getAddress());
+00089             \textcolor{keywordflow}{if} (appareil.getAddress().equals(idAppareil) || appareil.getName().equals(idAppareil))
+00090             \{
+00091                 module = appareil;
+00092                 \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \textcolor{comment}{// trouvé !}
+00093             \}
+00094         \}
+00095 
+00096         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00097     \}
+00098 
+\Hypertarget{_liaison_bluetooth_8java_source_l00102}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a69ea46dca5a0690d5d8231731ae60d9f}{00102}     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a69ea46dca5a0690d5d8231731ae60d9f}{creerSocket}()
+00103     \{
+00104         \textcolor{keywordflow}{if}(module == null)
+00105             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00106 
+00107         Log.d(TAG,\textcolor{stringliteral}{"Création de la socket pour l'appareil : "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} + module.
+      getAddress());
+00108         \textcolor{keywordflow}{try}
+00109         \{
+00110             socket = module.createRfcommSocketToServiceRecord(UUID.fromString(ID));
+00111         \}
+00112         \textcolor{keywordflow}{catch} (IOException e)
+00113         \{
+00114             e.printStackTrace();
+00115             socket = null;
+00116             Log.d(TAG, \textcolor{stringliteral}{"Echec de la création de socket"});
+00117             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00118         \}
+00119 
+00120         \textcolor{keywordflow}{if} (socket != null)
+00121         \{
+00122             tReception = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{TReception}();
+00123             Message message = \textcolor{keyword}{new} Message();
+00124             message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_ac961c73879bd0de9933b2fc310cc5e7e}{CREATION\_SOCKET};
+00125             message.obj = module.getName();
+00126             handlerIHM.sendMessage(message);
+00127             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00128         \}
+00129 
+00130         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00131     \}
+00132 
+\Hypertarget{_liaison_bluetooth_8java_source_l00136}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{00136}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{connecter}()
+00137     \{
+00138         \textcolor{keywordflow}{if} (module == null || socket == null)
+00139             \textcolor{keywordflow}{return};
+00140 
+00141         Log.d(TAG,\textcolor{stringliteral}{"Connexion au module "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} + module.getAddress());
+00142         \textcolor{keyword}{new} \hyperlink{class_thread}{Thread}()
+00143         \{
+00144             @Override \textcolor{keyword}{public} \textcolor{keywordtype}{void} run()
+00145             \{
+00146                 \textcolor{keywordflow}{try}
+00147                 \{
+00148                     bluetoothAdapter.cancelDiscovery();
+00149                     socket.connect();
+00150                     fluxReception = socket.getInputStream();
+00151                     fluxEnvoi = socket.getOutputStream();
+00152                     \textcolor{keywordflow}{if} (!tReception.isAlive())
+00153                         tReception.start();
+00154                     Message message = \textcolor{keyword}{new} Message();
+00155                     message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a4870b4fac5c0f1aedac1bb40346d43da}{CONNEXION\_SOCKET};
+00156                     message.obj = module.getName();
+00157                     handlerIHM.sendMessage(message);
+00158                 \}
+00159                 \textcolor{keywordflow}{catch} (IOException e)
+00160                 \{
+00161                     Log.e(TAG,\textcolor{stringliteral}{"Erreur ouverture du socket"});
+00162                     e.printStackTrace();
+00163                 \}
+00164             \}
+00165         \}.start();
+00166     \}
+00167 
+\Hypertarget{_liaison_bluetooth_8java_source_l00171}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a10b356586feed95ecacb0a57cb51f0e6}{00171}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a10b356586feed95ecacb0a57cb51f0e6}{deconnecter}()
+00172     \{
+00173         \textcolor{keywordflow}{if} (module == null || socket == null)
+00174             \textcolor{keywordflow}{return};
+00175 
+00176         Log.d(TAG,\textcolor{stringliteral}{"Déconnexion du module "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} + module.getAddress());
+00177         \textcolor{keyword}{new} \hyperlink{class_thread}{Thread}()
+00178         \{
+00179             @Override \textcolor{keyword}{public} \textcolor{keywordtype}{void} run()
+00180             \{
+00181                 \textcolor{keywordflow}{try}
+00182                 \{
+00183                     tReception.\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}{arreter}();
+00184                     socket.close();
+00185                     Message message = \textcolor{keyword}{new} Message();
+00186                     message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{DECONNEXION\_SOCKET};
+00187                     message.obj = module.getName();
+00188                     handlerIHM.sendMessage(message);
+00189                 \}
+00190                 \textcolor{keywordflow}{catch} (IOException e)
+00191                 \{
+00192                     Log.e(TAG,\textcolor{stringliteral}{"Erreur fermeture du socket"});
+00193                     e.printStackTrace();
+00194                 \}
+00195             \}
+00196         \}.start();
+00197     \}
+00198 
+\Hypertarget{_liaison_bluetooth_8java_source_l00202}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{00202}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a67360b2f673b47b8a552a9e789a93fce}{envoyer}(String donnees)
+00203     \{
+00204         \textcolor{keywordflow}{if} (module == null || socket == null)
+00205             \textcolor{keywordflow}{return};
+00206 
+00207         \textcolor{keyword}{new} \hyperlink{class_thread}{Thread}()
+00208         \{
+00209             @Override \textcolor{keyword}{public} \textcolor{keywordtype}{void} run()
+00210             \{
+00211                 \textcolor{keywordflow}{try}
+00212                 \{
+00213                     \textcolor{keywordflow}{if}(socket.isConnected())
+00214                     \{
+00215                         Log.d(TAG,\textcolor{stringliteral}{"Envoi vers le module "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} + module.
+      getAddress() + \textcolor{stringliteral}{" | Données : "} + donnees);
+00216                         fluxEnvoi.write(donnees.getBytes());
+00217                     \}
+00218                 \}
+00219                 \textcolor{keywordflow}{catch}(IOException e)
+00220                 \{
+00221                     Log.e(TAG,\textcolor{stringliteral}{"Erreur envoi socket"});
+00222                     e.printStackTrace();
+00223                 \}
+00224             \}
+00225         \}.start();
+00226     \}
+00227 
+\Hypertarget{_liaison_bluetooth_8java_source_l00228}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{00228}     \textcolor{keyword}{private} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{TReception} \textcolor{keyword}{extends} \hyperlink{class_thread}{Thread}
+00229     \{
+\Hypertarget{_liaison_bluetooth_8java_source_l00230}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{00230}         \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a7f942e7af3e97af754f2591d2bd20435}{fini};
+00231 
+00232         \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception}{TReception}()
+00233         \{
+00234           fini = \textcolor{keyword}{false};
+00235         \}
+00236 
+\Hypertarget{_liaison_bluetooth_8java_source_l00240}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_afb141736dac915d0c82f96f75033f318}{00240}         @Override \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_afb141736dac915d0c82f96f75033f318}{run}()
+00241         \{
+00242             Log.d(TAG,\textcolor{stringliteral}{"Démarrage du thread Réception pour le module "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} 
+      + module.getAddress());
+00243             BufferedReader reception = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(fluxReception));
+00244             \textcolor{keywordflow}{while}(!fini)
+00245             \{
+00246                 \textcolor{keywordflow}{try}
+00247                 \{
+00248                     String trame = \textcolor{stringliteral}{""};
+00249                     \textcolor{keywordflow}{if} (socket.isConnected())
+00250                     \{
+00251                         trame = reception.readLine();
+00252                         \textcolor{keywordflow}{if}(trame.length() > 0)
+00253                         \{
+00254                           Log.d(TAG, \textcolor{stringliteral}{"Trame : "} + trame);
+00255                           Message message = \textcolor{keyword}{new} Message();
+00256                           message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a1a3058c683cec15fe0f3699f7fc26073}{RECEPTION\_TRAME};
+00257                           message.obj = trame;
+00258                           handlerIHM.sendMessage(message);
+00259                         \}
+00260                     \}
+00261                 \}
+00262                 \textcolor{keywordflow}{catch} (IOException e)
+00263                 \{
+00264                     e.printStackTrace();
+00265                     Message message = \textcolor{keyword}{new} Message();
+00266                     message.what = \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a8ff08468d7b2cead9c3714c665f75d0e}{DECONNEXION\_SOCKET};
+00267                     message.obj = module.getName();
+00268                     handlerIHM.sendMessage(message);
+00269                     \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_a7b9662a4224762b23c814d1f4539002a}{connecter}();
+00270                 \}
+00271 
+00272                 \textcolor{keywordflow}{try}
+00273                 \{
+00274                     \hyperlink{class_thread}{Thread}.sleep(250);
+00275                 \}
+00276                 \textcolor{keywordflow}{catch} (InterruptedException e)
+00277                 \{
+00278                     e.printStackTrace();
+00279                 \}
+00280             \}
+00281             Log.d(TAG,\textcolor{stringliteral}{"Arrêt du thread Réception pour le module "} + module.getName() + \textcolor{stringliteral}{" | Adresse : "} + 
+      module.getAddress());
+00282         \}
+00283 
+\Hypertarget{_liaison_bluetooth_8java_source_l00287}\hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}{00287}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_liaison_bluetooth_1_1_t_reception_a89f97f22a976b8632e82b2aa94ab2674}{arreter}()
+00288         \{
+00289             \textcolor{keywordflow}{if} (fini == \textcolor{keyword}{false})
+00290             \{
+00291                 fini = \textcolor{keyword}{true};
+00292             \}
+00293 
+00294             \textcolor{keywordflow}{try}
+00295             \{
+00296                 \hyperlink{class_thread}{Thread}.sleep(250);
+00297             \}
+00298             \textcolor{keywordflow}{catch} (InterruptedException e)
+00299             \{
+00300                 e.printStackTrace();
+00301             \}
+00302         \}
+00303     \}
+00304 \}
+\end{DoxyCode}

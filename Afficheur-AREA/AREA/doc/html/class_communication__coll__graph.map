@@ -1,0 +1,4 @@
+<map id="Communication" name="Communication">
+<area shape="rect" id="node3" href="$class_rencontre.html" title="{Rencontre\n|&#45; clubs\l&#45; parties\l|+ getNomEquipe1()\l+ getNomEquipe2()\l+ Rencontre()\l+ ~Rencontre()\l+ creerPartie()\l}" alt="" coords="90,565,225,716"/>
+<area shape="rect" id="node2" href="$class_q_object.html" title="{QObject\n||}" alt="" coords="137,5,207,83"/>
+</map>

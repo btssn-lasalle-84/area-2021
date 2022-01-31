@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IHMLancementRencontre">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutLancementRencontre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewEquipeA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="@+id/layoutNomEquipeA"
+                app:layout_constraintStart_toStartOf="@+id/layoutNomEquipeA"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/layoutNomEquipeA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/layoutJoueursEquipeA"
+                app:layout_constraintStart_toStartOf="@+id/layoutJoueursEquipeA"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEquipeA">
+
+                <TextView
+                    android:id="@+id/textViewNomEquipeA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextNomEquipeA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/layoutJoueursEquipeA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNomEquipeA">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneJoueurEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneNomJoueurEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonnePrenomJoueurEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneLicenseJoueurEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurAEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurAEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurAEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurAEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurBEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurBEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurBEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurBEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurCEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurCEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurCEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurCEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurDEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurDEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurDEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurDEquipeA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textViewEquipeB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="@+id/layoutJoueursEquipeA"
+                app:layout_constraintStart_toStartOf="@+id/layoutJoueursEquipeA"
+                app:layout_constraintTop_toBottomOf="@+id/layoutJoueursEquipeA" />
+
+            <LinearLayout
+                android:id="@+id/layoutNomEquipeB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintStart_toStartOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewEquipeB">
+
+                <TextView
+                    android:id="@+id/textViewNomEquipeB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextNomEquipeB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/layoutJoueursEquipeB"
+                android:layout_width="672dp"
+                android:layout_height="202dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNomEquipeB">
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneJoueurEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneNomJoueurEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonnePrenomJoueurEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/textViewTitreColonneLicenseJoueurEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurAEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurAEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurAEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurAEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurBEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurBEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurBEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurBEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurCEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurCEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurCEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurCEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textViewJoueurDEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNomJoueurDEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextPrenomJoueurDEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/editTextNumeroLicenseJoueurDEquipeB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="number" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/textViewParametresRencontre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="34sp"
+                app:layout_constraintEnd_toEndOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintStart_toStartOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintTop_toBottomOf="@+id/layoutJoueursEquipeB" />
+
+            <LinearLayout
+                android:id="@+id/layoutNbPartiesGagnantes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintStart_toStartOf="@+id/layoutJoueursEquipeB"
+                app:layout_constraintTop_toBottomOf="@+id/textViewParametresRencontre">
+
+                <TextView
+                    android:id="@+id/textViewNbPartiesGagnante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextNbPartiesGagnante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutNbManchesGagnantes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/layoutNbPartiesGagnantes"
+                app:layout_constraintStart_toStartOf="@+id/layoutNbPartiesGagnantes"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNbPartiesGagnantes">
+
+                <TextView
+                    android:id="@+id/textViewNbManchesGagnante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextNbManchesGagnante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutNbPointsParManche"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/layoutNbManchesGagnantes"
+                app:layout_constraintStart_toStartOf="@+id/layoutNbManchesGagnantes"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNbManchesGagnantes">
+
+                <TextView
+                    android:id="@+id/textViewNbPointsParManche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editTextNbPointsParManche"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/boutonValider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@+id/layoutNbPointsParManche"
+                app:layout_constraintStart_toStartOf="@+id/layoutNbPointsParManche"
+                app:layout_constraintTop_toBottomOf="@+id/layoutNbPointsParManche" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

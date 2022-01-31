@@ -1,0 +1,811 @@
+\hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}{}\subsection{Référence de la classe com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre}
+\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}\index{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre@{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre}}
+
+
+L\textquotesingle{}activité principale de l\textquotesingle{}application A\+R\+EA.  
+
+
+
+
+Graphe de collaboration de com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Attributs publics statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final int \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}{D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE} = 0
+\begin{DoxyCompactList}\small\item\em Code pour le lancement de l\textquotesingle{}activité \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{I\+H\+M\+Gestion\+Partie}. \end{DoxyCompactList}\item 
+static final String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}{I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE} = \char`\"{}Partie\char`\"{}
+\item 
+static final String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}{T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE} = \char`\"{}Liste des parties pour la \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre} \+: \char`\"{}
+\item 
+static final String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}{T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR} = \char`\"{}Veuillez sélectionner le premier joueur à servir \+:\char`\"{}
+\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres protégées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a2ab13355dbd1751f43ff54c534d0f021}{on\+Activity\+Result} (int request\+Code, int result\+Code, Intent data)
+\begin{DoxyCompactList}\small\item\em Traite le retour de l\textquotesingle{}activité \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{I\+H\+M\+Gestion\+Partie}. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}{on\+Create} (Bundle saved\+Instance\+State)
+\begin{DoxyCompactList}\small\item\em Méthode appelée à la création de l\textquotesingle{}activité \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0cee3ae4aa9559d72f43aaa62f4ebe75}{on\+Destroy} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée à la destruction de l\textquotesingle{}application (après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} et détruite par le système Android) \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}{on\+Pause} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée après qu\textquotesingle{}une boîte de dialogue s\textquotesingle{}est affichée (on reprend sur un \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}{on\+Resume()}) ou avant \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} (activité plus visible) \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}{on\+Resume} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}{on\+Start()} ou après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}{on\+Pause()} \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}{on\+Start} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée au démarrage après le \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}{on\+Create()} ou un restart après un \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop} ()
+\begin{DoxyCompactList}\small\item\em Méthode appelée lorsque l\textquotesingle{}activité n\textquotesingle{}est plus visible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}{afficher\+Parties} ()
+\begin{DoxyCompactList}\small\item\em Affiche une liste de toutes les parties d\textquotesingle{}une rencontre. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}{connecter\+Boutons} ()
+\begin{DoxyCompactList}\small\item\em Définit le comportement des boutons. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}{demander\+Serveur} (\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+\begin{DoxyCompactList}\small\item\em Demande à l\textquotesingle{}utisateur qui est le premier à servir. \end{DoxyCompactList}\item 
+String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}{formater\+Partie} (\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+\begin{DoxyCompactList}\small\item\em Formate une partie sous forme de String en respectant la structure suivante \+: \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}{initialiser\+Rencontre} ()
+\begin{DoxyCompactList}\small\item\em Initialise un rencontre. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}{initialiser\+Ressources\+I\+HM} ()
+\begin{DoxyCompactList}\small\item\em Initialise les ressources graphiques de l\textquotesingle{}activité \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}{lancer\+Partie} (\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+\begin{DoxyCompactList}\small\item\em Lance une partie. \end{DoxyCompactList}\item 
+Char\+Sequence \mbox{[}$\,$\mbox{]} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}{recuperer\+Noms\+Joueurs} (Vector$<$ \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} $>$ joueursA, Vector$<$ \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} $>$ joueursB)
+\begin{DoxyCompactList}\small\item\em Récupère les noms des joueurs et de leur club dans un tableau de Char\+Sequence. \end{DoxyCompactList}\item 
+void \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}{recuperer\+Ressources\+I\+HM} ()
+\begin{DoxyCompactList}\small\item\em Recupère les ressources graphiques de l\textquotesingle{}activité \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Alert\+Dialog.\+Builder \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alert\+Dialog\+Builder\+Demander\+Serveur}
+\item 
+Alert\+Dialog \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{alert\+Dialog\+Demander\+Serveur}
+\item 
+Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{bouton\+Demarrer\+Partie}
+\item 
+List\+View \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{liste\+Parties}
+\item 
+\hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{Rencontre} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés statiques}
+\begin{DoxyCompactItemize}
+\item 
+static final String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{T\+AG} = \char`\"{}\+\_\+\+I\+H\+M\+Gestion\+Rencontre\char`\"{}
+\begin{DoxyCompactList}\small\item\em T\+AG pour les logs. \end{DoxyCompactList}\item 
+static final String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}{T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE} = \char`\"{}Démarrer\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+L\textquotesingle{}activité principale de l\textquotesingle{}application A\+R\+EA. 
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00035}{35} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!afficher\+Parties@{afficher\+Parties}}
+\index{afficher\+Parties@{afficher\+Parties}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{afficher\+Parties()}{afficherParties()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+afficher\+Parties (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affiche une liste de toutes les parties d\textquotesingle{}une rencontre. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00322}{322} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00343}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+formater\+Partie()}, et \hyperlink{_rencontre_8java_source_l00158}{com.\+example.\+area.\+Rencontre.\+get\+Parties()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00142}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Ressources\+I\+H\+M()}.
+
+
+\begin{DoxyCode}
+00323     \{
+00324         Vector<Partie> parties = \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{getParties}();
+00325         ListIterator<Partie> it = parties.listIterator();
+00326         ArrayList<String> arrayListParties = \textcolor{keyword}{new} ArrayList<String>();
+00327         ArrayAdapter<String> adapter;
+00328 
+00329         \textcolor{keywordflow}{while}(it.hasNext())
+00330         \{
+00331             arrayListParties.add(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}{formaterPartie}(it.next()));
+00332         \}
+00333 
+00334         adapter = \textcolor{keyword}{new} ArrayAdapter<String>(\textcolor{keyword}{this}, android.R.layout.simple\_list\_item\_single\_choice, 
+      arrayListParties);
+00335 
+00336         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties}.setAdapter(adapter);
+00337 
+00338     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!connecter\+Boutons@{connecter\+Boutons}}
+\index{connecter\+Boutons@{connecter\+Boutons}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{connecter\+Boutons()}{connecterBoutons()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+connecter\+Boutons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définit le comportement des boutons. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00158}{158} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00222}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+demander\+Serveur()}, et \hyperlink{_rencontre_8java_source_l00158}{com.\+example.\+area.\+Rencontre.\+get\+Parties()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00064}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00159     \{
+00160         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{boutonDemarrerPartie}.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00161         \{
+00162             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00163             \{
+00164                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}{demanderServeur}(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{getParties}().elementAt(
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties}.getCheckedItemPosition()));
+00165             \}
+00166         \});
+00167 
+00168         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties}.setOnItemClickListener(\textcolor{keyword}{new} AdapterView.OnItemClickListener()
+00169         \{
+00170             @Override
+00171             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onItemClick(AdapterView<?> parent, View view, \textcolor{keywordtype}{int} position, \textcolor{keywordtype}{long} \textcolor{keywordtype}{id})
+00172             \{
+00173                 Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"onItemClick()"});
+00174                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties}.setItemChecked(position,\textcolor{keyword}{true});
+00175 
+00176             \}
+00177         \});
+00178     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!demander\+Serveur@{demander\+Serveur}}
+\index{demander\+Serveur@{demander\+Serveur}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{demander\+Serveur()}{demanderServeur()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+demander\+Serveur (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}}]{partie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Demande à l\textquotesingle{}utisateur qui est le premier à servir. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00222}{222} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00051}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+alert\+Dialog\+Builder\+Demander\+Serveur}, \hyperlink{_partie_8java_source_l00064}{com.\+example.\+area.\+Partie.\+get\+Joueurs\+A()}, \hyperlink{_partie_8java_source_l00072}{com.\+example.\+area.\+Partie.\+get\+Joueurs\+B()}, \hyperlink{_partie_8java_source_l00351}{com.\+example.\+area.\+Partie.\+get\+Nb\+Joueurs()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00311}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+lancer\+Partie()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00281}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+recuperer\+Noms\+Joueurs()}, \hyperlink{_partie_8java_source_l00359}{com.\+example.\+area.\+Partie.\+set\+Joueurs\+A()}, et \hyperlink{_partie_8java_source_l00367}{com.\+example.\+area.\+Partie.\+set\+Joueurs\+B()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00158}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+connecter\+Boutons()}.
+
+
+\begin{DoxyCode}
+00223     \{
+00224         Vector<Joueur> joueursA = partie.getJoueursA();
+00225         Vector<Joueur> joueursB = partie.getJoueursB();
+00226         CharSequence[] nomJoueurs = \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}{recupererNomsJoueurs}(joueursA, joueursB);
+00227 
+00228         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.setItems(nomJoueurs, \textcolor{keyword}{new} 
+      DialogInterface.OnClickListener()
+00229         \{
+00230             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialog, \textcolor{keywordtype}{int} which)
+00231             \{
+00232                 \textcolor{comment}{// Partie simple ?}
+00233                 \textcolor{keywordflow}{if}(partie.getNbJoueurs() == 2)
+00234                 \{
+00235                     \textcolor{keywordflow}{if}(which == 0)
+00236                     \{
+00237                         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Serveur dans équipe A à la position : "} + which + \textcolor{stringliteral}{" ("} + joueursA.
+      elementAt(which).getNom() + \textcolor{stringliteral}{")"});
+00238                         joueursA.elementAt(which).setEstServeur(\textcolor{keyword}{true});
+00239                         partie.setJoueursA(joueursA);
+00240 
+00241                     \}
+00242                     \textcolor{keywordflow}{else}
+00243                     \{
+00244                         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Serveur dans équipe B à la position : "} + (which-1) + \textcolor{stringliteral}{" ("} + joueursB
+      .elementAt(which-1).getNom() + \textcolor{stringliteral}{")"});
+00245                         joueursB.elementAt(which-1).setEstServeur(\textcolor{keyword}{true});
+00246                         partie.setJoueursB(joueursB);
+00247                     \}
+00248                 \}
+00249                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(partie.getNbJoueurs() == 4) \textcolor{comment}{// Partie double ?}
+00250                 \{
+00251                     \textcolor{keywordflow}{if}(which < 2)
+00252                     \{
+00253                         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Serveur dans équipe A à la position : "} + which + \textcolor{stringliteral}{" ("} + joueursA.
+      elementAt(which).getNom() + \textcolor{stringliteral}{")"});
+00254                         joueursA.elementAt(which).setEstServeur(\textcolor{keyword}{true});
+00255                         partie.setJoueursA(joueursA);
+00256                     \}
+00257                     \textcolor{keywordflow}{else}
+00258                     \{
+00259                         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Serveur dans équipe B à la position : "} + (which-2) + \textcolor{stringliteral}{" ("} + joueursB
+      .elementAt(which-2).getNom() + \textcolor{stringliteral}{")"});
+00260                         joueursB.elementAt(which-2).setEstServeur(\textcolor{keyword}{true});
+00261                         partie.setJoueursB(joueursB);
+00262                     \}
+00263                 \}
+00264                 \textcolor{keywordflow}{else}
+00265                 \{
+00266                     Log.e(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Le nombre de joueurs dans cette partie est invalide !"});
+00267                 \}
+00268 
+00269                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}{lancerPartie}(partie);
+00270             \}
+00271         \});
+00272 
+00273         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{alertDialogDemanderServeur} = 
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.create();
+00274 
+00275         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{alertDialogDemanderServeur}.show();
+00276     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!formater\+Partie@{formater\+Partie}}
+\index{formater\+Partie@{formater\+Partie}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{formater\+Partie()}{formaterPartie()}}
+{\footnotesize\ttfamily String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+formater\+Partie (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}}]{partie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Formate une partie sous forme de String en respectant la structure suivante \+: 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00343}{343} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_partie_8java_source_l00064}{com.\+example.\+area.\+Partie.\+get\+Joueurs\+A()}, \hyperlink{_partie_8java_source_l00072}{com.\+example.\+area.\+Partie.\+get\+Joueurs\+B()}, \hyperlink{_joueur_8java_source_l00039}{com.\+example.\+area.\+Joueur.\+get\+Nom()}, et \hyperlink{_joueur_8java_source_l00047}{com.\+example.\+area.\+Joueur.\+get\+Prenom()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00322}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+afficher\+Parties()}.
+
+
+\begin{DoxyCode}
+00344     \{
+00345         String partieFormatee = \textcolor{keyword}{new} String();
+00346         Vector<Joueur> joueursA = partie.getJoueursA();
+00347         Vector<Joueur> joueursB = partie.getJoueursB();
+00348         ListIterator<Joueur> it = joueursA.listIterator();
+00349         Joueur joueur;
+00350 
+00351         \textcolor{keywordflow}{while} (it.hasNext())
+00352         \{
+00353             joueur = it.next();
+00354             partieFormatee += joueur.getNom() + \textcolor{stringliteral}{" "} + joueur.getPrenom() + \textcolor{stringliteral}{" "};
+00355         \}
+00356 
+00357         it = joueursB.listIterator();
+00358         partieFormatee += \textcolor{stringliteral}{" VS  "};
+00359 
+00360         \textcolor{keywordflow}{while} (it.hasNext())
+00361         \{
+00362             joueur = it.next();
+00363             partieFormatee += joueur.getNom() + \textcolor{stringliteral}{" "} + joueur.getPrenom() + \textcolor{stringliteral}{" "};
+00364         \}
+00365 
+00366         \textcolor{keywordflow}{return} partieFormatee;
+00367     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!initialiser\+Rencontre@{initialiser\+Rencontre}}
+\index{initialiser\+Rencontre@{initialiser\+Rencontre}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{initialiser\+Rencontre()}{initialiserRencontre()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Rencontre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise un rencontre. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00199}{199} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00064}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00200     \{
+00201         Vector<Joueur> joueursEquipe1 = \textcolor{keyword}{new} Vector<Joueur>();
+00202         joueursEquipe1.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"BEAUMONT"},\textcolor{stringliteral}{"Jérôme"},843944));
+00203         joueursEquipe1.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"SAULNIER"},\textcolor{stringliteral}{"Christian"},303504));
+00204         joueursEquipe1.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"FILAFERRO"},\textcolor{stringliteral}{"Thomas"},645758));
+00205         joueursEquipe1.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"COMTE"},\textcolor{stringliteral}{"Emmanuel"},842353));
+00206 
+00207         Vector<Joueur> joueursEquipe2 = \textcolor{keyword}{new} Vector<Joueur>();
+00208         joueursEquipe2.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"FAGOO"},\textcolor{stringliteral}{"Damien"},844549));
+00209         joueursEquipe2.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"BRESSON"},\textcolor{stringliteral}{"Thibault"},845423));
+00210         joueursEquipe2.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"CROUZET"},\textcolor{stringliteral}{"Lionel"},845682));
+00211         joueursEquipe2.add(\textcolor{keyword}{new} Joueur(\textcolor{stringliteral}{"FLORES"},\textcolor{stringliteral}{"Fabien"},847650));
+00212 
+00213         Equipe equipeA = \textcolor{keyword}{new} Equipe(\textcolor{stringliteral}{"PPC Sorgues"}, joueursEquipe1);
+00214         Equipe equipeB = \textcolor{keyword}{new} Equipe(\textcolor{stringliteral}{"PPC Pernes"}, joueursEquipe2);
+00215 
+00216         this.\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre} = \textcolor{keyword}{new} Rencontre(equipeA,equipeB);
+00217     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!initialiser\+Ressources\+I\+HM@{initialiser\+Ressources\+I\+HM}}
+\index{initialiser\+Ressources\+I\+HM@{initialiser\+Ressources\+I\+HM}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{initialiser\+Ressources\+I\+H\+M()}{initialiserRessourcesIHM()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Ressources\+I\+HM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les ressources graphiques de l\textquotesingle{}activité 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00142}{142} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00322}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+afficher\+Parties()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00051}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+alert\+Dialog\+Builder\+Demander\+Serveur}, \hyperlink{_rencontre_8java_source_l00177}{com.\+example.\+area.\+Rencontre.\+get\+Equipe\+A()}, \hyperlink{_rencontre_8java_source_l00186}{com.\+example.\+area.\+Rencontre.\+get\+Equipe\+B()}, et \hyperlink{_equipe_8java_source_l00043}{com.\+example.\+area.\+Equipe.\+get\+Nom\+Club()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00064}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00143     \{
+00144         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{boutonDemarrerPartie}.setText(
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}{TEXTE\_BOUTON\_DEMARRER\_PARTIE});
+00145 
+00146         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.setTitle(
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}{TITRE\_ALERT\_DIALOG\_DEMANDER\_SERVEUR});
+00147 
+00148         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{alertDialogDemanderServeur} = 
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.create();
+00149 
+00150         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}{afficherParties}();
+00151 
+00152         getSupportActionBar().setTitle( \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}{TITRE\_ACTIVITE} + \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{getEquipeA}().\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{" VS "} + \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.
+      \hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{getEquipeB}().\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}());
+00153     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!lancer\+Partie@{lancer\+Partie}}
+\index{lancer\+Partie@{lancer\+Partie}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{lancer\+Partie()}{lancerPartie()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+lancer\+Partie (\begin{DoxyParamCaption}\item[{\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie}}]{partie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lance une partie. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em partie} & La partie à lancer \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00311}{311} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00222}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+demander\+Serveur()}.
+
+
+\begin{DoxyCode}
+00312     \{
+00313         \textcolor{keyword}{final} Intent intent = \textcolor{keyword}{new} Intent(IHMGestionRencontre.this, IHMGestionPartie.class);
+00314         intent.putExtra(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}{ID\_INTENT\_LANCEMENT\_PARTIE}, partie);
+00315         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG},\textcolor{stringliteral}{"Lancement de l'activité IHMGestionPartie"});
+00316         startActivityForResult(intent, \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}{DEMARRAGE\_PARTIE});
+00317     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a2ab13355dbd1751f43ff54c534d0f021}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a2ab13355dbd1751f43ff54c534d0f021}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Activity\+Result@{on\+Activity\+Result}}
+\index{on\+Activity\+Result@{on\+Activity\+Result}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Activity\+Result()}{onActivityResult()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Activity\+Result (\begin{DoxyParamCaption}\item[{int}]{request\+Code,  }\item[{int}]{result\+Code,  }\item[{Intent}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Traite le retour de l\textquotesingle{}activité \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{I\+H\+M\+Gestion\+Partie}. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00184}{184} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00185     \{
+00186         super.onActivityResult(requestCode, resultCode, data);
+00187         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onActivityResult() resultCode : "} + resultCode);
+00188 
+00189         \textcolor{comment}{// Exemple}
+00190         \textcolor{keywordflow}{if}(requestCode == \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}{DEMARRAGE\_PARTIE} && resultCode == RESULT\_OK)
+00191         \{
+00192             Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onActivityResult() IHMGestionPartie s'est terminée avec succès !"});
+00193         \}
+00194     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Create@{on\+Create}}
+\index{on\+Create@{on\+Create}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Create()}{onCreate()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Create (\begin{DoxyParamCaption}\item[{Bundle}]{saved\+Instance\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée à la création de l\textquotesingle{}activité 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00064}{64} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00158}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+connecter\+Boutons()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00199}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Rencontre()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00142}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Ressources\+I\+H\+M()}, et \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00132}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+recuperer\+Ressources\+I\+H\+M()}.
+
+
+\begin{DoxyCode}
+00065     \{
+00066         super.onCreate(savedInstanceState);
+00067         setContentView(R.layout.ihm\_gestion\_rencontre);
+00068         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onCreate()"});
+00069 
+00070         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}{initialiserRencontre}();
+00071 
+00072         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}{recupererRessourcesIHM}();
+00073 
+00074         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}{initialiserRessourcesIHM}();
+00075 
+00076         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}{connecterBoutons}();
+00077     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0cee3ae4aa9559d72f43aaa62f4ebe75}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0cee3ae4aa9559d72f43aaa62f4ebe75}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Destroy@{on\+Destroy}}
+\index{on\+Destroy@{on\+Destroy}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Destroy()}{onDestroy()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée à la destruction de l\textquotesingle{}application (après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} et détruite par le système Android) 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00123}{123} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00124     \{
+00125         super.onDestroy();
+00126         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onDestroy()"});
+00127     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Pause@{on\+Pause}}
+\index{on\+Pause@{on\+Pause}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Pause()}{onPause()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée après qu\textquotesingle{}une boîte de dialogue s\textquotesingle{}est affichée (on reprend sur un \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}{on\+Resume()}) ou avant \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} (activité plus visible) 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00103}{103} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00104     \{
+00105         super.onPause();
+00106         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onPause()"});
+00107     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Resume@{on\+Resume}}
+\index{on\+Resume@{on\+Resume}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Resume()}{onResume()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Resume (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}{on\+Start()} ou après \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}{on\+Pause()} 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00093}{93} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00094     \{
+00095         super.onResume();
+00096         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onResume()"});
+00097     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Start@{on\+Start}}
+\index{on\+Start@{on\+Start}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Start()}{onStart()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée au démarrage après le \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}{on\+Create()} ou un restart après un \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{on\+Stop()} 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00083}{83} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00084     \{
+00085         super.onStart();
+00086         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onStart()"});
+00087     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!on\+Stop@{on\+Stop}}
+\index{on\+Stop@{on\+Stop}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{on\+Stop()}{onStop()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Méthode appelée lorsque l\textquotesingle{}activité n\textquotesingle{}est plus visible. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00113}{113} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+\begin{DoxyCode}
+00114     \{
+00115         super.onStop();
+00116         Log.d(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG}, \textcolor{stringliteral}{"onStop()"});
+00117     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!recuperer\+Noms\+Joueurs@{recuperer\+Noms\+Joueurs}}
+\index{recuperer\+Noms\+Joueurs@{recuperer\+Noms\+Joueurs}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{recuperer\+Noms\+Joueurs()}{recupererNomsJoueurs()}}
+{\footnotesize\ttfamily Char\+Sequence \mbox{[}$\,$\mbox{]} com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+recuperer\+Noms\+Joueurs (\begin{DoxyParamCaption}\item[{Vector$<$ \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} $>$}]{joueursA,  }\item[{Vector$<$ \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} $>$}]{joueursB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupère les noms des joueurs et de leur club dans un tableau de Char\+Sequence. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00281}{281} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_rencontre_8java_source_l00177}{com.\+example.\+area.\+Rencontre.\+get\+Equipe\+A()}, \hyperlink{_rencontre_8java_source_l00186}{com.\+example.\+area.\+Rencontre.\+get\+Equipe\+B()}, \hyperlink{_joueur_8java_source_l00039}{com.\+example.\+area.\+Joueur.\+get\+Nom()}, \hyperlink{_equipe_8java_source_l00043}{com.\+example.\+area.\+Equipe.\+get\+Nom\+Club()}, et \hyperlink{_joueur_8java_source_l00047}{com.\+example.\+area.\+Joueur.\+get\+Prenom()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00222}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+demander\+Serveur()}.
+
+
+\begin{DoxyCode}
+00282     \{
+00283         \textcolor{keywordtype}{int} nbJoueurs = joueursA.size() + joueursB.size();
+00284         CharSequence nomJoueurs[] = \textcolor{keyword}{new} CharSequence[nbJoueurs];
+00285         ListIterator<Joueur> it = joueursA.listIterator();
+00286         \textcolor{keywordtype}{int} i = 0;
+00287         Joueur joueur;
+00288 
+00289         \textcolor{keywordflow}{while} (it.hasNext())
+00290         \{
+00291             joueur = it.next();
+00292             nomJoueurs[i] = \textcolor{stringliteral}{"[ "} + \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{getEquipeA}().
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{"] "} + joueur.getNom()+ \textcolor{stringliteral}{" "} + joueur.getPrenom();
+00293             i++;
+00294         \}
+00295 
+00296         it = joueursB.listIterator();
+00297 
+00298         \textcolor{keywordflow}{while} (it.hasNext())
+00299         \{
+00300             joueur = it.next();
+00301             nomJoueurs[i] = \textcolor{stringliteral}{"[ "} + \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre}.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{getEquipeB}().
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{"] "} + joueur.getNom()+ \textcolor{stringliteral}{" "} + joueur.getPrenom();
+00302             i++;
+00303         \}
+00304         \textcolor{keywordflow}{return} nomJoueurs;
+00305     \}
+\end{DoxyCode}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!recuperer\+Ressources\+I\+HM@{recuperer\+Ressources\+I\+HM}}
+\index{recuperer\+Ressources\+I\+HM@{recuperer\+Ressources\+I\+HM}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{recuperer\+Ressources\+I\+H\+M()}{recupererRessourcesIHM()}}
+{\footnotesize\ttfamily void com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+recuperer\+Ressources\+I\+HM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recupère les ressources graphiques de l\textquotesingle{}activité 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00132}{132} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Références \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00051}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+alert\+Dialog\+Builder\+Demander\+Serveur}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00064}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+on\+Create()}.
+
+
+\begin{DoxyCode}
+00133     \{
+00134         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{boutonDemarrerPartie} = findViewById(R.id.boutonDemarrerPartie);
+00135         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur} = \textcolor{keyword}{new} AlertDialog.Builder(\textcolor{keyword}{this});
+00136         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties} = findViewById(R.id.listeParties);
+00137     \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!alert\+Dialog\+Builder\+Demander\+Serveur@{alert\+Dialog\+Builder\+Demander\+Serveur}}
+\index{alert\+Dialog\+Builder\+Demander\+Serveur@{alert\+Dialog\+Builder\+Demander\+Serveur}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{alert\+Dialog\+Builder\+Demander\+Serveur}{alertDialogBuilderDemanderServeur}}
+{\footnotesize\ttfamily Alert\+Dialog.\+Builder com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+alert\+Dialog\+Builder\+Demander\+Serveur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00051}{51} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00222}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+demander\+Serveur()}, \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00142}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+initialiser\+Ressources\+I\+H\+M()}, et \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00132}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+recuperer\+Ressources\+I\+H\+M()}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!alert\+Dialog\+Demander\+Serveur@{alert\+Dialog\+Demander\+Serveur}}
+\index{alert\+Dialog\+Demander\+Serveur@{alert\+Dialog\+Demander\+Serveur}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{alert\+Dialog\+Demander\+Serveur}{alertDialogDemanderServeur}}
+{\footnotesize\ttfamily Alert\+Dialog com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+alert\+Dialog\+Demander\+Serveur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00052}{52} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!bouton\+Demarrer\+Partie@{bouton\+Demarrer\+Partie}}
+\index{bouton\+Demarrer\+Partie@{bouton\+Demarrer\+Partie}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{bouton\+Demarrer\+Partie}{boutonDemarrerPartie}}
+{\footnotesize\ttfamily Button com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+bouton\+Demarrer\+Partie\hspace{0.3cm}{\ttfamily [private]}}
+
+Ressources I\+HM 
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00050}{50} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE@{D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE}}
+\index{D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE@{D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE}{DEMARRAGE\_PARTIE}}
+{\footnotesize\ttfamily final int com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+D\+E\+M\+A\+R\+R\+A\+G\+E\+\_\+\+P\+A\+R\+T\+IE = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Code pour le lancement de l\textquotesingle{}activité \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{I\+H\+M\+Gestion\+Partie}. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00041}{41} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE@{I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE}}
+\index{I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE@{I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE}{ID\_INTENT\_LANCEMENT\_PARTIE}}
+{\footnotesize\ttfamily final String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+I\+D\+\_\+\+I\+N\+T\+E\+N\+T\+\_\+\+L\+A\+N\+C\+E\+M\+E\+N\+T\+\_\+\+P\+A\+R\+T\+IE = \char`\"{}Partie\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00043}{43} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+Référencé par \hyperlink{_i_h_m_gestion_partie_8java_source_l00106}{com.\+example.\+area.\+I\+H\+M\+Gestion\+Partie.\+on\+Create()}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!liste\+Parties@{liste\+Parties}}
+\index{liste\+Parties@{liste\+Parties}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{liste\+Parties}{listeParties}}
+{\footnotesize\ttfamily List\+View com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+liste\+Parties\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00053}{53} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!rencontre@{rencontre}}
+\index{rencontre@{rencontre}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{rencontre}{rencontre}}
+{\footnotesize\ttfamily \hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{Rencontre} com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+rencontre\hspace{0.3cm}{\ttfamily [private]}}
+
+Attributs 
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00058}{58} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!T\+AG@{T\+AG}}
+\index{T\+AG@{T\+AG}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{T\+AG}{TAG}}
+{\footnotesize\ttfamily final String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+T\+AG = \char`\"{}\+\_\+\+I\+H\+M\+Gestion\+Rencontre\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+T\+AG pour les logs. 
+
+Constantes 
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00040}{40} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE@{T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE}}
+\index{T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE@{T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE}{TEXTE\_BOUTON\_DEMARRER\_PARTIE}}
+{\footnotesize\ttfamily final String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+T\+E\+X\+T\+E\+\_\+\+B\+O\+U\+T\+O\+N\+\_\+\+D\+E\+M\+A\+R\+R\+E\+R\+\_\+\+P\+A\+R\+T\+IE = \char`\"{}Démarrer\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00042}{42} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE@{T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE}}
+\index{T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE@{T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE}{TITRE\_ACTIVITE}}
+{\footnotesize\ttfamily final String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+T\+I\+T\+R\+E\+\_\+\+A\+C\+T\+I\+V\+I\+TE = \char`\"{}Liste des parties pour la \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre} \+: \char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00045}{45} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+\mbox{\Hypertarget{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}\label{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}} 
+\index{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}!T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR@{T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR}}
+\index{T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR@{T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR}!com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre@{com\+::example\+::area\+::\+I\+H\+M\+Gestion\+Rencontre}}
+\paragraph{\texorpdfstring{T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR}{TITRE\_ALERT\_DIALOG\_DEMANDER\_SERVEUR}}
+{\footnotesize\ttfamily final String com.\+example.\+area.\+I\+H\+M\+Gestion\+Rencontre.\+T\+I\+T\+R\+E\+\_\+\+A\+L\+E\+R\+T\+\_\+\+D\+I\+A\+L\+O\+G\+\_\+\+D\+E\+M\+A\+N\+D\+E\+R\+\_\+\+S\+E\+R\+V\+E\+UR = \char`\"{}Veuillez sélectionner le premier joueur à servir \+:\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_gestion_rencontre_8java_source_l00044}{44} du fichier \hyperlink{_i_h_m_gestion_rencontre_8java_source}{I\+H\+M\+Gestion\+Rencontre.\+java}.
+
+
+
+La documentation de cette classe a été générée à partir du fichier suivant \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_h_m_gestion_rencontre_8java}{I\+H\+M\+Gestion\+Rencontre.\+java}\end{DoxyCompactItemize}

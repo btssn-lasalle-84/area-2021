@@ -1,0 +1,328 @@
+\hypertarget{class_i_h_m_afficheur}{}\subsection{Référence de la classe I\+H\+M\+Afficheur}
+\label{class_i_h_m_afficheur}\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+
+
+Déclaration de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}.  
+
+
+
+
+{\ttfamily \#include $<$I\+H\+M\+Afficheur.\+h$>$}
+
+
+
+Graphe de collaboration de I\+H\+M\+Afficheur\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_h_m_afficheur__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Connecteurs publics}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{commencer\+Rencontre} (Q\+String club1, Q\+String club2)
+\begin{DoxyCompactList}\small\item\em Commence une rencontre entre deux clubs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_i_h_m_afficheur_a2fdf6626a1d9c2c635110a6e6ab703f9}{I\+H\+M\+Afficheur} (Q\+Widget $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}. \end{DoxyCompactList}\item 
+\hyperlink{class_i_h_m_afficheur_aba47ddf68f3966ed8f5c697b48e352a4}{$\sim$\+I\+H\+M\+Afficheur} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}{afficher\+Rencontre} ()
+\item 
+void \hyperlink{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}{initialiser\+Communication} ()
+\begin{DoxyCompactList}\small\item\em Initialise la communication Bluetooth en mode serveur. \end{DoxyCompactList}\item 
+void \hyperlink{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}{initialiser\+I\+HM} ()
+\begin{DoxyCompactList}\small\item\em Initialise les widgets de l\textquotesingle{}I\+HM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_communication}{Communication} $\ast$ \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}
+\item 
+\hyperlink{class_rencontre}{Rencontre} $\ast$ \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}
+\item 
+Ui\+::\+I\+H\+M\+Afficheur $\ast$ \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}
+\begin{DoxyCompactList}\small\item\em Association vers l\textquotesingle{}interface utilisateur réalisé avec Qt Designer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Déclaration de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}. 
+
+Cette classe assure l\textquotesingle{}affichage de l\textquotesingle{}écran A\+R\+EA 
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8h_source_l00034}{34} du fichier \hyperlink{_i_h_m_afficheur_8h_source}{I\+H\+M\+Afficheur.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_i_h_m_afficheur_a2fdf6626a1d9c2c635110a6e6ab703f9}\label{class_i_h_m_afficheur_a2fdf6626a1d9c2c635110a6e6ab703f9}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{I\+H\+M\+Afficheur()}{IHMAfficheur()}}
+{\footnotesize\ttfamily I\+H\+M\+Afficheur\+::\+I\+H\+M\+Afficheur (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructeur de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & L\textquotesingle{}adresse de l\textquotesingle{}objet parent, si nullptr \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur} sera la fenêtre principale \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00022}{22} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{commencer\+Rencontre()}, \hyperlink{_i_h_m_afficheur_8cpp_source_l00074}{initialiser\+Communication()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00056}{initialiser\+I\+H\+M()}.
+
+
+\begin{DoxyCode}
+00022                                           : \hyperlink{class_q_main_window}{QMainWindow}(parent), \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}(\textcolor{keyword}{new} Ui::IHMAfficheur), 
+      \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}(\textcolor{keyword}{nullptr}), \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}(\textcolor{keyword}{nullptr})
+00023 \{
+00024     qDebug() << Q\_FUNC\_INFO;
+00025 
+00026     \hyperlink{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}{initialiserIHM}();
+00027 
+00028 \textcolor{preprocessor}{    #ifndef TEST\_SANS\_BLUETOOTH}
+00029     \hyperlink{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}{initialiserCommunication}();
+00030 \textcolor{preprocessor}{    #endif}
+00031 
+00032 \textcolor{preprocessor}{    #ifdef TEST\_SANS\_BLUETOOTH}
+00033     \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{commencerRencontre}(\textcolor{stringliteral}{"Avignon"}, \textcolor{stringliteral}{"Orange"});
+00034 \textcolor{preprocessor}{    #endif}
+00035 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_afficheur_aba47ddf68f3966ed8f5c697b48e352a4}\label{class_i_h_m_afficheur_aba47ddf68f3966ed8f5c697b48e352a4}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!````~I\+H\+M\+Afficheur@{$\sim$\+I\+H\+M\+Afficheur}}
+\index{````~I\+H\+M\+Afficheur@{$\sim$\+I\+H\+M\+Afficheur}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{$\sim$\+I\+H\+M\+Afficheur()}{~IHMAfficheur()}}
+{\footnotesize\ttfamily I\+H\+M\+Afficheur\+::$\sim$\+I\+H\+M\+Afficheur (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_i_h_m_afficheur}{I\+H\+M\+Afficheur}. 
+
+Libère les ressources de l\textquotesingle{}application 
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00043}{43} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_i_h_m_afficheur_8h_source_l00040}{rencontre}, et \hyperlink{_i_h_m_afficheur_8h_source_l00039}{ui}.
+
+
+\begin{DoxyCode}
+00044 \{
+00045     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre} != \textcolor{keyword}{nullptr})
+00046         \textcolor{keyword}{delete} \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre};
+00047     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui};
+00048     qDebug() << Q\_FUNC\_INFO;
+00049 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}\label{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!afficher\+Rencontre@{afficher\+Rencontre}}
+\index{afficher\+Rencontre@{afficher\+Rencontre}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{afficher\+Rencontre()}{afficherRencontre()}}
+{\footnotesize\ttfamily void I\+H\+M\+Afficheur\+::afficher\+Rencontre (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{100} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_rencontre_8cpp_source_l00041}{Rencontre\+::get\+Nom\+Equipe1()}, \hyperlink{_rencontre_8cpp_source_l00049}{Rencontre\+::get\+Nom\+Equipe2()}, \hyperlink{_i_h_m_afficheur_8h_source_l00040}{rencontre}, et \hyperlink{_i_h_m_afficheur_8h_source_l00039}{ui}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{commencer\+Rencontre()}.
+
+
+\begin{DoxyCode}
+00101 \{
+00102     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe1->setText(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{getNomEquipe1}());
+00103     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe1->setAlignment(Qt::AlignCenter);
+00104     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe2->setText(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{getNomEquipe2}());
+00105     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe2->setAlignment(Qt::AlignCenter);
+00106 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}\label{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!commencer\+Rencontre@{commencer\+Rencontre}}
+\index{commencer\+Rencontre@{commencer\+Rencontre}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{commencer\+Rencontre}{commencerRencontre}}
+{\footnotesize\ttfamily void I\+H\+M\+Afficheur\+::commencer\+Rencontre (\begin{DoxyParamCaption}\item[{Q\+String}]{club1,  }\item[{Q\+String}]{club2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Commence une rencontre entre deux clubs. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em club1} & \\
+\hline
+{\em club2} & \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{90} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{afficher\+Rencontre()}, \hyperlink{_i_h_m_afficheur_8h_source_l00041}{communication}, \hyperlink{_rencontre_8cpp_source_l00041}{Rencontre\+::get\+Nom\+Equipe1()}, \hyperlink{_rencontre_8cpp_source_l00049}{Rencontre\+::get\+Nom\+Equipe2()}, et \hyperlink{_i_h_m_afficheur_8h_source_l00040}{rencontre}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00022}{I\+H\+M\+Afficheur()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00074}{initialiser\+Communication()}.
+
+
+\begin{DoxyCode}
+00091 \{
+00092     \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre} = \textcolor{keyword}{new} \hyperlink{class_rencontre}{Rencontre}(club1, club2);
+00093     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{getNomEquipe1}() << \textcolor{stringliteral}{"vs"} << 
+      \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{getNomEquipe2}();
+00094 
+00095     \hyperlink{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}{afficherRencontre}();
+00096 
+00097     connect(\hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}, SIGNAL(creationPartie(QStringList)), 
+      \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}, SLOT(creerPartie(QStringList)));
+00098 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}\label{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!initialiser\+Communication@{initialiser\+Communication}}
+\index{initialiser\+Communication@{initialiser\+Communication}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{initialiser\+Communication()}{initialiserCommunication()}}
+{\footnotesize\ttfamily void I\+H\+M\+Afficheur\+::initialiser\+Communication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise la communication Bluetooth en mode serveur. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00074}{74} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{commencer\+Rencontre()}, \hyperlink{_i_h_m_afficheur_8h_source_l00041}{communication}, et \hyperlink{_communication_8cpp_source_l00073}{Communication\+::demarrer()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00022}{I\+H\+M\+Afficheur()}.
+
+
+\begin{DoxyCode}
+00075 \{
+00076     \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication} = \textcolor{keyword}{new} \hyperlink{class_communication}{Communication}(\textcolor{keyword}{this});
+00077 
+00078     connect(\hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}, SIGNAL(debutRencontre(QString,QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{commencerRencontre}(QString,QString)));
+00079 
+00080     \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}->\hyperlink{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}{demarrer}();
+00081 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}\label{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!initialiser\+I\+HM@{initialiser\+I\+HM}}
+\index{initialiser\+I\+HM@{initialiser\+I\+HM}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{initialiser\+I\+H\+M()}{initialiserIHM()}}
+{\footnotesize\ttfamily void I\+H\+M\+Afficheur\+::initialiser\+I\+HM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Initialise les widgets de l\textquotesingle{}I\+HM. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8cpp_source_l00056}{56} du fichier \hyperlink{_i_h_m_afficheur_8cpp_source}{I\+H\+M\+Afficheur.\+cpp}.
+
+
+
+Références \hyperlink{_i_h_m_afficheur_8h_source_l00039}{ui}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00022}{I\+H\+M\+Afficheur()}.
+
+
+\begin{DoxyCode}
+00057 \{
+00058     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->setupUi(\textcolor{keyword}{this});
+00059 
+00060     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->centralWidget->setStyleSheet(\textcolor{stringliteral}{"QWidget#centralWidget \{background-color: black;\} QLabel \{color:
+       white\}"});
+00061 
+00062     \textcolor{comment}{// Mode debug}
+00063     QAction *quitter = \textcolor{keyword}{new} QAction(\textcolor{keyword}{this});
+00064     quitter->setShortcut(QKeySequence(QKeySequence(Qt::Key\_Escape)));
+00065     addAction(quitter);
+00066     connect(quitter, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(close()));
+00067 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}\label{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!communication@{communication}}
+\index{communication@{communication}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{communication}{communication}}
+{\footnotesize\ttfamily \hyperlink{class_communication}{Communication}$\ast$ I\+H\+M\+Afficheur\+::communication\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8h_source_l00041}{41} du fichier \hyperlink{_i_h_m_afficheur_8h_source}{I\+H\+M\+Afficheur.\+h}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{commencer\+Rencontre()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00074}{initialiser\+Communication()}.
+
+\mbox{\Hypertarget{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}\label{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!rencontre@{rencontre}}
+\index{rencontre@{rencontre}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{rencontre}{rencontre}}
+{\footnotesize\ttfamily \hyperlink{class_rencontre}{Rencontre}$\ast$ I\+H\+M\+Afficheur\+::rencontre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8h_source_l00040}{40} du fichier \hyperlink{_i_h_m_afficheur_8h_source}{I\+H\+M\+Afficheur.\+h}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{afficher\+Rencontre()}, \hyperlink{_i_h_m_afficheur_8cpp_source_l00090}{commencer\+Rencontre()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00043}{$\sim$\+I\+H\+M\+Afficheur()}.
+
+\mbox{\Hypertarget{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}\label{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}} 
+\index{I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}!ui@{ui}}
+\index{ui@{ui}!I\+H\+M\+Afficheur@{I\+H\+M\+Afficheur}}
+\paragraph{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+I\+H\+M\+Afficheur$\ast$ I\+H\+M\+Afficheur\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Association vers l\textquotesingle{}interface utilisateur réalisé avec Qt Designer. 
+
+
+
+Définition à la ligne \hyperlink{_i_h_m_afficheur_8h_source_l00039}{39} du fichier \hyperlink{_i_h_m_afficheur_8h_source}{I\+H\+M\+Afficheur.\+h}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00100}{afficher\+Rencontre()}, \hyperlink{_i_h_m_afficheur_8cpp_source_l00056}{initialiser\+I\+H\+M()}, et \hyperlink{_i_h_m_afficheur_8cpp_source_l00043}{$\sim$\+I\+H\+M\+Afficheur()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_i_h_m_afficheur_8h}{I\+H\+M\+Afficheur.\+h}\item 
+\hyperlink{_i_h_m_afficheur_8cpp}{I\+H\+M\+Afficheur.\+cpp}\end{DoxyCompactItemize}

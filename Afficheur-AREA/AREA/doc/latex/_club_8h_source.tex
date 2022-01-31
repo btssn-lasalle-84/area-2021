@@ -1,0 +1,29 @@
+\hypertarget{_club_8h_source}{}\subsection{Club.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef CLUB\_H}
+00002 \textcolor{preprocessor}{#define CLUB\_H}
+00003 
+00013 \textcolor{preprocessor}{#include <QString>}
+00014 \textcolor{preprocessor}{#include <QMap>}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_joueur_8h}{Joueur.h}"}
+00016 
+\Hypertarget{_club_8h_source_l00017}\hyperlink{class_club}{00017} \textcolor{keyword}{class }\hyperlink{class_club}{Club}
+00018 \{
+00019 \textcolor{keyword}{private}:
+\Hypertarget{_club_8h_source_l00020}\hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{00020}     QString \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom};
+\Hypertarget{_club_8h_source_l00021}\hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{00021}     \textcolor{keywordtype}{int} \hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees};
+\Hypertarget{_club_8h_source_l00022}\hyperlink{class_club_a1546f281ba72a07e52cbfd2a60af699b}{00022}     QMap<char,Joueur> \hyperlink{class_club_a1546f281ba72a07e52cbfd2a60af699b}{joueurs};
+00023 
+00024 \textcolor{keyword}{public}:
+00025     \hyperlink{class_club_a6d6fa5971608a06394c40453289d6251}{Club}(QString nom = \textcolor{stringliteral}{""});
+00026     \hyperlink{class_club_a1c2993e141cfa6468284274359cc7de5}{~Club}();
+00027     QString \hyperlink{class_club_aaa3c96659bf305d7a1988ecbd27de30f}{getNom}()\textcolor{keyword}{const};
+00028     \textcolor{keywordtype}{void} \hyperlink{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}{setNom}(QString &n);
+00029     \textcolor{keywordtype}{int} \hyperlink{class_club_af4f28219aa51c3742cddfae4b66cec4b}{getPartiesRemportes}() \textcolor{keyword}{const};
+00030     \textcolor{keywordtype}{void} \hyperlink{class_club_ad1711f2742e385ef00174b3ebd98b165}{setPartiesRemportes}(\textcolor{keywordtype}{int} &p);
+00031     \textcolor{keywordtype}{void} \hyperlink{class_club_af7cf902fc29f6d587b11a10eec87edff}{ajouterJoueur}(\textcolor{keywordtype}{char} &lettre, \hyperlink{class_joueur}{Joueur} &j);
+00032 \};
+00033 
+00034 \textcolor{preprocessor}{#endif // CLUB\_H}
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\hypertarget{_joueur_8cpp_source}{}\subsection{Joueur.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{_joueur_8h}{Joueur.h}"}
+00002 \textcolor{preprocessor}{#include <QDebug>}
+00003 
+\Hypertarget{_joueur_8cpp_source_l00013}\hyperlink{class_joueur_a75f73a73741b0faa59c75fc98b872765}{00013} \hyperlink{class_joueur_a75f73a73741b0faa59c75fc98b872765}{Joueur::Joueur}(QString nom, QString prenom) : nom(nom), prenom(prenom), estServeur(false), 
+      echangesRemportes(0)
+00014 \{
+00015     qDebug() << Q\_FUNC\_INFO << nom << \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom};
+00016 \}
+00017 
+\Hypertarget{_joueur_8cpp_source_l00018}\hyperlink{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}{00018} \hyperlink{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}{Joueur::~Joueur}()
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+00022 
+\Hypertarget{_joueur_8cpp_source_l00023}\hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{00023} QString \hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{Joueur::getNom}()\textcolor{keyword}{ const}
+00024 \textcolor{keyword}{}\{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom};
+00026 \}
+00027 
+\Hypertarget{_joueur_8cpp_source_l00028}\hyperlink{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}{00028} \textcolor{keywordtype}{void} \hyperlink{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}{Joueur::setNom}(QString &n)
+00029 \{
+00030     \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom} = n;
+00031 \}
+00032 
+\Hypertarget{_joueur_8cpp_source_l00033}\hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{00033} QString \hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{Joueur::getPrenom}()\textcolor{keyword}{ const}
+00034 \textcolor{keyword}{}\{
+00035     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom};
+00036 \}
+00037 
+\Hypertarget{_joueur_8cpp_source_l00038}\hyperlink{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}{00038} \textcolor{keywordtype}{void} \hyperlink{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}{Joueur::setPrenom}(QString &p)
+00039 \{
+00040     \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom} = p;
+00041 \}
+00042 
+\Hypertarget{_joueur_8cpp_source_l00043}\hyperlink{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}{00043} \textcolor{keywordtype}{bool} \hyperlink{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}{Joueur::getEstServeur}()\textcolor{keyword}{ const}
+00044 \textcolor{keyword}{}\{
+00045     \textcolor{keywordflow}{return} this->\hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur};
+00046 \}
+00047 
+\Hypertarget{_joueur_8cpp_source_l00048}\hyperlink{class_joueur_aea42f5af160c61130d5252796378ad4f}{00048} \textcolor{keywordtype}{void} \hyperlink{class_joueur_aea42f5af160c61130d5252796378ad4f}{Joueur::setServeur}(\textcolor{keywordtype}{bool} &e)
+00049 \{
+00050     \hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur} = e;
+00051 \}
+00052 
+\Hypertarget{_joueur_8cpp_source_l00053}\hyperlink{class_joueur_affde221fc6d6bf633991fff4f11dd62b}{00053} \textcolor{keywordtype}{int} \hyperlink{class_joueur_affde221fc6d6bf633991fff4f11dd62b}{Joueur::getEchangesRemportes}()\textcolor{keyword}{ const}
+00054 \textcolor{keyword}{}\{
+00055     \textcolor{keywordflow}{return} \hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{echangesRemportes};
+00056 \}
+\end{DoxyCode}

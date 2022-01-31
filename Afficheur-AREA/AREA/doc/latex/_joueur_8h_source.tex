@@ -1,0 +1,30 @@
+\hypertarget{_joueur_8h_source}{}\subsection{Joueur.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef JOUEUR\_H}
+00002 \textcolor{preprocessor}{#define JOUEUR\_H}
+00003 
+00013 \textcolor{preprocessor}{#include <QString>}
+00014 
+\Hypertarget{_joueur_8h_source_l00015}\hyperlink{class_joueur}{00015} \textcolor{keyword}{class }\hyperlink{class_joueur}{Joueur}
+00016 \{
+00017 \textcolor{keyword}{private}:
+\Hypertarget{_joueur_8h_source_l00018}\hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{00018}     QString \hyperlink{class_joueur_ab06d7f1e6b482299bb03919e0cd2166d}{nom};
+\Hypertarget{_joueur_8h_source_l00019}\hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{00019}     QString \hyperlink{class_joueur_a96d4237143c2e57b8025c4e116e95909}{prenom};
+\Hypertarget{_joueur_8h_source_l00020}\hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{00020}     \textcolor{keywordtype}{bool} \hyperlink{class_joueur_ac22161c9510ed38d6c65cdf6315737a5}{estServeur};
+\Hypertarget{_joueur_8h_source_l00021}\hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{00021}     \textcolor{keywordtype}{int} \hyperlink{class_joueur_a23ab203e6bbfc1b2679a8457b99206dc}{echangesRemportes};
+00022 
+00023 \textcolor{keyword}{public}:
+00024     \hyperlink{class_joueur_a75f73a73741b0faa59c75fc98b872765}{Joueur}(QString nom =\textcolor{stringliteral}{"nomJoueur"}, QString prenom = \textcolor{stringliteral}{"PrenomJoueur"});
+00025     \hyperlink{class_joueur_a9fb594f755601ee77ce5884c4c0861f3}{~Joueur}();
+00026     QString \hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{getNom}() \textcolor{keyword}{const};
+00027     \textcolor{keywordtype}{void} \hyperlink{class_joueur_a30fdb194cbf6d7c378d173cc133fc23e}{setNom}(QString &n);
+00028     QString \hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{getPrenom}() \textcolor{keyword}{const};
+00029     \textcolor{keywordtype}{void} \hyperlink{class_joueur_a1425ea57a1f030a26d9beb1244e6caa2}{setPrenom}(QString &p);
+00030     \textcolor{keywordtype}{bool} \hyperlink{class_joueur_a7bf0e45b6600ae3a68b4afdad6d884b7}{getEstServeur}() \textcolor{keyword}{const};
+00031     \textcolor{keywordtype}{void} \hyperlink{class_joueur_aea42f5af160c61130d5252796378ad4f}{setServeur}(\textcolor{keywordtype}{bool} &e);
+00032     \textcolor{keywordtype}{int} \hyperlink{class_joueur_affde221fc6d6bf633991fff4f11dd62b}{getEchangesRemportes}() \textcolor{keyword}{const};
+00033 \};
+00034 
+00035 \textcolor{preprocessor}{#endif // JOUEUR\_H}
+\end{DoxyCode}

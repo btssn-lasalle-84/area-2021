@@ -1,0 +1,51 @@
+\hypertarget{_rencontre_8cpp_source}{}\subsection{Rencontre.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{_rencontre_8h}{Rencontre.h}"}
+00002 \textcolor{preprocessor}{#include "\hyperlink{_club_8h}{Club.h}"}
+00003 \textcolor{preprocessor}{#include "\hyperlink{_communication_8h}{Communication.h}"}
+00004 \textcolor{preprocessor}{#include <QDebug>}
+00005 
+\Hypertarget{_rencontre_8cpp_source_l00015}\hyperlink{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}{00015} \hyperlink{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}{Rencontre::Rencontre}(QString nomClub1, QString nomClub2)
+00016 \{
+00017     qDebug() << Q\_FUNC\_INFO << nomClub1 << nomClub2;
+00018     \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.push\_back(\textcolor{keyword}{new} \hyperlink{class_club}{Club}(nomClub1));
+00019     \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.push\_back(\textcolor{keyword}{new} \hyperlink{class_club}{Club}(nomClub2));
+00020 \}
+00021 
+\Hypertarget{_rencontre_8cpp_source_l00022}\hyperlink{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}{00022} \hyperlink{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}{Rencontre::~Rencontre}()
+00023 \{
+00024     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.size(); i++)
+00025     \{
+00026         \textcolor{keyword}{delete} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[i];
+00027     \}
+00028     qDebug() << Q\_FUNC\_INFO;
+00029 \}
+00030 
+\Hypertarget{_rencontre_8cpp_source_l00031}\hyperlink{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}{00031} \textcolor{keywordtype}{void} \hyperlink{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}{Rencontre::creerPartie}(QStringList infoTrame)
+00032 \{
+00033     qDebug() << Q\_FUNC\_INFO;
+00034     \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties}.push\_back(\hyperlink{class_partie}{Partie}(\hyperlink{class_joueur}{Joueur}(infoTrame[3],infoTrame[4]), 
+      \hyperlink{class_joueur}{Joueur}(infoTrame[5], infoTrame[6])));
+00035 
+00036 \textcolor{preprocessor}{    #ifdef DEBUG\_PARTIE}
+00037     \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties}[0].debugPartie();
+00038 \textcolor{preprocessor}{    #endif}
+00039 \}
+00040 
+\Hypertarget{_rencontre_8cpp_source_l00041}\hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{00041} QString \hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{Rencontre::getNomEquipe1}()
+00042 \{
+00043     \textcolor{keywordflow}{if}(\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.count() > 0)
+00044         \textcolor{keywordflow}{return} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[\hyperlink{_rencontre_8h_ab4f4f1173fbbb2f1f27e2b18c5de79dc}{EQUIPE\_A}]->getNom();
+00045     \textcolor{keywordflow}{else}
+00046         \textcolor{keywordflow}{return} QString();
+00047 \}
+00048 
+\Hypertarget{_rencontre_8cpp_source_l00049}\hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{00049} QString \hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{Rencontre::getNomEquipe2}()
+00050 \{
+00051     \textcolor{keywordflow}{if}(\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}.count() > 0)
+00052         \textcolor{keywordflow}{return} \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs}[\hyperlink{_rencontre_8h_abee6bce8b9cc687177c72a76428afcff}{EQUIPE\_X}]->getNom();
+00053     \textcolor{keywordflow}{else}
+00054         \textcolor{keywordflow}{return} QString();
+00055 \}
+\end{DoxyCode}

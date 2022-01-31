@@ -1,0 +1,78 @@
+\hypertarget{_i_h_m_afficheur_8cpp_source}{}\subsection{I\+H\+M\+Afficheur.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{_i_h_m_afficheur_8h}{IHMAfficheur.h}"}
+00002 \textcolor{preprocessor}{#include "ui\_IHMAfficheur.h"}
+00003 \textcolor{preprocessor}{#include "\hyperlink{_rencontre_8h}{Rencontre.h}"}
+00004 \textcolor{preprocessor}{#include "\hyperlink{_communication_8h}{Communication.h}"}
+00005 \textcolor{preprocessor}{#include <QtDebug>}
+00006 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00022}\hyperlink{class_i_h_m_afficheur_a2fdf6626a1d9c2c635110a6e6ab703f9}{00022} \hyperlink{class_i_h_m_afficheur_a2fdf6626a1d9c2c635110a6e6ab703f9}{IHMAfficheur::IHMAfficheur}(QWidget *parent) : 
+      \hyperlink{class_q_main_window}{QMainWindow}(parent), ui(new \hyperlink{namespace_ui}{Ui}::\hyperlink{class_i_h_m_afficheur}{IHMAfficheur}), rencontre(nullptr), communication(
+      nullptr)
+00023 \{
+00024     qDebug() << Q\_FUNC\_INFO;
+00025 
+00026     \hyperlink{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}{initialiserIHM}();
+00027 
+00028 \textcolor{preprocessor}{    #ifndef TEST\_SANS\_BLUETOOTH}
+00029     \hyperlink{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}{initialiserCommunication}();
+00030 \textcolor{preprocessor}{    #endif}
+00031 
+00032 \textcolor{preprocessor}{    #ifdef TEST\_SANS\_BLUETOOTH}
+00033     \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{commencerRencontre}(\textcolor{stringliteral}{"Avignon"}, \textcolor{stringliteral}{"Orange"});
+00034 \textcolor{preprocessor}{    #endif}
+00035 \}
+00036 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00043}\hyperlink{class_i_h_m_afficheur_aba47ddf68f3966ed8f5c697b48e352a4}{00043} \hyperlink{class_i_h_m_afficheur_aba47ddf68f3966ed8f5c697b48e352a4}{IHMAfficheur::~IHMAfficheur}()
+00044 \{
+00045     \textcolor{keywordflow}{if}(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre} != \textcolor{keyword}{nullptr})
+00046         \textcolor{keyword}{delete} \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre};
+00047     \textcolor{keyword}{delete} \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui};
+00048     qDebug() << Q\_FUNC\_INFO;
+00049 \}
+00050 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00056}\hyperlink{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}{00056} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_afficheur_a119539fa51bf2e091e77faedf82eb146}{IHMAfficheur::initialiserIHM}()
+00057 \{
+00058     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->setupUi(\textcolor{keyword}{this});
+00059 
+00060     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->centralWidget->setStyleSheet(\textcolor{stringliteral}{"QWidget#centralWidget \{background-color: black;\} QLabel \{color:
+       white\}"});
+00061 
+00062     \textcolor{comment}{// Mode debug}
+00063     QAction *quitter = \textcolor{keyword}{new} QAction(\textcolor{keyword}{this});
+00064     quitter->setShortcut(QKeySequence(QKeySequence(Qt::Key\_Escape)));
+00065     addAction(quitter);
+00066     connect(quitter, SIGNAL(triggered()), \textcolor{keyword}{this}, SLOT(close()));
+00067 \}
+00068 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00074}\hyperlink{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}{00074} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_afficheur_ab7a8db8e7cfa6dc86ab59a07ede75298}{IHMAfficheur::initialiserCommunication}()
+00075 \{
+00076     \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication} = \textcolor{keyword}{new} \hyperlink{class_communication}{Communication}(\textcolor{keyword}{this});
+00077 
+00078     connect(\hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}, SIGNAL(debutRencontre(QString,QString)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{commencerRencontre}(QString,QString)));
+00079 
+00080     \hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}->\hyperlink{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}{demarrer}();
+00081 \}
+00082 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00090}\hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{00090} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_afficheur_ad2dc0742d9cdda731a16c570fd6f2434}{IHMAfficheur::commencerRencontre}(QString club1, QString club2)
+00091 \{
+00092     \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre} = \textcolor{keyword}{new} \hyperlink{class_rencontre}{Rencontre}(club1, club2);
+00093     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{getNomEquipe1}() << \textcolor{stringliteral}{"vs"} << 
+      \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{getNomEquipe2}();
+00094 
+00095     \hyperlink{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}{afficherRencontre}();
+00096 
+00097     connect(\hyperlink{class_i_h_m_afficheur_a331b5544e96cc908336a1486b52c379b}{communication}, SIGNAL(creationPartie(QStringList)), 
+      \hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}, SLOT(creerPartie(QStringList)));
+00098 \}
+00099 
+\Hypertarget{_i_h_m_afficheur_8cpp_source_l00100}\hyperlink{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}{00100} \textcolor{keywordtype}{void} \hyperlink{class_i_h_m_afficheur_aec1fee14a130ea53206bf5f8e532b819}{IHMAfficheur::afficherRencontre}()
+00101 \{
+00102     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe1->setText(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{getNomEquipe1}());
+00103     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe1->setAlignment(Qt::AlignCenter);
+00104     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe2->setText(\hyperlink{class_i_h_m_afficheur_aef34d340f7ea30f049a98efc47bd9779}{rencontre}->\hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{getNomEquipe2}());
+00105     \hyperlink{class_i_h_m_afficheur_a26ca43f1ff87b1caa2191adcce444d23}{ui}->nomEquipe2->setAlignment(Qt::AlignCenter);
+00106 \}
+\end{DoxyCode}

@@ -1,0 +1,39 @@
+\hypertarget{_rencontre_8h_source}{}\subsection{Rencontre.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef RENCONTRE\_H}
+00002 \textcolor{preprocessor}{#define RENCONTRE\_H}
+00003 
+00013 \textcolor{preprocessor}{#include <QObject>}
+00014 \textcolor{preprocessor}{#include <QVector>}
+00015 \textcolor{preprocessor}{#include "\hyperlink{_partie_8h}{Partie.h}"}
+00016 
+\Hypertarget{_rencontre_8h_source_l00017}\hyperlink{_rencontre_8h_ab4f4f1173fbbb2f1f27e2b18c5de79dc}{00017} \textcolor{preprocessor}{#define EQUIPE\_A    0}
+\Hypertarget{_rencontre_8h_source_l00018}\hyperlink{_rencontre_8h_abee6bce8b9cc687177c72a76428afcff}{00018} \textcolor{preprocessor}{#define EQUIPE\_X    1}
+00019 
+00020 \textcolor{comment}{//#define DEBUG\_PARTIE}
+00021 
+00022 \textcolor{keyword}{class }\hyperlink{class_club}{Club};
+00023 \textcolor{keyword}{class }\hyperlink{class_communication}{Communication};
+00024 
+\Hypertarget{_rencontre_8h_source_l00025}\hyperlink{class_rencontre}{00025} \textcolor{keyword}{class }\hyperlink{class_rencontre}{Rencontre} : \textcolor{keyword}{public} \hyperlink{class_q_object}{QObject}
+00026 \{
+00027     Q\_OBJECT
+00028 
+00029 \textcolor{keyword}{private}:
+\Hypertarget{_rencontre_8h_source_l00030}\hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{00030}     QVector<Club*> \hyperlink{class_rencontre_a12f6cef62070ecb095971e704a9d92a6}{clubs};
+\Hypertarget{_rencontre_8h_source_l00031}\hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{00031}     QVector<Partie> \hyperlink{class_rencontre_a6b52ccf9b5d083718928b207ae5316fe}{parties};
+\Hypertarget{_rencontre_8h_source_l00032}\hyperlink{class_rencontre_a843a1b93c1cb909f2706c6f81438661e}{00032}     \hyperlink{class_communication}{Communication} *\hyperlink{class_rencontre_a843a1b93c1cb909f2706c6f81438661e}{communication};
+00033 
+00034 \textcolor{keyword}{public}:
+00035     \hyperlink{class_rencontre_aab1bbf3ea211e00186ab7f866994b77a}{Rencontre}(QString nomClub1 = \textcolor{stringliteral}{"nomClub1"}, QString nomClub2 = \textcolor{stringliteral}{"nomClub1"});
+00036     \hyperlink{class_rencontre_a437de7d5f9adced5124dcfdd13e504d3}{~Rencontre}();
+00037     QString \hyperlink{class_rencontre_a50df24caf57437d8eaaadae43ff846ec}{getNomEquipe1}();
+00038     QString \hyperlink{class_rencontre_ac544f97755480e0e2718d0802d308585}{getNomEquipe2}();
+00039 
+00040 \textcolor{keyword}{public} slots:
+00041     \textcolor{keywordtype}{void} \hyperlink{class_rencontre_a8eb8eb61ed543925626e7680a1ecef5b}{creerPartie}(QStringList infoTrame);
+00042 \};
+00043 
+00044 \textcolor{preprocessor}{#endif // RENCONTRE\_H}
+\end{DoxyCode}

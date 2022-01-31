@@ -1,0 +1,64 @@
+\hypertarget{main_8cpp}{}\subsection{Référence du fichier main.\+cpp}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+Programme principal A\+R\+EA.  
+
+
+{\ttfamily \#include \char`\"{}I\+H\+M\+Afficheur.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Application$>$}\newline
+\subsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Programme principal A\+R\+EA. 
+
+Crée et affiche en plein écran la fenêtre principale de l\textquotesingle{}application A\+R\+EA \begin{DoxyAuthor}{Auteur}
+William G\+E\+R\+O\+U\+V\+I\+L\+LE \href{mailto:gerouwilliam@gmail.com}{\tt gerouwilliam@gmail.\+com} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0
+\end{DoxyVersion}
+
+\begin{DoxyParams}{Paramètres}
+{\em argc} & \\
+\hline
+{\em argv\mbox{[}$\,$\mbox{]}} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int \$\+Last\+Changed\+Revision\$ \$\+Last\+Changed\+Date\$ 
+\end{DoxyReturn}
+
+
+Définition dans le fichier \hyperlink{main_8cpp_source}{main.\+cpp}.
+
+
+
+\subsubsection{Documentation des fonctions}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{main_8cpp_source_l00019}{19} du fichier \hyperlink{main_8cpp_source}{main.\+cpp}.
+
+
+\begin{DoxyCode}
+00020 \{
+00021     QApplication a(argc, argv);
+00022     \hyperlink{class_i_h_m_afficheur}{IHMAfficheur} w;
+00023 
+00024     \textcolor{comment}{//w.show();}
+00025     w.showFullScreen();
+00026 
+00027     \textcolor{keywordflow}{return} a.exec();
+00028 \}
+\end{DoxyCode}

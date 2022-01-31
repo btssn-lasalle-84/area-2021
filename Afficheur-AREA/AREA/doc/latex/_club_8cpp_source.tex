@@ -1,0 +1,41 @@
+\hypertarget{_club_8cpp_source}{}\subsection{Club.\+cpp}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#include "\hyperlink{_club_8h}{Club.h}"}
+00002 \textcolor{preprocessor}{#include <QDebug>}
+00003 
+\Hypertarget{_club_8cpp_source_l00013}\hyperlink{class_club_a6d6fa5971608a06394c40453289d6251}{00013} \hyperlink{class_club_a6d6fa5971608a06394c40453289d6251}{Club::Club}(QString nom) : nom(nom), partiesRemportees(0)
+00014 \{
+00015     qDebug() << Q\_FUNC\_INFO << nom << \textcolor{keyword}{this};
+00016 \}
+00017 
+\Hypertarget{_club_8cpp_source_l00018}\hyperlink{class_club_a1c2993e141cfa6468284274359cc7de5}{00018} \hyperlink{class_club_a1c2993e141cfa6468284274359cc7de5}{Club::~Club}()
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO << \textcolor{keyword}{this};
+00021 \}
+00022 
+\Hypertarget{_club_8cpp_source_l00023}\hyperlink{class_club_aaa3c96659bf305d7a1988ecbd27de30f}{00023} QString \hyperlink{class_club_aaa3c96659bf305d7a1988ecbd27de30f}{Club::getNom}()\textcolor{keyword}{ const}
+00024 \textcolor{keyword}{}\{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom};
+00026 \}
+00027 
+\Hypertarget{_club_8cpp_source_l00028}\hyperlink{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}{00028} \textcolor{keywordtype}{void} \hyperlink{class_club_a6cb8e81d8cfd3d5febd6ce48e33ba94e}{Club::setNom}(QString &n)
+00029 \{
+00030     \hyperlink{class_club_a18e1489d02110a82a0c8706f52091002}{nom} = n;
+00031 \}
+00032 
+\Hypertarget{_club_8cpp_source_l00033}\hyperlink{class_club_af4f28219aa51c3742cddfae4b66cec4b}{00033} \textcolor{keywordtype}{int} \hyperlink{class_club_af4f28219aa51c3742cddfae4b66cec4b}{Club::getPartiesRemportes}()\textcolor{keyword}{ const}
+00034 \textcolor{keyword}{}\{
+00035     \textcolor{keywordflow}{return} this->\hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees};
+00036 \}
+00037 
+\Hypertarget{_club_8cpp_source_l00038}\hyperlink{class_club_ad1711f2742e385ef00174b3ebd98b165}{00038} \textcolor{keywordtype}{void} \hyperlink{class_club_ad1711f2742e385ef00174b3ebd98b165}{Club::setPartiesRemportes}(\textcolor{keywordtype}{int} &p)
+00039 \{
+00040     \hyperlink{class_club_a1c5dd1362656cb4829de483255ffc39a}{partiesRemportees} = p;
+00041 \}
+00042 
+\Hypertarget{_club_8cpp_source_l00043}\hyperlink{class_club_af7cf902fc29f6d587b11a10eec87edff}{00043} \textcolor{keywordtype}{void} \hyperlink{class_club_af7cf902fc29f6d587b11a10eec87edff}{Club::ajouterJoueur}(\textcolor{keywordtype}{char} &lettre, \hyperlink{class_joueur}{Joueur} &j)
+00044 \{
+00045     \hyperlink{class_club_a1546f281ba72a07e52cbfd2a60af699b}{joueurs}.insert(lettre,j);
+00046 \}
+\end{DoxyCode}

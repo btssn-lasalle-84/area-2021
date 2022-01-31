@@ -1,0 +1,29 @@
+\hypertarget{_partie_8h_source}{}\subsection{Partie.\+h}
+
+\begin{DoxyCode}
+00001 \textcolor{preprocessor}{#ifndef PARTIE\_H}
+00002 \textcolor{preprocessor}{#define PARTIE\_H}
+00003 
+00013 \textcolor{preprocessor}{#include <QVector>}
+00014 \textcolor{preprocessor}{#include "\hyperlink{_joueur_8h}{Joueur.h}"}
+00015 
+\Hypertarget{_partie_8h_source_l00016}\hyperlink{class_partie}{00016} \textcolor{keyword}{class }\hyperlink{class_partie}{Partie}
+00017 \{
+00018 \textcolor{keyword}{private}:
+\Hypertarget{_partie_8h_source_l00019}\hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{00019}     QVector<Joueur> \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs};
+\Hypertarget{_partie_8h_source_l00020}\hyperlink{class_partie_a58664212ddb4954a59298f1de8256477}{00020}     \textcolor{keywordtype}{int} \hyperlink{class_partie_a58664212ddb4954a59298f1de8256477}{tempsEcoule};
+\Hypertarget{_partie_8h_source_l00021}\hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{00021}     \textcolor{keywordtype}{int} \hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{tempsMort};
+00022 
+00023 \textcolor{keyword}{public}:
+00024     \hyperlink{class_partie_ae1a2da8080f9f51bdd7e9d864080444c}{Partie}(\hyperlink{class_joueur}{Joueur} joueurA = \hyperlink{class_joueur}{Joueur}(\textcolor{stringliteral}{"nomJoueur1"}, \textcolor{stringliteral}{"prenomJoueur1"}), 
+      \hyperlink{class_joueur}{Joueur} joueurB = \hyperlink{class_joueur}{Joueur}(\textcolor{stringliteral}{"nomJoueur2"}, \textcolor{stringliteral}{"prenomJoueur2"}));
+00025     \hyperlink{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}{~Partie}();
+00026     \textcolor{keywordtype}{int} \hyperlink{class_partie_ab5bb77bcbdb9a145016ebb4ff2bf6c38}{getTempsEcoule}() \textcolor{keyword}{const};
+00027     \textcolor{keywordtype}{void} \hyperlink{class_partie_a4c9c799ba4057c15c0600bdf8b7f296f}{setTempsMort}(\textcolor{keywordtype}{int} &t);
+00028     \textcolor{keywordtype}{int} \hyperlink{class_partie_ad78c6daffd7a676ce6c0a8e511991a75}{getTempsMort}() \textcolor{keyword}{const};
+00029     \textcolor{keywordtype}{void} \hyperlink{class_partie_ab9900d3b66d9ac7eabc837c790faa6b8}{ajouterJoueur}(QString &nomJoueur, QString &prenomJoueur);
+00030     \textcolor{keywordtype}{void} \hyperlink{class_partie_aea05906078462b32bf08a3172ab14328}{debugPartie}();
+00031 \};
+00032 
+00033 \textcolor{preprocessor}{#endif // PARTIE\_H}
+\end{DoxyCode}

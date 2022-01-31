@@ -1,0 +1,820 @@
+\hypertarget{class_communication}{}\subsection{Référence de la classe Communication}
+\label{class_communication}\index{Communication@{Communication}}
+
+
+Déclaration de la classe \hyperlink{class_communication}{Communication}.  
+
+
+
+
+{\ttfamily \#include $<$Communication.\+h$>$}
+
+
+
+Graphe de collaboration de Communication\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_communication__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Signaux}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_communication_af5444d470230a6e817ca8bc9484eb169}{changement\+Etat\+Partie} ()
+\item 
+void \hyperlink{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}{creation\+Partie} (Q\+String\+List info\+Trame)
+\item 
+void \hyperlink{class_communication_af3430c844d728e4ec3961744243324e1}{debut\+Rencontre} (Q\+String club1, Q\+String club2)
+\item 
+void \hyperlink{class_communication_ab2dd9f10ceaba18016017104683b6fc1}{demande\+Temps\+Mort} ()
+\item 
+void \hyperlink{class_communication_a4c828450e0ff92818c878ee28f240662}{detection\+N\+ET} ()
+\item 
+void \hyperlink{class_communication_acf4446d47652e0c508296e52df6fb11b}{nouveau\+Score\+Partie} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_communication_a1f4b02441803f9c8e231cb9f304d776b}{arreter} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui arrête le serveur Bluetooth. \end{DoxyCompactList}\item 
+\hyperlink{class_communication_a56cf4b262e592bcae1d987c3dd00487f}{Communication} (\hyperlink{class_q_object}{Q\+Object} $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe \hyperlink{class_communication}{Communication}. \end{DoxyCompactList}\item 
+void \hyperlink{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}{demarrer} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui démarre le serveur Bluetooth. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_communication_ad8dbd75b168bc02c76306361e650bbba}{get\+Trame} () const
+\item 
+void \hyperlink{class_communication_a2c10a52807bc7bdc520ec3fae622f672}{initialiser} ()
+\begin{DoxyCompactList}\small\item\em Méthode qui prépare la connexion Bluetooth en mode serveur. \end{DoxyCompactList}\item 
+\hyperlink{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}{$\sim$\+Communication} ()
+\begin{DoxyCompactList}\small\item\em Destructeur de la classe \hyperlink{class_communication}{Communication}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Connecteurs privés}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_communication_a1ef7e4107d98346290f19f76d7eecf32}{connecter\+Socket} ()
+\item 
+void \hyperlink{class_communication_a9640339b93f4a99f80426b7345615037}{connecter\+Terminal\+Mobile} (const Q\+Bluetooth\+Address \&adresse)
+\item 
+void \hyperlink{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}{deconnecter\+Socket} ()
+\item 
+void \hyperlink{class_communication_aeeb47bc3c4d7419fefb737168638442e}{deconnecter\+Terminal\+Mobile} (const Q\+Bluetooth\+Address \&adresse)
+\item 
+void \hyperlink{class_communication_ad99afe857470e6e95432b3adcb97fea2}{lire\+Trame} ()
+\item 
+void \hyperlink{class_communication_adbbab5630096d6374c4d7e52508b8a37}{recevoir\+Erreur\+Bluetooth} (Q\+Bluetooth\+Local\+Device\+::\+Error erreur\+Bluetooth)
+\item 
+void \hyperlink{class_communication_a94a9c34e683d590fc6abbc4111a57f29}{recevoir\+Erreur\+Socket} (Q\+Bluetooth\+Socket\+::\+Socket\+Error e)
+\end{DoxyCompactItemize}
+\subsubsection*{Fonctions membres privées}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_communication_a1f17fd8330b55b3ab30263d15e6e740b}{traiter\+Trame} (Q\+String\+List \hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infos\+Trame})
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String\+List \hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infos\+Trame}
+\begin{DoxyCompactList}\small\item\em Les informations transmises dans la trame. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}{nom\+Peripherique\+Local}
+\begin{DoxyCompactList}\small\item\em Nom du périphérique local. \end{DoxyCompactList}\item 
+Q\+Bluetooth\+Local\+Device \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripherique\+Local}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}interface Bluetooth de la Raspberry Pi. \end{DoxyCompactList}\item 
+\hyperlink{class_rencontre}{Rencontre} $\ast$ \hyperlink{class_communication_acb471e5da168acc149c5e4e90d8b601c}{rencontre}
+\item 
+Q\+Bluetooth\+Server $\ast$ \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur}
+\begin{DoxyCompactList}\small\item\em Le serveur Bluetooth. \end{DoxyCompactList}\item 
+Q\+Bluetooth\+Service\+Info \hyperlink{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}{service\+Info}
+\begin{DoxyCompactList}\small\item\em Informations sur le service bluetooth. \end{DoxyCompactList}\item 
+Q\+Bluetooth\+Socket $\ast$ \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}
+\begin{DoxyCompactList}\small\item\em La socket de communication Bluetooth. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{trame}
+\begin{DoxyCompactList}\small\item\em Une trame extraite. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{class_communication_a89b75dc8f2d3427478660b45c01f4186}{trames}
+\begin{DoxyCompactList}\small\item\em Les trames recues. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+Déclaration de la classe \hyperlink{class_communication}{Communication}. 
+
+Cette classe gère la communication Bluetooth 
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00046}{46} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_communication_a56cf4b262e592bcae1d987c3dd00487f}\label{class_communication_a56cf4b262e592bcae1d987c3dd00487f}} 
+\index{Communication@{Communication}!Communication@{Communication}}
+\index{Communication@{Communication}!Communication@{Communication}}
+\paragraph{\texorpdfstring{Communication()}{Communication()}}
+{\footnotesize\ttfamily Communication\+::\+Communication (\begin{DoxyParamCaption}\item[{\hyperlink{class_q_object}{Q\+Object} $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe \hyperlink{class_communication}{Communication}. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em parent} & L\textquotesingle{}adresse de l\textquotesingle{}objet parent \\
+\hline
+\end{DoxyParams}
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00020}{20} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+
+\begin{DoxyCode}
+00020                                             : \hyperlink{class_q_object}{QObject}(parent), \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur}(\textcolor{keyword}{nullptr}), 
+      \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}(\textcolor{keyword}{nullptr})
+00021 \{
+00022     qDebug() << Q\_FUNC\_INFO;
+00023 
+00024     \hyperlink{class_communication_a2c10a52807bc7bdc520ec3fae622f672}{initialiser}();
+00025 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}\label{class_communication_a75ba08ce908d45251e28e4c1db94e6f4}} 
+\index{Communication@{Communication}!````~Communication@{$\sim$\+Communication}}
+\index{````~Communication@{$\sim$\+Communication}!Communication@{Communication}}
+\paragraph{\texorpdfstring{$\sim$\+Communication()}{~Communication()}}
+{\footnotesize\ttfamily Communication\+::$\sim$\+Communication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructeur de la classe \hyperlink{class_communication}{Communication}. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00032}{32} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00099}{arreter()}.
+
+
+\begin{DoxyCode}
+00033 \{
+00034     qDebug() << Q\_FUNC\_INFO;
+00035 
+00036     \hyperlink{class_communication_a1f4b02441803f9c8e231cb9f304d776b}{arreter}();
+00037 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_communication_a1f4b02441803f9c8e231cb9f304d776b}\label{class_communication_a1f4b02441803f9c8e231cb9f304d776b}} 
+\index{Communication@{Communication}!arreter@{arreter}}
+\index{arreter@{arreter}!Communication@{Communication}}
+\paragraph{\texorpdfstring{arreter()}{arreter()}}
+{\footnotesize\ttfamily void Communication\+::arreter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode qui arrête le serveur Bluetooth. 
+
+Arrête la communication Bluetooth en mode serveur. 
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00099}{99} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00133}{deconnecter\+Socket()}, \hyperlink{_communication_8h_source_l00053}{peripherique\+Local}, \hyperlink{_communication_8h_source_l00051}{serveur}, et \hyperlink{_communication_8h_source_l00052}{socket}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00032}{$\sim$\+Communication()}.
+
+
+\begin{DoxyCode}
+00100 \{    
+00101     \textcolor{keywordflow}{if} (\hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur} == \textcolor{keyword}{nullptr})
+00102         \textcolor{keywordflow}{return};
+00103 
+00104     \textcolor{keywordflow}{if} (\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket} != \textcolor{keyword}{nullptr})
+00105     \{
+00106         \hyperlink{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}{deconnecterSocket}();
+00107     \}
+00108 
+00109     \textcolor{keyword}{delete} \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur};
+00110     \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur} = \textcolor{keyword}{nullptr};
+00111     qDebug() << Q\_FUNC\_INFO;
+00112 
+00113     \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.setHostMode(QBluetoothLocalDevice::HostPoweredOff);
+00114 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_af5444d470230a6e817ca8bc9484eb169}\label{class_communication_af5444d470230a6e817ca8bc9484eb169}} 
+\index{Communication@{Communication}!changement\+Etat\+Partie@{changement\+Etat\+Partie}}
+\index{changement\+Etat\+Partie@{changement\+Etat\+Partie}!Communication@{Communication}}
+\paragraph{\texorpdfstring{changement\+Etat\+Partie}{changementEtatPartie}}
+{\footnotesize\ttfamily void Communication\+::changement\+Etat\+Partie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_a1ef7e4107d98346290f19f76d7eecf32}\label{class_communication_a1ef7e4107d98346290f19f76d7eecf32}} 
+\index{Communication@{Communication}!connecter\+Socket@{connecter\+Socket}}
+\index{connecter\+Socket@{connecter\+Socket}!Communication@{Communication}}
+\paragraph{\texorpdfstring{connecter\+Socket}{connecterSocket}}
+{\footnotesize\ttfamily void Communication\+::connecter\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000001}{A faire}]Signaler la connexion de la socket \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00116}{116} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00133}{deconnecter\+Socket()}, \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}, \hyperlink{_communication_8cpp_source_l00142}{recevoir\+Erreur\+Socket()}, \hyperlink{_communication_8h_source_l00051}{serveur}, et \hyperlink{_communication_8h_source_l00052}{socket}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00073}{demarrer()}.
+
+
+\begin{DoxyCode}
+00117 \{
+00118     \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket} = \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur}->nextPendingConnection();
+00119     \textcolor{keywordflow}{if} (!\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket})
+00120         \textcolor{keywordflow}{return};
+00121 
+00122     qDebug() << Q\_FUNC\_INFO;
+00123     \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}->open(QIODevice::ReadOnly);
+00124     connect(\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}, SIGNAL(readyRead()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_communication_ad99afe857470e6e95432b3adcb97fea2}{lireTrame}()));
+00125     connect(\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}, SIGNAL(disconnected()), \textcolor{keyword}{this}, SLOT(\hyperlink{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}{deconnecterSocket}()));
+00126     connect(\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}, SIGNAL(error(QBluetoothSocket::SocketError)), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_communication_a94a9c34e683d590fc6abbc4111a57f29}{recevoirErreurSocket}(QBluetoothSocket::SocketError)));
+00127 
+00131 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a9640339b93f4a99f80426b7345615037}\label{class_communication_a9640339b93f4a99f80426b7345615037}} 
+\index{Communication@{Communication}!connecter\+Terminal\+Mobile@{connecter\+Terminal\+Mobile}}
+\index{connecter\+Terminal\+Mobile@{connecter\+Terminal\+Mobile}!Communication@{Communication}}
+\paragraph{\texorpdfstring{connecter\+Terminal\+Mobile}{connecterTerminalMobile}}
+{\footnotesize\ttfamily void Communication\+::connecter\+Terminal\+Mobile (\begin{DoxyParamCaption}\item[{const Q\+Bluetooth\+Address \&}]{adresse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000002}{A faire}]Signaler la connexion d\textquotesingle{}un appareil \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00147}{147} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8h_source_l00053}{peripherique\+Local}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+
+\begin{DoxyCode}
+00148 \{
+00149     \textcolor{keywordflow}{if} (\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.pairingStatus(adresse) == QBluetoothLocalDevice::Paired || 
+      \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.pairingStatus(adresse) == QBluetoothLocalDevice::AuthorizedPaired)
+00150     \{
+00151         qDebug() << Q\_FUNC\_INFO << adresse.toString() << \textcolor{stringliteral}{"appairé"};
+00155     \}
+00156     \textcolor{keywordflow}{else}
+00157         qDebug() << Q\_FUNC\_INFO << adresse.toString() << \textcolor{stringliteral}{"non appairé"};
+00158 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}\label{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}} 
+\index{Communication@{Communication}!creation\+Partie@{creation\+Partie}}
+\index{creation\+Partie@{creation\+Partie}!Communication@{Communication}}
+\paragraph{\texorpdfstring{creation\+Partie}{creationPartie}}
+{\footnotesize\ttfamily void Communication\+::creation\+Partie (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{info\+Trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_af3430c844d728e4ec3961744243324e1}\label{class_communication_af3430c844d728e4ec3961744243324e1}} 
+\index{Communication@{Communication}!debut\+Rencontre@{debut\+Rencontre}}
+\index{debut\+Rencontre@{debut\+Rencontre}!Communication@{Communication}}
+\paragraph{\texorpdfstring{debut\+Rencontre}{debutRencontre}}
+{\footnotesize\ttfamily void Communication\+::debut\+Rencontre (\begin{DoxyParamCaption}\item[{Q\+String}]{club1,  }\item[{Q\+String}]{club2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}\label{class_communication_a5280c11bea5ead32e7a7101fd5b0f9b2}} 
+\index{Communication@{Communication}!deconnecter\+Socket@{deconnecter\+Socket}}
+\index{deconnecter\+Socket@{deconnecter\+Socket}!Communication@{Communication}}
+\paragraph{\texorpdfstring{deconnecter\+Socket}{deconnecterSocket}}
+{\footnotesize\ttfamily void Communication\+::deconnecter\+Socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00133}{133} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8h_source_l00052}{socket}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00099}{arreter()}, et \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}.
+
+
+\begin{DoxyCode}
+00134 \{    
+00135     \textcolor{keywordflow}{if} (\hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}->isOpen())
+00136        \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}->close();
+00137     \textcolor{keyword}{delete} \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket};
+00138     \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket} = \textcolor{keyword}{nullptr};
+00139     qDebug() << Q\_FUNC\_INFO;
+00140 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_aeeb47bc3c4d7419fefb737168638442e}\label{class_communication_aeeb47bc3c4d7419fefb737168638442e}} 
+\index{Communication@{Communication}!deconnecter\+Terminal\+Mobile@{deconnecter\+Terminal\+Mobile}}
+\index{deconnecter\+Terminal\+Mobile@{deconnecter\+Terminal\+Mobile}!Communication@{Communication}}
+\paragraph{\texorpdfstring{deconnecter\+Terminal\+Mobile}{deconnecterTerminalMobile}}
+{\footnotesize\ttfamily void Communication\+::deconnecter\+Terminal\+Mobile (\begin{DoxyParamCaption}\item[{const Q\+Bluetooth\+Address \&}]{adresse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000003}{A faire}]Signaler la déconnexion d\textquotesingle{}un appareil \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00160}{160} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+
+\begin{DoxyCode}
+00161 \{
+00162     qDebug() << Q\_FUNC\_INFO << adresse;
+00166 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_ab2dd9f10ceaba18016017104683b6fc1}\label{class_communication_ab2dd9f10ceaba18016017104683b6fc1}} 
+\index{Communication@{Communication}!demande\+Temps\+Mort@{demande\+Temps\+Mort}}
+\index{demande\+Temps\+Mort@{demande\+Temps\+Mort}!Communication@{Communication}}
+\paragraph{\texorpdfstring{demande\+Temps\+Mort}{demandeTempsMort}}
+{\footnotesize\ttfamily void Communication\+::demande\+Temps\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}\label{class_communication_af29ea9a1c2ce29436f2331c322f6ebbf}} 
+\index{Communication@{Communication}!demarrer@{demarrer}}
+\index{demarrer@{demarrer}!Communication@{Communication}}
+\paragraph{\texorpdfstring{demarrer()}{demarrer()}}
+{\footnotesize\ttfamily void Communication\+::demarrer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode qui démarre le serveur Bluetooth. 
+
+Démarre la communication Bluetooth en mode serveur. 
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00073}{73} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}, \hyperlink{_communication_8h_afd6061bebcd621de34bc921326538181}{nom\+Service()}, \hyperlink{_communication_8h_source_l00053}{peripherique\+Local}, \hyperlink{_communication_8h_source_l00051}{serveur}, \hyperlink{_communication_8h_source_l00054}{service\+Info}, et \hyperlink{_communication_8h_a6f285f3a7cee5c6573729d7e6b99dbf4}{uuid\+Service()}.
+
+
+
+Référencé par \hyperlink{_i_h_m_afficheur_8cpp_source_l00074}{I\+H\+M\+Afficheur\+::initialiser\+Communication()}.
+
+
+\begin{DoxyCode}
+00074 \{
+00075     \textcolor{comment}{// vérifier la présence du Bluetooth}
+00076     \textcolor{keywordflow}{if} (\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.isValid() && \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur} == \textcolor{keyword}{nullptr})
+00077     \{
+00078         \textcolor{comment}{// créer une socket serveur}
+00079         \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur} = \textcolor{keyword}{new} QBluetoothServer(QBluetoothServiceInfo::RfcommProtocol, \textcolor{keyword}{this});
+00080 
+00081         \textcolor{comment}{// connecter les signaux et les slots}
+00082         connect(\hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur}, SIGNAL(newConnection()), \textcolor{keyword}{this}, SLOT(
+      \hyperlink{class_communication_a1ef7e4107d98346290f19f76d7eecf32}{connecterSocket}()));
+00083 
+00084         \textcolor{comment}{// placer le serveur en écoute}
+00085         QBluetoothUuid uuid = QBluetoothUuid(\hyperlink{_communication_8h_a6f285f3a7cee5c6573729d7e6b99dbf4}{uuidService});
+00086         \hyperlink{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}{serviceInfo} = \hyperlink{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}{serveur}->listen(uuid, \hyperlink{_communication_8h_afd6061bebcd621de34bc921326538181}{nomService});
+00087 
+00088         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Attente de connexion"};
+00089     \}
+00090     \textcolor{keywordflow}{else}
+00091         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Bluetooth non disponible !"};
+00092 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a4c828450e0ff92818c878ee28f240662}\label{class_communication_a4c828450e0ff92818c878ee28f240662}} 
+\index{Communication@{Communication}!detection\+N\+ET@{detection\+N\+ET}}
+\index{detection\+N\+ET@{detection\+N\+ET}!Communication@{Communication}}
+\paragraph{\texorpdfstring{detection\+N\+ET}{detectionNET}}
+{\footnotesize\ttfamily void Communication\+::detection\+N\+ET (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_ad8dbd75b168bc02c76306361e650bbba}\label{class_communication_ad8dbd75b168bc02c76306361e650bbba}} 
+\index{Communication@{Communication}!get\+Trame@{get\+Trame}}
+\index{get\+Trame@{get\+Trame}!Communication@{Communication}}
+\paragraph{\texorpdfstring{get\+Trame()}{getTrame()}}
+{\footnotesize\ttfamily Q\+String Communication\+::get\+Trame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00252}{252} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8h_source_l00056}{trame}.
+
+
+\begin{DoxyCode}
+00253 \{
+00254     \textcolor{keywordflow}{return} \hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{trame};
+00255 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a2c10a52807bc7bdc520ec3fae622f672}\label{class_communication_a2c10a52807bc7bdc520ec3fae622f672}} 
+\index{Communication@{Communication}!initialiser@{initialiser}}
+\index{initialiser@{initialiser}!Communication@{Communication}}
+\paragraph{\texorpdfstring{initialiser()}{initialiser()}}
+{\footnotesize\ttfamily void Communication\+::initialiser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Méthode qui prépare la connexion Bluetooth en mode serveur. 
+
+Initialise la liaison Bluetooth en mode serveur. 
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00044}{44} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8cpp_source_l00147}{connecter\+Terminal\+Mobile()}, \hyperlink{_communication_8cpp_source_l00160}{deconnecter\+Terminal\+Mobile()}, \hyperlink{_communication_8h_source_l00055}{nom\+Peripherique\+Local}, \hyperlink{_communication_8h_source_l00053}{peripherique\+Local}, et \hyperlink{_communication_8cpp_source_l00168}{recevoir\+Erreur\+Bluetooth()}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00020}{Communication()}.
+
+
+\begin{DoxyCode}
+00045 \{
+00046     \textcolor{comment}{// vérifier la présence du Bluetooth}
+00047     \textcolor{keywordflow}{if} (\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.isValid())
+00048     \{
+00049         \textcolor{comment}{// activer le bluetooth}
+00050         \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.powerOn();
+00051 
+00052         \textcolor{comment}{// récupérer le nom du périphérique local}
+00053         \hyperlink{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}{nomPeripheriqueLocal} = \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.name();
+00054         qDebug() << Q\_FUNC\_INFO << \hyperlink{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}{nomPeripheriqueLocal};
+00055 
+00056         \textcolor{comment}{// rendre le périphérique local découvrable et jumelable}
+00057         \hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}.setHostMode(QBluetoothLocalDevice::HostDiscoverable);
+00058 
+00059         \textcolor{comment}{// connecter les signaux et les slots}
+00060         connect(&\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}, SIGNAL(deviceConnected(QBluetoothAddress)), \textcolor{keyword}{this}, SLOT
+      (\hyperlink{class_communication_a9640339b93f4a99f80426b7345615037}{connecterTerminalMobile}(QBluetoothAddress)));
+00061         connect(&\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}, SIGNAL(deviceDisconnected(QBluetoothAddress)), \textcolor{keyword}{this}, 
+      SLOT(\hyperlink{class_communication_aeeb47bc3c4d7419fefb737168638442e}{deconnecterTerminalMobile}(QBluetoothAddress)));
+00062         connect(&\hyperlink{class_communication_a2d643d199169dfe1d258df54d3ee5728}{peripheriqueLocal}, SIGNAL(error(QBluetoothLocalDevice::Error)), \textcolor{keyword}{this}, 
+      SLOT(\hyperlink{class_communication_adbbab5630096d6374c4d7e52508b8a37}{recevoirErreurBluetooth}(QBluetoothLocalDevice::Error)));
+00063     \}
+00064     \textcolor{keywordflow}{else}
+00065         qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Bluetooth non disponible !"};
+00066 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_ad99afe857470e6e95432b3adcb97fea2}\label{class_communication_ad99afe857470e6e95432b3adcb97fea2}} 
+\index{Communication@{Communication}!lire\+Trame@{lire\+Trame}}
+\index{lire\+Trame@{lire\+Trame}!Communication@{Communication}}
+\paragraph{\texorpdfstring{lire\+Trame}{lireTrame}}
+{\footnotesize\ttfamily void Communication\+::lire\+Trame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00173}{173} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8h_source_l00019}{E\+N\+T\+E\+T\+E\+\_\+\+T\+R\+A\+ME}, \hyperlink{_communication_8h_source_l00058}{infos\+Trame}, \hyperlink{_communication_8h_source_l00052}{socket}, \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}, \hyperlink{_communication_8h_source_l00056}{trame}, et \hyperlink{_communication_8h_source_l00057}{trames}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}.
+
+
+\begin{DoxyCode}
+00174 \{
+00175     QByteArray donnees;
+00176 
+00177     \textcolor{comment}{// lit les données reçues}
+00178     donnees = \hyperlink{class_communication_aa4ddc3151b305db0135d5826384645cc}{socket}->readAll();
+00179     qDebug() << Q\_FUNC\_INFO << donnees;
+00180 
+00181     \textcolor{comment}{// ajoute les données reçues}
+00182     \hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{trame} += QString(donnees.data());
+00183     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}{trame};
+00184 
+00185     \textcolor{comment}{// au moins une trame complète reçue ?}
+00186     \textcolor{keywordflow}{if}(trame.startsWith(\hyperlink{_communication_8h_a226742d7ade287673fb2295df90f462b}{ENTETE\_TRAME}) && trame.endsWith(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"}))
+00187     \{
+00188         \textcolor{comment}{// si plusieurs trames reçues}
+00189         QStringList \hyperlink{class_communication_a89b75dc8f2d3427478660b45c01f4186}{trames} = trame.split(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n"}, QString::SkipEmptyParts);
+00190         qDebug() << Q\_FUNC\_INFO << \hyperlink{class_communication_a89b75dc8f2d3427478660b45c01f4186}{trames};
+00191 
+00192         \textcolor{comment}{// traite les trames reçues}
+00193         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < trames.count(); ++i)
+00194         \{
+00195             qDebug() << Q\_FUNC\_INFO << i << trames[i];
+00196 
+00197             \textcolor{comment}{// découpe les champs de la trame}
+00198             \hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infosTrame} = trames[i].split(\textcolor{stringliteral}{";"});
+00199 
+00200             \hyperlink{class_communication_a1f17fd8330b55b3ab30263d15e6e740b}{traiterTrame}(\hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infosTrame});
+00201         \}
+00202 
+00203         \textcolor{comment}{// reinitialise trame pour la prochaine réception}
+00204         trame.clear();
+00205     \}
+00206 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_acf4446d47652e0c508296e52df6fb11b}\label{class_communication_acf4446d47652e0c508296e52df6fb11b}} 
+\index{Communication@{Communication}!nouveau\+Score\+Partie@{nouveau\+Score\+Partie}}
+\index{nouveau\+Score\+Partie@{nouveau\+Score\+Partie}!Communication@{Communication}}
+\paragraph{\texorpdfstring{nouveau\+Score\+Partie}{nouveauScorePartie}}
+{\footnotesize\ttfamily void Communication\+::nouveau\+Score\+Partie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_adbbab5630096d6374c4d7e52508b8a37}\label{class_communication_adbbab5630096d6374c4d7e52508b8a37}} 
+\index{Communication@{Communication}!recevoir\+Erreur\+Bluetooth@{recevoir\+Erreur\+Bluetooth}}
+\index{recevoir\+Erreur\+Bluetooth@{recevoir\+Erreur\+Bluetooth}!Communication@{Communication}}
+\paragraph{\texorpdfstring{recevoir\+Erreur\+Bluetooth}{recevoirErreurBluetooth}}
+{\footnotesize\ttfamily void Communication\+::recevoir\+Erreur\+Bluetooth (\begin{DoxyParamCaption}\item[{Q\+Bluetooth\+Local\+Device\+::\+Error}]{erreur\+Bluetooth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00168}{168} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+
+\begin{DoxyCode}
+00169 \{
+00170     qDebug() << Q\_FUNC\_INFO << erreurBluetooth;
+00171 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a94a9c34e683d590fc6abbc4111a57f29}\label{class_communication_a94a9c34e683d590fc6abbc4111a57f29}} 
+\index{Communication@{Communication}!recevoir\+Erreur\+Socket@{recevoir\+Erreur\+Socket}}
+\index{recevoir\+Erreur\+Socket@{recevoir\+Erreur\+Socket}!Communication@{Communication}}
+\paragraph{\texorpdfstring{recevoir\+Erreur\+Socket}{recevoirErreurSocket}}
+{\footnotesize\ttfamily void Communication\+::recevoir\+Erreur\+Socket (\begin{DoxyParamCaption}\item[{Q\+Bluetooth\+Socket\+::\+Socket\+Error}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00142}{142} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}.
+
+
+\begin{DoxyCode}
+00143 \{
+00144     qDebug() << Q\_FUNC\_INFO << e;
+00145 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_communication_a1f17fd8330b55b3ab30263d15e6e740b}\label{class_communication_a1f17fd8330b55b3ab30263d15e6e740b}} 
+\index{Communication@{Communication}!traiter\+Trame@{traiter\+Trame}}
+\index{traiter\+Trame@{traiter\+Trame}!Communication@{Communication}}
+\paragraph{\texorpdfstring{traiter\+Trame()}{traiterTrame()}}
+{\footnotesize\ttfamily bool Communication\+::traiter\+Trame (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{infos\+Trame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyRefDesc}{A faire}
+\item[\hyperlink{todo__todo000004}{A faire}]Définir les constantes pour les champs de la trame !!! \end{DoxyRefDesc}
+
+
+Définition à la ligne \hyperlink{_communication_8cpp_source_l00208}{208} du fichier \hyperlink{_communication_8cpp_source}{Communication.\+cpp}.
+
+
+
+Références \hyperlink{_communication_8h_source_l00020}{C\+H\+A\+M\+P\+\_\+\+T\+Y\+P\+E\+\_\+\+T\+R\+A\+ME}, \hyperlink{class_communication_af5444d470230a6e817ca8bc9484eb169}{changement\+Etat\+Partie()}, \hyperlink{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}{creation\+Partie()}, \hyperlink{class_communication_af3430c844d728e4ec3961744243324e1}{debut\+Rencontre()}, \hyperlink{class_communication_ab2dd9f10ceaba18016017104683b6fc1}{demande\+Temps\+Mort()}, \hyperlink{class_communication_a4c828450e0ff92818c878ee28f240662}{detection\+N\+E\+T()}, \hyperlink{_communication_8h_source_l00031}{E\+T\+A\+T\+\_\+\+P\+A\+R\+T\+IE}, \hyperlink{_communication_8h_source_l00029}{I\+N\+F\+O\+\_\+\+P\+A\+R\+T\+IE}, \hyperlink{_communication_8h_source_l00058}{infos\+Trame}, \hyperlink{_communication_8h_source_l00032}{N\+ET}, \hyperlink{class_communication_acf4446d47652e0c508296e52df6fb11b}{nouveau\+Score\+Partie()}, \hyperlink{_communication_8h_source_l00028}{R\+E\+N\+C\+O\+N\+T\+RE}, \hyperlink{_communication_8h_source_l00030}{S\+C\+O\+RE}, et \hyperlink{_communication_8h_source_l00033}{T\+E\+M\+P\+S\+\_\+\+M\+O\+RT}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}.
+
+
+\begin{DoxyCode}
+00209 \{
+00210     \textcolor{keywordflow}{if}(\hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infosTrame}.count() < \hyperlink{_communication_8h_a2aab79787b26ad74e8cb5ab837236791}{CHAMP\_TYPE\_TRAME})
+00211         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00212 
+00213     qDebug() << Q\_FUNC\_INFO << \hyperlink{class_communication_a219fe9a4cd04470241f26f1f6159d721}{infosTrame};
+00214 
+00215     \textcolor{keywordflow}{switch}(infosTrame[\hyperlink{_communication_8h_a2aab79787b26ad74e8cb5ab837236791}{CHAMP\_TYPE\_TRAME}].toInt())
+00216     \{
+00220         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af8ce6111c15264884121829746e18a1f}{TypeTrame::RENCONTRE}:
+00221             emit(\hyperlink{class_communication_af3430c844d728e4ec3961744243324e1}{debutRencontre}(infosTrame[2], infosTrame[3]));
+00222             \textcolor{keywordflow}{break};
+00223 
+00224         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992ac3a2021df6ca4ad18f8af3ce95931122}{TypeTrame::INFO\_PARTIE}:
+00225             emit(\hyperlink{class_communication_a3d8a1dccee9867e6b84932ddc3072b45}{creationPartie}(infosTrame));
+00226             \textcolor{keywordflow}{break};
+00227 
+00228         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992af57444a2814db96222f09035ff269767}{TypeTrame::SCORE}:
+00229             emit(\hyperlink{class_communication_acf4446d47652e0c508296e52df6fb11b}{nouveauScorePartie}());
+00230             \textcolor{keywordflow}{break};
+00231 
+00232         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a6f91d1f6dd2600af9ca6a66ffe2adba2}{TypeTrame::ETAT\_PARTIE}:
+00233             emit(\hyperlink{class_communication_af5444d470230a6e817ca8bc9484eb169}{changementEtatPartie}());
+00234             \textcolor{keywordflow}{break};
+00235 
+00236         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a09c331e69591a2470471d457a17b413c}{TypeTrame::NET}:
+00237             emit(\hyperlink{class_communication_a4c828450e0ff92818c878ee28f240662}{detectionNET}());
+00238             \textcolor{keywordflow}{break};
+00239 
+00240         \textcolor{keywordflow}{case} \hyperlink{_communication_8h_ad794b2a211d6c4ead603d7ebd097a992a2f4a926417575653ebbe1ca64a16974f}{TypeTrame::TEMPS\_MORT}:
+00241             emit(\hyperlink{class_communication_ab2dd9f10ceaba18016017104683b6fc1}{demandeTempsMort}());
+00242             \textcolor{keywordflow}{break};
+00243 
+00244         \textcolor{keywordflow}{default}:
+00245             qDebug() << Q\_FUNC\_INFO << \textcolor{stringliteral}{"Type de trame inconnu !"};
+00246             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+00247     \}
+00248 
+00249     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+00250 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_communication_a219fe9a4cd04470241f26f1f6159d721}\label{class_communication_a219fe9a4cd04470241f26f1f6159d721}} 
+\index{Communication@{Communication}!infos\+Trame@{infos\+Trame}}
+\index{infos\+Trame@{infos\+Trame}!Communication@{Communication}}
+\paragraph{\texorpdfstring{infos\+Trame}{infosTrame}}
+{\footnotesize\ttfamily Q\+String\+List Communication\+::infos\+Trame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Les informations transmises dans la trame. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00058}{58} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}, et \hyperlink{_communication_8cpp_source_l00208}{traiter\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}\label{class_communication_acfe0b2b569ebf174fcdd766272b89ba8}} 
+\index{Communication@{Communication}!nom\+Peripherique\+Local@{nom\+Peripherique\+Local}}
+\index{nom\+Peripherique\+Local@{nom\+Peripherique\+Local}!Communication@{Communication}}
+\paragraph{\texorpdfstring{nom\+Peripherique\+Local}{nomPeripheriqueLocal}}
+{\footnotesize\ttfamily Q\+String Communication\+::nom\+Peripherique\+Local\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Nom du périphérique local. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00055}{55} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+\mbox{\Hypertarget{class_communication_a2d643d199169dfe1d258df54d3ee5728}\label{class_communication_a2d643d199169dfe1d258df54d3ee5728}} 
+\index{Communication@{Communication}!peripherique\+Local@{peripherique\+Local}}
+\index{peripherique\+Local@{peripherique\+Local}!Communication@{Communication}}
+\paragraph{\texorpdfstring{peripherique\+Local}{peripheriqueLocal}}
+{\footnotesize\ttfamily Q\+Bluetooth\+Local\+Device Communication\+::peripherique\+Local\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+L\textquotesingle{}interface Bluetooth de la Raspberry Pi. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00053}{53} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00099}{arreter()}, \hyperlink{_communication_8cpp_source_l00147}{connecter\+Terminal\+Mobile()}, \hyperlink{_communication_8cpp_source_l00073}{demarrer()}, et \hyperlink{_communication_8cpp_source_l00044}{initialiser()}.
+
+\mbox{\Hypertarget{class_communication_acb471e5da168acc149c5e4e90d8b601c}\label{class_communication_acb471e5da168acc149c5e4e90d8b601c}} 
+\index{Communication@{Communication}!rencontre@{rencontre}}
+\index{rencontre@{rencontre}!Communication@{Communication}}
+\paragraph{\texorpdfstring{rencontre}{rencontre}}
+{\footnotesize\ttfamily \hyperlink{class_rencontre}{Rencontre}$\ast$ Communication\+::rencontre\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00050}{50} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+\mbox{\Hypertarget{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}\label{class_communication_a6384747297d6efa9e8fd2fc79ed0c269}} 
+\index{Communication@{Communication}!serveur@{serveur}}
+\index{serveur@{serveur}!Communication@{Communication}}
+\paragraph{\texorpdfstring{serveur}{serveur}}
+{\footnotesize\ttfamily Q\+Bluetooth\+Server$\ast$ Communication\+::serveur\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Le serveur Bluetooth. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00051}{51} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00099}{arreter()}, \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}, et \hyperlink{_communication_8cpp_source_l00073}{demarrer()}.
+
+\mbox{\Hypertarget{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}\label{class_communication_aa7f9ee5e5d90336a56857ebc229e4274}} 
+\index{Communication@{Communication}!service\+Info@{service\+Info}}
+\index{service\+Info@{service\+Info}!Communication@{Communication}}
+\paragraph{\texorpdfstring{service\+Info}{serviceInfo}}
+{\footnotesize\ttfamily Q\+Bluetooth\+Service\+Info Communication\+::service\+Info\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Informations sur le service bluetooth. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00054}{54} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00073}{demarrer()}.
+
+\mbox{\Hypertarget{class_communication_aa4ddc3151b305db0135d5826384645cc}\label{class_communication_aa4ddc3151b305db0135d5826384645cc}} 
+\index{Communication@{Communication}!socket@{socket}}
+\index{socket@{socket}!Communication@{Communication}}
+\paragraph{\texorpdfstring{socket}{socket}}
+{\footnotesize\ttfamily Q\+Bluetooth\+Socket$\ast$ Communication\+::socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+La socket de communication Bluetooth. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00052}{52} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00099}{arreter()}, \hyperlink{_communication_8cpp_source_l00116}{connecter\+Socket()}, \hyperlink{_communication_8cpp_source_l00133}{deconnecter\+Socket()}, et \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}\label{class_communication_ac8f5004bfaaf7f538ba5ae93255f772b}} 
+\index{Communication@{Communication}!trame@{trame}}
+\index{trame@{trame}!Communication@{Communication}}
+\paragraph{\texorpdfstring{trame}{trame}}
+{\footnotesize\ttfamily Q\+String Communication\+::trame\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Une trame extraite. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00056}{56} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00252}{get\+Trame()}, et \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}.
+
+\mbox{\Hypertarget{class_communication_a89b75dc8f2d3427478660b45c01f4186}\label{class_communication_a89b75dc8f2d3427478660b45c01f4186}} 
+\index{Communication@{Communication}!trames@{trames}}
+\index{trames@{trames}!Communication@{Communication}}
+\paragraph{\texorpdfstring{trames}{trames}}
+{\footnotesize\ttfamily Q\+String Communication\+::trames\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Les trames recues. 
+
+
+
+Définition à la ligne \hyperlink{_communication_8h_source_l00057}{57} du fichier \hyperlink{_communication_8h_source}{Communication.\+h}.
+
+
+
+Référencé par \hyperlink{_communication_8cpp_source_l00173}{lire\+Trame()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_communication_8h}{Communication.\+h}\item 
+\hyperlink{_communication_8cpp}{Communication.\+cpp}\end{DoxyCompactItemize}

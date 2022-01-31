@@ -1,0 +1,249 @@
+\hypertarget{class_partie}{}\subsection{Référence de la classe Partie}
+\label{class_partie}\index{Partie@{Partie}}
+
+
+{\ttfamily \#include $<$Partie.\+h$>$}
+
+
+
+Graphe de collaboration de Partie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{class_partie__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Fonctions membres publiques}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_partie_ab9900d3b66d9ac7eabc837c790faa6b8}{ajouter\+Joueur} (Q\+String \&nom\+Joueur, Q\+String \&prenom\+Joueur)
+\item 
+void \hyperlink{class_partie_aea05906078462b32bf08a3172ab14328}{debug\+Partie} ()
+\item 
+int \hyperlink{class_partie_ab5bb77bcbdb9a145016ebb4ff2bf6c38}{get\+Temps\+Ecoule} () const
+\item 
+int \hyperlink{class_partie_ad78c6daffd7a676ce6c0a8e511991a75}{get\+Temps\+Mort} () const
+\item 
+\hyperlink{class_partie_ae1a2da8080f9f51bdd7e9d864080444c}{Partie} (\hyperlink{class_joueur}{Joueur} joueurA=\hyperlink{class_joueur}{Joueur}(\char`\"{}nom\+Joueur1\char`\"{}, \char`\"{}prenom\+Joueur1\char`\"{}), Joueur joueurB=\hyperlink{class_joueur}{Joueur}(\char`\"{}nom\+Joueur2\char`\"{}, \char`\"{}prenom\+Joueur2\char`\"{}))
+\item 
+void \hyperlink{class_partie_a4c9c799ba4057c15c0600bdf8b7f296f}{set\+Temps\+Mort} (int \&t)
+\item 
+\hyperlink{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}{$\sim$\+Partie} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Attributs privés}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Vector$<$ \hyperlink{class_joueur}{Joueur} $>$ \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}
+\item 
+int \hyperlink{class_partie_a58664212ddb4954a59298f1de8256477}{temps\+Ecoule}
+\item 
+int \hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{temps\+Mort}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Description détaillée}
+
+
+Définition à la ligne \hyperlink{_partie_8h_source_l00016}{16} du fichier \hyperlink{_partie_8h_source}{Partie.\+h}.
+
+
+
+\subsubsection{Documentation des constructeurs et destructeur}
+\mbox{\Hypertarget{class_partie_ae1a2da8080f9f51bdd7e9d864080444c}\label{class_partie_ae1a2da8080f9f51bdd7e9d864080444c}} 
+\index{Partie@{Partie}!Partie@{Partie}}
+\index{Partie@{Partie}!Partie@{Partie}}
+\paragraph{\texorpdfstring{Partie()}{Partie()}}
+{\footnotesize\ttfamily Partie\+::\+Partie (\begin{DoxyParamCaption}\item[{\hyperlink{class_joueur}{Joueur}}]{joueurA = {\ttfamily \hyperlink{class_joueur}{Joueur}(\char`\"{}nomJoueur1\char`\"{},~\char`\"{}prenomJoueur1\char`\"{})},  }\item[{\hyperlink{class_joueur}{Joueur}}]{joueurB = {\ttfamily \hyperlink{class_joueur}{Joueur}(\char`\"{}nomJoueur2\char`\"{},~\char`\"{}prenomJoueur2\char`\"{})} }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00013}{13} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00020}{temps\+Ecoule}, et \hyperlink{_partie_8h_source_l00021}{temps\+Mort}.
+
+
+\begin{DoxyCode}
+00013                                              : \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}(\{joueurA, joueurB\}), 
+      \hyperlink{class_partie_a58664212ddb4954a59298f1de8256477}{tempsEcoule}(0), \hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{tempsMort}(0)
+00014 \{
+00015     qDebug() << Q\_FUNC\_INFO << joueurA.\hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{getNom}() << joueurA.\hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{getPrenom}() << \textcolor{stringliteral}{"vs"} << joueurB.
+      \hyperlink{class_joueur_a1d7082ab1f926eae1bd6834e901751a7}{getNom}() << joueurB.\hyperlink{class_joueur_ade527085b285ce86ea9e369bc9959032}{getPrenom}();
+00016 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}\label{class_partie_ae4afeb7336bb84427272cfb7018b5e3d}} 
+\index{Partie@{Partie}!````~Partie@{$\sim$\+Partie}}
+\index{````~Partie@{$\sim$\+Partie}!Partie@{Partie}}
+\paragraph{\texorpdfstring{$\sim$\+Partie()}{~Partie()}}
+{\footnotesize\ttfamily Partie\+::$\sim$\+Partie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00018}{18} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+\begin{DoxyCode}
+00019 \{
+00020     qDebug() << Q\_FUNC\_INFO;
+00021 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des fonctions membres}
+\mbox{\Hypertarget{class_partie_ab9900d3b66d9ac7eabc837c790faa6b8}\label{class_partie_ab9900d3b66d9ac7eabc837c790faa6b8}} 
+\index{Partie@{Partie}!ajouter\+Joueur@{ajouter\+Joueur}}
+\index{ajouter\+Joueur@{ajouter\+Joueur}!Partie@{Partie}}
+\paragraph{\texorpdfstring{ajouter\+Joueur()}{ajouterJoueur()}}
+{\footnotesize\ttfamily void Partie\+::ajouter\+Joueur (\begin{DoxyParamCaption}\item[{Q\+String \&}]{nom\+Joueur,  }\item[{Q\+String \&}]{prenom\+Joueur }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00038}{38} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00019}{joueurs}.
+
+
+\begin{DoxyCode}
+00039 \{
+00040     qDebug() << Q\_FUNC\_INFO << nomJoueur << prenomJoueur;
+00041     \hyperlink{class_joueur}{Joueur} joueur(nomJoueur,prenomJoueur);
+00042     \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}.push\_back(joueur);
+00043 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_partie_aea05906078462b32bf08a3172ab14328}\label{class_partie_aea05906078462b32bf08a3172ab14328}} 
+\index{Partie@{Partie}!debug\+Partie@{debug\+Partie}}
+\index{debug\+Partie@{debug\+Partie}!Partie@{Partie}}
+\paragraph{\texorpdfstring{debug\+Partie()}{debugPartie()}}
+{\footnotesize\ttfamily void Partie\+::debug\+Partie (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00045}{45} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00019}{joueurs}.
+
+
+\begin{DoxyCode}
+00046 \{
+00047     qDebug() << \textcolor{stringliteral}{"Nb joueurs : "} << \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}.size();
+00048     qDebug() << \textcolor{stringliteral}{"Partie existente"} << \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}[0].getNom() << \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}[0].getPrenom() << \textcolor{stringliteral}{"vs"} <
+      < \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}[1].getNom() << \hyperlink{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}{joueurs}[1].getPrenom();
+00049 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_partie_ab5bb77bcbdb9a145016ebb4ff2bf6c38}\label{class_partie_ab5bb77bcbdb9a145016ebb4ff2bf6c38}} 
+\index{Partie@{Partie}!get\+Temps\+Ecoule@{get\+Temps\+Ecoule}}
+\index{get\+Temps\+Ecoule@{get\+Temps\+Ecoule}!Partie@{Partie}}
+\paragraph{\texorpdfstring{get\+Temps\+Ecoule()}{getTempsEcoule()}}
+{\footnotesize\ttfamily int Partie\+::get\+Temps\+Ecoule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00023}{23} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00020}{temps\+Ecoule}.
+
+
+\begin{DoxyCode}
+00024 \{
+00025     \textcolor{keywordflow}{return} this->\hyperlink{class_partie_a58664212ddb4954a59298f1de8256477}{tempsEcoule};
+00026 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_partie_ad78c6daffd7a676ce6c0a8e511991a75}\label{class_partie_ad78c6daffd7a676ce6c0a8e511991a75}} 
+\index{Partie@{Partie}!get\+Temps\+Mort@{get\+Temps\+Mort}}
+\index{get\+Temps\+Mort@{get\+Temps\+Mort}!Partie@{Partie}}
+\paragraph{\texorpdfstring{get\+Temps\+Mort()}{getTempsMort()}}
+{\footnotesize\ttfamily int Partie\+::get\+Temps\+Mort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00033}{33} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00021}{temps\+Mort}.
+
+
+\begin{DoxyCode}
+00034 \{
+00035     \textcolor{keywordflow}{return} this->\hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{tempsMort};
+00036 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_partie_a4c9c799ba4057c15c0600bdf8b7f296f}\label{class_partie_a4c9c799ba4057c15c0600bdf8b7f296f}} 
+\index{Partie@{Partie}!set\+Temps\+Mort@{set\+Temps\+Mort}}
+\index{set\+Temps\+Mort@{set\+Temps\+Mort}!Partie@{Partie}}
+\paragraph{\texorpdfstring{set\+Temps\+Mort()}{setTempsMort()}}
+{\footnotesize\ttfamily void Partie\+::set\+Temps\+Mort (\begin{DoxyParamCaption}\item[{int \&}]{t }\end{DoxyParamCaption})}
+
+
+
+Définition à la ligne \hyperlink{_partie_8cpp_source_l00028}{28} du fichier \hyperlink{_partie_8cpp_source}{Partie.\+cpp}.
+
+
+
+Références \hyperlink{_partie_8h_source_l00021}{temps\+Mort}.
+
+
+\begin{DoxyCode}
+00029 \{
+00030     \hyperlink{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}{tempsMort} = t;
+00031 \}
+\end{DoxyCode}
+
+
+\subsubsection{Documentation des données membres}
+\mbox{\Hypertarget{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}\label{class_partie_a98fa2810599b3eb46d57df2b5836a3f4}} 
+\index{Partie@{Partie}!joueurs@{joueurs}}
+\index{joueurs@{joueurs}!Partie@{Partie}}
+\paragraph{\texorpdfstring{joueurs}{joueurs}}
+{\footnotesize\ttfamily Q\+Vector$<$\hyperlink{class_joueur}{Joueur}$>$ Partie\+::joueurs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_partie_8h_source_l00019}{19} du fichier \hyperlink{_partie_8h_source}{Partie.\+h}.
+
+
+
+Référencé par \hyperlink{_partie_8cpp_source_l00038}{ajouter\+Joueur()}, et \hyperlink{_partie_8cpp_source_l00045}{debug\+Partie()}.
+
+\mbox{\Hypertarget{class_partie_a58664212ddb4954a59298f1de8256477}\label{class_partie_a58664212ddb4954a59298f1de8256477}} 
+\index{Partie@{Partie}!temps\+Ecoule@{temps\+Ecoule}}
+\index{temps\+Ecoule@{temps\+Ecoule}!Partie@{Partie}}
+\paragraph{\texorpdfstring{temps\+Ecoule}{tempsEcoule}}
+{\footnotesize\ttfamily int Partie\+::temps\+Ecoule\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_partie_8h_source_l00020}{20} du fichier \hyperlink{_partie_8h_source}{Partie.\+h}.
+
+
+
+Référencé par \hyperlink{_partie_8cpp_source_l00023}{get\+Temps\+Ecoule()}, et \hyperlink{_partie_8cpp_source_l00013}{Partie()}.
+
+\mbox{\Hypertarget{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}\label{class_partie_a55a5e6e0b757d74fa9aceefa7228ead9}} 
+\index{Partie@{Partie}!temps\+Mort@{temps\+Mort}}
+\index{temps\+Mort@{temps\+Mort}!Partie@{Partie}}
+\paragraph{\texorpdfstring{temps\+Mort}{tempsMort}}
+{\footnotesize\ttfamily int Partie\+::temps\+Mort\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Définition à la ligne \hyperlink{_partie_8h_source_l00021}{21} du fichier \hyperlink{_partie_8h_source}{Partie.\+h}.
+
+
+
+Référencé par \hyperlink{_partie_8cpp_source_l00033}{get\+Temps\+Mort()}, \hyperlink{_partie_8cpp_source_l00013}{Partie()}, et \hyperlink{_partie_8cpp_source_l00028}{set\+Temps\+Mort()}.
+
+
+
+La documentation de cette classe a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_partie_8h}{Partie.\+h}\item 
+\hyperlink{_partie_8cpp}{Partie.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,319 @@
+\hypertarget{_i_h_m_gestion_rencontre_8java_source}{}\subsection{I\+H\+M\+Gestion\+Rencontre.\+java}
+\label{_i_h_m_gestion_rencontre_8java_source}\index{I\+H\+M\+Gestion\+Rencontre.\+java@{I\+H\+M\+Gestion\+Rencontre.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} androidx.appcompat.app.AlertDialog;
+00004 \textcolor{keyword}{import} androidx.appcompat.app.AppCompatActivity;
+00005 
+00006 \textcolor{keyword}{import} android.app.Dialog;
+00007 \textcolor{keyword}{import} android.content.DialogInterface;
+00008 \textcolor{keyword}{import} android.content.Intent;
+00009 \textcolor{keyword}{import} android.os.Bundle;
+00010 \textcolor{keyword}{import} android.provider.Telephony;
+00011 \textcolor{keyword}{import} android.util.Log;
+00012 \textcolor{keyword}{import} android.view.View;
+00013 \textcolor{keyword}{import} android.widget.AdapterView;
+00014 \textcolor{keyword}{import} android.widget.ArrayAdapter;
+00015 \textcolor{keyword}{import} android.widget.Button;
+00016 \textcolor{keyword}{import} android.widget.ListView;
+00017 \textcolor{keyword}{import} android.widget.TextView;
+00018 
+00019 \textcolor{keyword}{import} java.util.ArrayList;
+00020 \textcolor{keyword}{import} java.util.ListIterator;
+00021 \textcolor{keyword}{import} java.util.Vector;
+00022 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00035}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}{00035} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}{IHMGestionRencontre} \textcolor{keyword}{extends} AppCompatActivity
+00036 \{
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00040}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{00040}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0ac4d9152d48619cd697c8c69166219f}{TAG} = \textcolor{stringliteral}{"\_IHMGestionRencontre"};  
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00041}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}{00041}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a752975e509f051f66f3f06a744807f21}{DEMARRAGE\_PARTIE} = 0;  
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00042}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}{00042}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abd01f503f5a75a27b12261b30d80c053}{TEXTE\_BOUTON\_DEMARRER\_PARTIE} = \textcolor{stringliteral}{"Démarrer"};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00043}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}{00043}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a03e10549be0fc3fb5dc146afe8db5e89}{ID\_INTENT\_LANCEMENT\_PARTIE} = \textcolor{stringliteral}{"Partie"};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00044}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}{00044}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a31b8b293d8e0aa02050fddf9891349f2}{TITRE\_ALERT\_DIALOG\_DEMANDER\_SERVEUR} = \textcolor{stringliteral}{"
+      Veuillez sélectionner le premier joueur à servir :"};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00045}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}{00045}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae75a8de544fd03072c8dbaf6445d2589}{TITRE\_ACTIVITE} = \textcolor{stringliteral}{"Liste des parties pour la rencontre :  "};
+00046 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00050}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{00050}     \textcolor{keyword}{private} Button \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a29f52b3b1397d21728bbe60b826facd8}{boutonDemarrerPartie};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00051}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{00051}     \textcolor{keyword}{private} AlertDialog.Builder \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00052}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{00052}     \textcolor{keyword}{private} AlertDialog \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a9e68d97c4b50758ce1d6a2d8a217d5fc}{alertDialogDemanderServeur};
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00053}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{00053}     \textcolor{keyword}{private} ListView \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a127e07e7de6ff7e02fa84c52a3399aaa}{listeParties};
+00054 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00058}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{00058}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{Rencontre} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aa3ecacbd8ab104d2a3c3f3e727ae6c5c}{rencontre};
+00059 
+00063     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00064}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}{00064}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a233405b574407eda9ba407dd706fef91}{onCreate}(Bundle savedInstanceState)
+00065     \{
+00066         super.onCreate(savedInstanceState);
+00067         setContentView(R.layout.ihm\_gestion\_rencontre);
+00068         Log.d(TAG, \textcolor{stringliteral}{"onCreate()"});
+00069 
+00070         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}{initialiserRencontre}();
+00071 
+00072         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}{recupererRessourcesIHM}();
+00073 
+00074         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}{initialiserRessourcesIHM}();
+00075 
+00076         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}{connecterBoutons}();
+00077     \}
+00078 
+00082     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00083}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}{00083}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae34fc2516b20ce7917e53eb9e55c7afc}{onStart}()
+00084     \{
+00085         super.onStart();
+00086         Log.d(TAG, \textcolor{stringliteral}{"onStart()"});
+00087     \}
+00088 
+00092     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00093}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}{00093}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ad8a4a274c61458fe25a48ccba0d846e7}{onResume}()
+00094     \{
+00095         super.onResume();
+00096         Log.d(TAG, \textcolor{stringliteral}{"onResume()"});
+00097     \}
+00098 
+00102     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00103}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}{00103}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a390adc8e9ec98d7147957ce8d9e1c071}{onPause}()
+00104     \{
+00105         super.onPause();
+00106         Log.d(TAG, \textcolor{stringliteral}{"onPause()"});
+00107     \}
+00108 
+00112     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00113}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{00113}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_abfee40a2616713d70c0245ae72c6d794}{onStop}()
+00114     \{
+00115         super.onStop();
+00116         Log.d(TAG, \textcolor{stringliteral}{"onStop()"});
+00117     \}
+00118 
+00122     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00123}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0cee3ae4aa9559d72f43aaa62f4ebe75}{00123}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a0cee3ae4aa9559d72f43aaa62f4ebe75}{onDestroy}()
+00124     \{
+00125         super.onDestroy();
+00126         Log.d(TAG, \textcolor{stringliteral}{"onDestroy()"});
+00127     \}
+00128 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00132}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}{00132}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ac3d024fe8637e7cc4469a88a7ab81b53}{recupererRessourcesIHM}()
+00133     \{
+00134         boutonDemarrerPartie = findViewById(R.id.boutonDemarrerPartie);
+00135         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur} = \textcolor{keyword}{new} AlertDialog.Builder(\textcolor{keyword}{this});
+00136         listeParties = findViewById(R.id.listeParties);
+00137     \}
+00138 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00142}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}{00142}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a18b1c1a04b6070a8d90aa135ad1212b7}{initialiserRessourcesIHM}()
+00143     \{
+00144         boutonDemarrerPartie.setText(TEXTE\_BOUTON\_DEMARRER\_PARTIE);
+00145 
+00146         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.setTitle(
+      TITRE\_ALERT\_DIALOG\_DEMANDER\_SERVEUR);
+00147 
+00148         alertDialogDemanderServeur = \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.
+      create();
+00149 
+00150         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}{afficherParties}();
+00151 
+00152         getSupportActionBar().setTitle( TITRE\_ACTIVITE + rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{getEquipeA}().
+      \hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{" VS "} + rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{getEquipeB}().\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}());
+00153     \}
+00154 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00158}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}{00158}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a3d4decb257b09dafa98f4a6accc8c15d}{connecterBoutons}()
+00159     \{
+00160         boutonDemarrerPartie.setOnClickListener(\textcolor{keyword}{new} View.OnClickListener()
+00161         \{
+00162             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(View v)
+00163             \{
+00164                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}{demanderServeur}(rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{getParties}().elementAt(listeParties.
+      getCheckedItemPosition()));
+00165             \}
+00166         \});
+00167 
+00168         listeParties.setOnItemClickListener(\textcolor{keyword}{new} AdapterView.OnItemClickListener()
+00169         \{
+00170             @Override
+00171             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onItemClick(AdapterView<?> parent, View view, \textcolor{keywordtype}{int} position, \textcolor{keywordtype}{long} \textcolor{keywordtype}{id})
+00172             \{
+00173                 Log.d(TAG,\textcolor{stringliteral}{"onItemClick()"});
+00174                 listeParties.setItemChecked(position,\textcolor{keyword}{true});
+00175 
+00176             \}
+00177         \});
+00178     \}
+00179 
+00183     @Override
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00184}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a2ab13355dbd1751f43ff54c534d0f021}{00184}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a2ab13355dbd1751f43ff54c534d0f021}{onActivityResult}(\textcolor{keywordtype}{int} requestCode, \textcolor{keywordtype}{int} resultCode, Intent data)
+00185     \{
+00186         super.onActivityResult(requestCode, resultCode, data);
+00187         Log.d(TAG, \textcolor{stringliteral}{"onActivityResult() resultCode : "} + resultCode);
+00188 
+00189         \textcolor{comment}{// Exemple}
+00190         \textcolor{keywordflow}{if}(requestCode == DEMARRAGE\_PARTIE && resultCode == RESULT\_OK)
+00191         \{
+00192             Log.d(TAG, \textcolor{stringliteral}{"onActivityResult() IHMGestionPartie s'est terminée avec succès !"});
+00193         \}
+00194     \}
+00195 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00199}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}{00199}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aedaadbb550aab497aac0501ced04a3eb}{initialiserRencontre}()
+00200     \{
+00201         Vector<Joueur> joueursEquipe1 = \textcolor{keyword}{new} Vector<Joueur>();
+00202         joueursEquipe1.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"BEAUMONT"},\textcolor{stringliteral}{"Jérôme"},843944));
+00203         joueursEquipe1.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"SAULNIER"},\textcolor{stringliteral}{"Christian"},303504));
+00204         joueursEquipe1.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"FILAFERRO"},\textcolor{stringliteral}{"Thomas"},645758));
+00205         joueursEquipe1.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"COMTE"},\textcolor{stringliteral}{"Emmanuel"},842353));
+00206 
+00207         Vector<Joueur> joueursEquipe2 = \textcolor{keyword}{new} Vector<Joueur>();
+00208         joueursEquipe2.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"FAGOO"},\textcolor{stringliteral}{"Damien"},844549));
+00209         joueursEquipe2.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"BRESSON"},\textcolor{stringliteral}{"Thibault"},845423));
+00210         joueursEquipe2.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"CROUZET"},\textcolor{stringliteral}{"Lionel"},845682));
+00211         joueursEquipe2.add(\textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur}(\textcolor{stringliteral}{"FLORES"},\textcolor{stringliteral}{"Fabien"},847650));
+00212 
+00213         \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeA = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}(\textcolor{stringliteral}{"PPC Sorgues"}, joueursEquipe1);
+00214         \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe} equipeB = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_equipe}{Equipe}(\textcolor{stringliteral}{"PPC Pernes"}, joueursEquipe2);
+00215 
+00216         this.rencontre = \textcolor{keyword}{new} \hyperlink{classcom_1_1example_1_1area_1_1_rencontre}{Rencontre}(equipeA,equipeB);
+00217     \}
+00218 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00222}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}{00222}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a34d405f3c30f6d040b2db3a6ee54a2f4}{demanderServeur}(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+00223     \{
+00224         Vector<Joueur> joueursA = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00225         Vector<Joueur> joueursB = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3c6b981de54d03eeb553919983ee3be8}{getJoueursB}();
+00226         CharSequence[] nomJoueurs = \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}{recupererNomsJoueurs}(joueursA, joueursB);
+00227 
+00228         \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.setItems(nomJoueurs, \textcolor{keyword}{new} 
+      DialogInterface.OnClickListener()
+00229         \{
+00230             \textcolor{keyword}{public} \textcolor{keywordtype}{void} onClick(DialogInterface dialog, \textcolor{keywordtype}{int} which)
+00231             \{
+00232                 \textcolor{comment}{// Partie simple ?}
+00233                 \textcolor{keywordflow}{if}(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a70ddc06f598fa7ffb00c315fc9490647}{getNbJoueurs}() == 2)
+00234                 \{
+00235                     \textcolor{keywordflow}{if}(which == 0)
+00236                     \{
+00237                         Log.d(TAG,\textcolor{stringliteral}{"Serveur dans équipe A à la position : "} + which + \textcolor{stringliteral}{" ("} + joueursA.
+      elementAt(which).getNom() + \textcolor{stringliteral}{")"});
+00238                         joueursA.elementAt(which).setEstServeur(\textcolor{keyword}{true});
+00239                         partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_ace9c70bf0685d426f0d3fdb7e4f81f3f}{setJoueursA}(joueursA);
+00240 
+00241                     \}
+00242                     \textcolor{keywordflow}{else}
+00243                     \{
+00244                         Log.d(TAG,\textcolor{stringliteral}{"Serveur dans équipe B à la position : "} + (which-1) + \textcolor{stringliteral}{" ("} + joueursB.
+      elementAt(which-1).getNom() + \textcolor{stringliteral}{")"});
+00245                         joueursB.elementAt(which-1).setEstServeur(\textcolor{keyword}{true});
+00246                         partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3f3cc9b2ddd055945b8b0835d0e7466b}{setJoueursB}(joueursB);
+00247                     \}
+00248                 \}
+00249                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a70ddc06f598fa7ffb00c315fc9490647}{getNbJoueurs}() == 4) \textcolor{comment}{// Partie double ?}
+00250                 \{
+00251                     \textcolor{keywordflow}{if}(which < 2)
+00252                     \{
+00253                         Log.d(TAG,\textcolor{stringliteral}{"Serveur dans équipe A à la position : "} + which + \textcolor{stringliteral}{" ("} + joueursA.
+      elementAt(which).getNom() + \textcolor{stringliteral}{")"});
+00254                         joueursA.elementAt(which).setEstServeur(\textcolor{keyword}{true});
+00255                         partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_ace9c70bf0685d426f0d3fdb7e4f81f3f}{setJoueursA}(joueursA);
+00256                     \}
+00257                     \textcolor{keywordflow}{else}
+00258                     \{
+00259                         Log.d(TAG,\textcolor{stringliteral}{"Serveur dans équipe B à la position : "} + (which-2) + \textcolor{stringliteral}{" ("} + joueursB.
+      elementAt(which-2).getNom() + \textcolor{stringliteral}{")"});
+00260                         joueursB.elementAt(which-2).setEstServeur(\textcolor{keyword}{true});
+00261                         partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3f3cc9b2ddd055945b8b0835d0e7466b}{setJoueursB}(joueursB);
+00262                     \}
+00263                 \}
+00264                 \textcolor{keywordflow}{else}
+00265                 \{
+00266                     Log.e(TAG,\textcolor{stringliteral}{"Le nombre de joueurs dans cette partie est invalide !"});
+00267                 \}
+00268 
+00269                 \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}{lancerPartie}(partie);
+00270             \}
+00271         \});
+00272 
+00273         alertDialogDemanderServeur = \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a47ed7018b2af1ac9197715b9008a34a5}{alertDialogBuilderDemanderServeur}.
+      create();
+00274 
+00275         alertDialogDemanderServeur.show();
+00276     \}
+00277 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00281}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}{00281}     \textcolor{keyword}{private} CharSequence[] \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_ae68b1e5d73d33d01e622a736a25da731}{recupererNomsJoueurs}(Vector<Joueur> joueursA, Vector<Joueur>
+       joueursB)
+00282     \{
+00283         \textcolor{keywordtype}{int} nbJoueurs = joueursA.size() + joueursB.size();
+00284         CharSequence nomJoueurs[] = \textcolor{keyword}{new} CharSequence[nbJoueurs];
+00285         ListIterator<Joueur> it = joueursA.listIterator();
+00286         \textcolor{keywordtype}{int} i = 0;
+00287         \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} joueur;
+00288 
+00289         \textcolor{keywordflow}{while} (it.hasNext())
+00290         \{
+00291             joueur = it.next();
+00292             nomJoueurs[i] = \textcolor{stringliteral}{"[ "} + rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a207498fd691285b28b0a720da0a660f8}{getEquipeA}().\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{"] "} + joueur.
+      \hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}()+ \textcolor{stringliteral}{" "} + joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}();
+00293             i++;
+00294         \}
+00295 
+00296         it = joueursB.listIterator();
+00297 
+00298         \textcolor{keywordflow}{while} (it.hasNext())
+00299         \{
+00300             joueur = it.next();
+00301             nomJoueurs[i] = \textcolor{stringliteral}{"[ "} + rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a83deec026e26407049c5671672291170}{getEquipeB}().\hyperlink{classcom_1_1example_1_1area_1_1_equipe_a735e5e0aaac9ac2c17f3eca3d47862dc}{getNomClub}() + \textcolor{stringliteral}{"] "} + joueur.
+      \hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}()+ \textcolor{stringliteral}{" "} + joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}();
+00302             i++;
+00303         \}
+00304         \textcolor{keywordflow}{return} nomJoueurs;
+00305     \}
+00306 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00311}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}{00311}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a284518fddedfaed4b257f852290e1e63}{lancerPartie}(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+00312     \{
+00313         \textcolor{keyword}{final} Intent intent = \textcolor{keyword}{new} Intent(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre}{IHMGestionRencontre}.this, 
+      \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_partie}{IHMGestionPartie}.class);
+00314         intent.putExtra(ID\_INTENT\_LANCEMENT\_PARTIE, partie);
+00315         Log.d(TAG,\textcolor{stringliteral}{"Lancement de l'activité IHMGestionPartie"});
+00316         startActivityForResult(intent, DEMARRAGE\_PARTIE);
+00317     \}
+00318 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00322}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}{00322}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_a5d86e4705a4bbea19f05781403df4742}{afficherParties}()
+00323     \{
+00324         Vector<Partie> parties = rencontre.\hyperlink{classcom_1_1example_1_1area_1_1_rencontre_a58b62bd2f8a63f532df2bc8607268a2d}{getParties}();
+00325         ListIterator<Partie> it = parties.listIterator();
+00326         ArrayList<String> arrayListParties = \textcolor{keyword}{new} ArrayList<String>();
+00327         ArrayAdapter<String> adapter;
+00328 
+00329         \textcolor{keywordflow}{while}(it.hasNext())
+00330         \{
+00331             arrayListParties.add(\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}{formaterPartie}(it.next()));
+00332         \}
+00333 
+00334         adapter = \textcolor{keyword}{new} ArrayAdapter<String>(\textcolor{keyword}{this}, android.R.layout.simple\_list\_item\_single\_choice, 
+      arrayListParties);
+00335 
+00336         listeParties.setAdapter(adapter);
+00337 
+00338     \}
+00339 
+\Hypertarget{_i_h_m_gestion_rencontre_8java_source_l00343}\hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}{00343}     \textcolor{keyword}{private} String \hyperlink{classcom_1_1example_1_1area_1_1_i_h_m_gestion_rencontre_aadc556a63bb77b707f4677c34d61dae5}{formaterPartie}(\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} partie)
+00344     \{
+00345         String partieFormatee = \textcolor{keyword}{new} String();
+00346         Vector<Joueur> joueursA = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}();
+00347         Vector<Joueur> joueursB = partie.\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3c6b981de54d03eeb553919983ee3be8}{getJoueursB}();
+00348         ListIterator<Joueur> it = joueursA.listIterator();
+00349         \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} joueur;
+00350 
+00351         \textcolor{keywordflow}{while} (it.hasNext())
+00352         \{
+00353             joueur = it.next();
+00354             partieFormatee += joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}() + \textcolor{stringliteral}{" "} + joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}() + \textcolor{stringliteral}{" "};
+00355         \}
+00356 
+00357         it = joueursB.listIterator();
+00358         partieFormatee += \textcolor{stringliteral}{" VS  "};
+00359 
+00360         \textcolor{keywordflow}{while} (it.hasNext())
+00361         \{
+00362             joueur = it.next();
+00363             partieFormatee += joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}() + \textcolor{stringliteral}{" "} + joueur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}() + \textcolor{stringliteral}{" "};
+00364         \}
+00365 
+00366         \textcolor{keywordflow}{return} partieFormatee;
+00367     \}
+00368 \}
+\end{DoxyCode}

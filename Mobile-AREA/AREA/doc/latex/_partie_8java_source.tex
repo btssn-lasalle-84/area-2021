@@ -1,0 +1,294 @@
+\hypertarget{_partie_8java_source}{}\subsection{Partie.\+java}
+\label{_partie_8java_source}\index{Partie.\+java@{Partie.\+java}}
+
+\begin{DoxyCode}
+00001 \textcolor{keyword}{package }com.example.area;
+00002 
+00003 \textcolor{keyword}{import} android.util.Log;
+00004 
+00005 \textcolor{keyword}{import} java.io.Serializable;
+00006 \textcolor{keyword}{import} java.util.Iterator;
+00007 \textcolor{keyword}{import} java.util.Vector;
+00008 
+\Hypertarget{_partie_8java_source_l00022}\hyperlink{classcom_1_1example_1_1area_1_1_partie}{00022} \textcolor{keyword}{public} \textcolor{keyword}{class }\hyperlink{classcom_1_1example_1_1area_1_1_partie}{Partie} \textcolor{keyword}{implements} Serializable
+00023 \{
+\Hypertarget{_partie_8java_source_l00027}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ac0444402f7c570474df1c8b7ece88ad9}{00027}     \textcolor{keyword}{private} \textcolor{keyword}{static} \textcolor{keyword}{final} String \hyperlink{classcom_1_1example_1_1area_1_1_partie_ac0444402f7c570474df1c8b7ece88ad9}{TAG} = \textcolor{stringliteral}{"\_Partie"};
+\Hypertarget{_partie_8java_source_l00028}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{00028}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2f977d38424ff199a053d9e3cd4eb8c6}{POSITION\_PREMIER\_JOUEUR} = 0;
+\Hypertarget{_partie_8java_source_l00029}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{00029}     \textcolor{keyword}{public} \textcolor{keyword}{static} \textcolor{keyword}{final} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a6b5837dffa2af6a8da369f69916498f4}{POSITION\_DEUXIEME\_JOUEUR} = 1;
+00030 
+\Hypertarget{_partie_8java_source_l00034}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a1d1d6ce602fecf229217fe3d7a4d9152}{00034}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a1d1d6ce602fecf229217fe3d7a4d9152}{nbManchesGagnantes};
+\Hypertarget{_partie_8java_source_l00035}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{00035}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{nbPointsParManche};
+\Hypertarget{_partie_8java_source_l00036}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a00890390c78922c024fe31065923964e}{00036}     \textcolor{keyword}{private} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a00890390c78922c024fe31065923964e}{estFinie};
+\Hypertarget{_partie_8java_source_l00037}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a190a033a96ec435589ac53f78d60890b}{00037}     \textcolor{keyword}{private} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_partie_a190a033a96ec435589ac53f78d60890b}{joueursA};
+\Hypertarget{_partie_8java_source_l00038}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a208910b83df461c3a2503f3b28650ce8}{00038}     \textcolor{keyword}{private} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_partie_a208910b83df461c3a2503f3b28650ce8}{joueursB};
+\Hypertarget{_partie_8java_source_l00039}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ad1075e561acb71ac3307570f79795b1c}{00039}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad1075e561acb71ac3307570f79795b1c}{pointsJoueursA};
+\Hypertarget{_partie_8java_source_l00040}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ae1ceb321b45437487124b1d886c7297c}{00040}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ae1ceb321b45437487124b1d886c7297c}{pointsJoueursB};
+\Hypertarget{_partie_8java_source_l00041}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a4563ef3464c670e68405bb7256abb770}{00041}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a4563ef3464c670e68405bb7256abb770}{manchesJoueursA};
+\Hypertarget{_partie_8java_source_l00042}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a9bb9a60be0b966b5a8bd5ac0934387bf}{00042}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a9bb9a60be0b966b5a8bd5ac0934387bf}{manchesJoueursB};
+\Hypertarget{_partie_8java_source_l00043}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a06ef6dd2585a669a8230ed1217cd98f4}{00043}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a06ef6dd2585a669a8230ed1217cd98f4}{id};
+\Hypertarget{_partie_8java_source_l00044}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a4b5e5464eb3b37f7c78d4134bf29a7f8}{00044}     \textcolor{keyword}{private} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a4b5e5464eb3b37f7c78d4134bf29a7f8}{nbPointsMaxMancheActuelle};\textcolor{comment}{// Attribut permettant de gérer les deux
+       points d'écarts dans une manche}
+00045 
+\Hypertarget{_partie_8java_source_l00046}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a147e80f330c0236dbe800f5e2b4c2c84}{00046}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a147e80f330c0236dbe800f5e2b4c2c84}{Partie}(\textcolor{keywordtype}{int} nbManchesGagnantes, \textcolor{keywordtype}{int} nbPointsParManche, Vector<Joueur> joueursA, 
+      Vector<Joueur> joueursB)
+00047     \{
+00048         this.nbManchesGagnantes = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a1d1d6ce602fecf229217fe3d7a4d9152}{nbManchesGagnantes};
+00049         this.nbPointsParManche = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{nbPointsParManche};
+00050         this.nbPointsMaxMancheActuelle = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{nbPointsParManche};
+00051         this.estFinie = \textcolor{keyword}{false};
+00052         this.pointsJoueursA = 0;
+00053         this.pointsJoueursB = 0;
+00054         this.manchesJoueursA = 0;
+00055         this.manchesJoueursB = 0;
+00056         this.\textcolor{keywordtype}{id} = 0;
+00057         this.joueursA = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a190a033a96ec435589ac53f78d60890b}{joueursA};
+00058         this.joueursB = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a208910b83df461c3a2503f3b28650ce8}{joueursB};
+00059     \}
+00060 
+\Hypertarget{_partie_8java_source_l00064}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{00064}     \textcolor{keyword}{public} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_partie_a0f944de317206d9b99f9ffc7146a43ef}{getJoueursA}()
+00065     \{
+00066         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a190a033a96ec435589ac53f78d60890b}{joueursA};
+00067     \}
+00068 
+\Hypertarget{_partie_8java_source_l00072}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3c6b981de54d03eeb553919983ee3be8}{00072}     \textcolor{keyword}{public} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_partie_a3c6b981de54d03eeb553919983ee3be8}{getJoueursB}()
+00073     \{
+00074         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a208910b83df461c3a2503f3b28650ce8}{joueursB};
+00075     \}
+00076 
+\Hypertarget{_partie_8java_source_l00080}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a5ec15306fc24648c1698ea0cdd50bf53}{00080}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a5ec15306fc24648c1698ea0cdd50bf53}{getPointsJoueursA}()
+00081     \{
+00082         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad1075e561acb71ac3307570f79795b1c}{pointsJoueursA};
+00083     \}
+00084 
+\Hypertarget{_partie_8java_source_l00088}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a376bb79a67c311e1eb681387e9440bbd}{00088}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a376bb79a67c311e1eb681387e9440bbd}{getPointsJoueursB}()
+00089     \{
+00090         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ae1ceb321b45437487124b1d886c7297c}{pointsJoueursB};
+00091     \}
+00092 
+\Hypertarget{_partie_8java_source_l00096}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a7c863edbbdd07ddc7f71616949823201}{00096}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a7c863edbbdd07ddc7f71616949823201}{getManchesJoueursA}()
+00097     \{
+00098         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a4563ef3464c670e68405bb7256abb770}{manchesJoueursA};
+00099     \}
+00100 
+\Hypertarget{_partie_8java_source_l00104}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a706fa101c4fcad9f2ea6473b5778b55e}{00104}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a706fa101c4fcad9f2ea6473b5778b55e}{getManchesJoueursB}()
+00105     \{
+00106         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a9bb9a60be0b966b5a8bd5ac0934387bf}{manchesJoueursB};
+00107     \}
+00108 
+\Hypertarget{_partie_8java_source_l00112}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a535a67141814a238c1ffc0c42d0afedc}{00112}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a535a67141814a238c1ffc0c42d0afedc}{getId}()
+00113     \{
+00114         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a06ef6dd2585a669a8230ed1217cd98f4}{id};
+00115     \}
+00116 
+\Hypertarget{_partie_8java_source_l00120}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ab0dd955a65440cab1569311ff35de3eb}{00120}     \textcolor{keyword}{public} \textcolor{keywordtype}{boolean} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ab0dd955a65440cab1569311ff35de3eb}{estFinie}()
+00121     \{
+00122         \textcolor{keywordflow}{return} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ab0dd955a65440cab1569311ff35de3eb}{estFinie};
+00123     \}
+00124 
+\Hypertarget{_partie_8java_source_l00128}\hyperlink{classcom_1_1example_1_1area_1_1_partie_abb040a8be4a92a91afded80991d07087}{00128}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_abb040a8be4a92a91afded80991d07087}{ajouterPointJoueursA}()
+00129     \{
+00130         pointsJoueursA++;
+00131         \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{gererPointsEcart}();
+00132         \hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{gererService}();
+00133 
+00134         \textcolor{keywordflow}{if} (pointsJoueursA == nbPointsMaxMancheActuelle)
+00135         \{
+00136             manchesJoueursA++;
+00137             pointsJoueursA = 0;
+00138             pointsJoueursB = 0;
+00139             nbPointsMaxMancheActuelle = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{nbPointsParManche};
+00140             \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad07c65c2ba36cd08798cee1ba6b99c81}{verifierPartieFinie}();
+00141         \}
+00142     \}
+00143 
+\Hypertarget{_partie_8java_source_l00147}\hyperlink{classcom_1_1example_1_1area_1_1_partie_aadc82cc11b982008b81f886adbc4e63a}{00147}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_aadc82cc11b982008b81f886adbc4e63a}{ajouterPointJoueursB}()
+00148     \{
+00149         pointsJoueursB++;
+00150         \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{gererPointsEcart}();
+00151         \hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{gererService}();
+00152 
+00153         \textcolor{keywordflow}{if} (pointsJoueursB == nbPointsMaxMancheActuelle)
+00154         \{
+00155             manchesJoueursB++;
+00156             pointsJoueursA = 0;
+00157             pointsJoueursB = 0;
+00158             nbPointsMaxMancheActuelle = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a23cd7e19042eece7057f810bba2f4f2c}{nbPointsParManche};
+00159             \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad07c65c2ba36cd08798cee1ba6b99c81}{verifierPartieFinie}();
+00160         \}
+00161     \}
+00162 
+\Hypertarget{_partie_8java_source_l00166}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2847b07aff035a02c130f6219efc5312}{00166}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2847b07aff035a02c130f6219efc5312}{retirerPointJoueursA}()
+00167     \{
+00168         \textcolor{keywordflow}{if}(pointsJoueursA != 0)
+00169         \{
+00170             \hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{gererService}();
+00171             \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{gererPointsEcart}();
+00172             pointsJoueursA--;
+00173         \}
+00174     \}
+00175 
+\Hypertarget{_partie_8java_source_l00179}\hyperlink{classcom_1_1example_1_1area_1_1_partie_aa3f7d2c68dcf31a2e48f95c5db9c5663}{00179}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_aa3f7d2c68dcf31a2e48f95c5db9c5663}{retirerPointJoueursB}()
+00180     \{
+00181         \textcolor{keywordflow}{if}(pointsJoueursB != 0)
+00182         \{
+00183             \hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{gererService}();
+00184             \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{gererPointsEcart}();
+00185             pointsJoueursB--;
+00186         \}
+00187     \}
+00188 
+\Hypertarget{_partie_8java_source_l00192}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ad07c65c2ba36cd08798cee1ba6b99c81}{00192}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad07c65c2ba36cd08798cee1ba6b99c81}{verifierPartieFinie}()
+00193     \{
+00194         \textcolor{keywordflow}{if} (manchesJoueursB == nbManchesGagnantes || manchesJoueursA == nbManchesGagnantes)
+00195         \{
+00196             estFinie = \textcolor{keyword}{true};
+00197             Log.d(TAG,\textcolor{stringliteral}{"Partie finie !"});
+00198         \}
+00199     \}
+00200 
+\Hypertarget{_partie_8java_source_l00204}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{00204}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a2838da99f206d736a22f8a3f271365b2}{gererPointsEcart}()
+00205     \{
+00206         \textcolor{keywordflow}{if} (pointsJoueursA == pointsJoueursB && (pointsJoueursA == (nbPointsMaxMancheActuelle-1 )))
+00207         \{
+00208             nbPointsMaxMancheActuelle++;
+00209         \}
+00210         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( nbPointsMaxMancheActuelle > nbPointsParManche && pointsJoueursA == pointsJoueursB && (
+      pointsJoueursA == (nbPointsMaxMancheActuelle-2 )))
+00211         \{
+00212             nbPointsMaxMancheActuelle--;
+00213         \}
+00214         Log.d(TAG,\textcolor{stringliteral}{"nbPointsMaxMancheActuelle : "} + Integer.toString(nbPointsMaxMancheActuelle));
+00215     \}
+00216 
+\Hypertarget{_partie_8java_source_l00220}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{00220}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a52c8e133b23468d4b2c4338a80c3763c}{gererService}()
+00221     \{
+00222         \textcolor{keywordtype}{int} pointsMarques = pointsJoueursA + \hyperlink{classcom_1_1example_1_1area_1_1_partie_ae1ceb321b45437487124b1d886c7297c}{pointsJoueursB};
+00223         \textcolor{keywordflow}{if}(pointsMarques % 2 == 0 && pointsMarques != 0)
+00224         \{
+00225             \textcolor{keywordflow}{if}(joueursA.size() == 1)
+00226             \{
+00227                 \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad6d7eef6348a783f9cdd0eb3dd14793d}{changerServeurSimple}();
+00228             \}
+00229             \textcolor{keywordflow}{else}
+00230             \{
+00231                 \hyperlink{classcom_1_1example_1_1area_1_1_partie_a14ae07774755900e3ae4e7e6808126c6}{changerServeurDouble}();
+00232             \}
+00233         \}
+00234         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (joueursA.size() == 2)
+00235         \{
+00236             \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur = null;
+00237             serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursA);
+00238             \textcolor{keywordflow}{if} (serveur != null)
+00239             \{
+00240                 joueursA = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a3143072ab9e3a306a42a84ecac4bdcf1}{permuterServeurRelanceurDuo}(joueursA,serveur);
+00241             \}
+00242             \textcolor{keywordflow}{else}
+00243             \{
+00244                 serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursB);
+00245                 joueursB = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a3143072ab9e3a306a42a84ecac4bdcf1}{permuterServeurRelanceurDuo}(joueursB,serveur);
+00246             \}
+00247         \}
+00248     \}
+00249 
+\Hypertarget{_partie_8java_source_l00253}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a14ae07774755900e3ae4e7e6808126c6}{00253}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a14ae07774755900e3ae4e7e6808126c6}{changerServeurDouble}()
+00254     \{
+00255         \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur = null;
+00256         serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursA);
+00257         \textcolor{keywordtype}{int} indexServeur = 0;
+00258         \textcolor{keywordflow}{if} (serveur != null)
+00259         \{
+00260             indexServeur = joueursA.indexOf(serveur);
+00261             joueursB.elementAt(indexServeur).setEstServeur(\textcolor{keyword}{true});
+00262             joueursA.elementAt(indexServeur).setEstServeur(\textcolor{keyword}{false});
+00263         \}
+00264         \textcolor{keywordflow}{else}
+00265         \{
+00266             serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursB);
+00267             indexServeur = joueursB.indexOf(serveur);
+00268             joueursA.elementAt(indexServeur).setEstServeur(\textcolor{keyword}{true});
+00269             joueursB.elementAt(indexServeur).setEstServeur(\textcolor{keyword}{false});
+00270         \}
+00271     \}
+00272 
+\Hypertarget{_partie_8java_source_l00276}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ad6d7eef6348a783f9cdd0eb3dd14793d}{00276}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ad6d7eef6348a783f9cdd0eb3dd14793d}{changerServeurSimple}()
+00277     \{
+00278         \textcolor{keywordflow}{if} (joueursA.elementAt(POSITION\_PREMIER\_JOUEUR).estServeur())
+00279         \{
+00280             joueursA.elementAt(POSITION\_PREMIER\_JOUEUR).setEstServeur(\textcolor{keyword}{false});
+00281             joueursB.elementAt(POSITION\_PREMIER\_JOUEUR).setEstServeur(\textcolor{keyword}{true});
+00282         \}
+00283         \textcolor{keywordflow}{else}
+00284         \{
+00285             joueursB.elementAt(POSITION\_PREMIER\_JOUEUR).setEstServeur(\textcolor{keyword}{false});
+00286             joueursA.elementAt(POSITION\_PREMIER\_JOUEUR).setEstServeur(\textcolor{keyword}{true});
+00287         \}
+00288     \}
+00289 
+\Hypertarget{_partie_8java_source_l00293}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3143072ab9e3a306a42a84ecac4bdcf1}{00293}     \textcolor{keyword}{private} Vector<Joueur> \hyperlink{classcom_1_1example_1_1area_1_1_partie_a3143072ab9e3a306a42a84ecac4bdcf1}{permuterServeurRelanceurDuo}(Vector<Joueur> duo, 
+      \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur)
+00294     \{
+00295         \textcolor{keywordtype}{int} indexServeur = 0;
+00296         indexServeur = duo.indexOf(serveur);
+00297         serveur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_aa0ae3b52616cc034cd6270eade9a1be7}{setEstServeur}(\textcolor{keyword}{false});
+00298         \textcolor{keywordflow}{if} (indexServeur == POSITION\_DEUXIEME\_JOUEUR)
+00299         \{
+00300             duo.setElementAt(serveur,POSITION\_DEUXIEME\_JOUEUR);
+00301             duo.elementAt(POSITION\_PREMIER\_JOUEUR).setEstServeur(\textcolor{keyword}{true});
+00302         \}
+00303         \textcolor{keywordflow}{else}
+00304         \{
+00305             duo.setElementAt(serveur,POSITION\_PREMIER\_JOUEUR);
+00306             duo.elementAt(POSITION\_DEUXIEME\_JOUEUR).setEstServeur(\textcolor{keyword}{true});
+00307         \}
+00308 
+00309         \textcolor{keywordflow}{return} duo;
+00310     \}
+00311 
+\Hypertarget{_partie_8java_source_l00315}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{00315}     \textcolor{keyword}{private} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(Vector<Joueur> joueurs)
+00316     \{
+00317         Iterator<Joueur> itJoueurs = joueurs.iterator();
+00318         \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur;
+00319 
+00320         \textcolor{keywordflow}{while}(itJoueurs.hasNext())
+00321         \{
+00322             serveur = itJoueurs.next();
+00323             \textcolor{keywordflow}{if} (serveur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_abbc3e85c6740569af7f1bd2cb7aad6a2}{estServeur}())
+00324             \{
+00325                 \textcolor{keywordflow}{return} serveur;
+00326             \}
+00327         \}
+00328         \textcolor{keywordflow}{return} null;
+00329     \}
+00330 
+\Hypertarget{_partie_8java_source_l00334}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a34f75da57f51b710fccbce4aafda28d4}{00334}     \textcolor{keyword}{public} \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34f75da57f51b710fccbce4aafda28d4}{getServeur}()
+00335     \{
+00336         \hyperlink{classcom_1_1example_1_1area_1_1_joueur}{Joueur} serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursA);
+00337 
+00338         \textcolor{keywordflow}{if}(serveur == null)
+00339         \{
+00340             serveur = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a34c737de89dee9e2510fa5959e238a3e}{trouverServeur}(joueursB);
+00341         \}
+00342 
+00343         Log.d(TAG,\textcolor{stringliteral}{"Serveur : "} + serveur.\hyperlink{classcom_1_1example_1_1area_1_1_joueur_a4e43a9187363501204af7b2f2c84a9a4}{getNom}() + \textcolor{stringliteral}{" "} + serveur.
+      \hyperlink{classcom_1_1example_1_1area_1_1_joueur_ac2cd099ccfc34c48fbabde5649514a27}{getPrenom}() );
+00344 
+00345         \textcolor{keywordflow}{return} serveur;
+00346     \}
+00347 
+\Hypertarget{_partie_8java_source_l00351}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a70ddc06f598fa7ffb00c315fc9490647}{00351}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a70ddc06f598fa7ffb00c315fc9490647}{getNbJoueurs}()
+00352     \{
+00353         \textcolor{keywordflow}{return} (joueursA.size() + joueursB.size());
+00354     \}
+00355 
+\Hypertarget{_partie_8java_source_l00359}\hyperlink{classcom_1_1example_1_1area_1_1_partie_ace9c70bf0685d426f0d3fdb7e4f81f3f}{00359}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_ace9c70bf0685d426f0d3fdb7e4f81f3f}{setJoueursA}(Vector<Joueur> joueursA)
+00360     \{
+00361         this.joueursA = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a190a033a96ec435589ac53f78d60890b}{joueursA};
+00362     \}
+00363 
+\Hypertarget{_partie_8java_source_l00367}\hyperlink{classcom_1_1example_1_1area_1_1_partie_a3f3cc9b2ddd055945b8b0835d0e7466b}{00367}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \hyperlink{classcom_1_1example_1_1area_1_1_partie_a3f3cc9b2ddd055945b8b0835d0e7466b}{setJoueursB}(Vector<Joueur> joueursB)
+00368     \{
+00369         this.joueursB = \hyperlink{classcom_1_1example_1_1area_1_1_partie_a208910b83df461c3a2503f3b28650ce8}{joueursB};
+00370     \}
+00371 
+00372 \}
+\end{DoxyCode}
