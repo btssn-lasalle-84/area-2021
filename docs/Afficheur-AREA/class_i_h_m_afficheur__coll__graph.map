@@ -1,0 +1,6 @@
+<map id="IHMAfficheur" name="IHMAfficheur">
+<area shape="rect" id="node2" href="$class_q_main_window.html" title="{QMainWindow\n||}" alt="" coords="5,602,112,679"/>
+<area shape="rect" id="node3" href="$class_communication.html" title="Déclaration de la classe Communication. " alt="" coords="151,132,348,503"/>
+<area shape="rect" id="node5" href="$class_rencontre.html" title="{Rencontre\n|&#45; clubs\l&#45; parties\l|+ getNomEquipe1()\l+ getNomEquipe2()\l+ Rencontre()\l+ ~Rencontre()\l+ creerPartie()\l}" alt="" coords="282,565,417,716"/>
+<area shape="rect" id="node4" href="$class_q_object.html" title="{QObject\n||}" alt="" coords="319,5,390,83"/>
+</map>
