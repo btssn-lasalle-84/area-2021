@@ -30,9 +30,12 @@ Le système AREA est donc décomposé en plusieurs modules :
 - [presentation-brunet-2021.pptx](presentation-brunet-2021.pptx)
 - [presentation-gerouville-2021.pptx](presentation-gerouville-2021.pptx)
 
+Documentation du code : https://btssn-lasalle-84.github.io/area-2021/
+
 ## Vidéo
 
 Lien : https://www.youtube.com/watch?v=HDWd8hjTrLk&t=75s
+
 ## Licence GPL
 
 This program is free software; you can redistribute it and/or modify
